@@ -489,6 +489,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:400;height:54px;display:flex;ali
 .status-char{font-size:10px;color:var(--ink3)}
 .status-post-btn{font-family:'Geist Mono',monospace;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border:none;border-radius:3px;padding:7px 18px;cursor:pointer;transition:opacity .15s}
 .status-post-btn:hover{opacity:.85}
+/* ── ONBOARDING ── */
+.ob-cats-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ob-cat-btn{display:flex;align-items:center;gap:10px;font-family:'Geist Mono',monospace;font-size:12px;font-weight:500;color:var(--ink2);background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;cursor:pointer;transition:all .15s;text-align:left}
+.ob-cat-btn:hover{border-color:var(--border2);color:var(--ink)}
+.ob-cat-btn.selected{border-color:var(--accent);background:var(--accent-l);color:var(--ink)}
+.ob-cat-icon{font-size:18px;flex-shrink:0}
 .status-media-btns{display:flex;gap:6px}
 .status-media-btn{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;cursor:pointer;color:var(--ink3);background:var(--bg3);border:1px solid var(--border2);transition:all .15s}
 .status-media-btn:hover{color:var(--accent);border-color:var(--accent);background:var(--accent-l)}
@@ -714,79 +720,21 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:22px 44px
     <div class="glass-ant"><svg viewBox="0 0 32 32"><use href="#ant"/></svg></div>antism
   </div>
   <div class="nav-right">
-    <div class="country-sel-wrap" id="country-wrap">
-      <button class="country-btn" onclick="toggleCountryDD()" id="country-btn">
-        <span class="flag" id="nav-flag">🌐</span>
-        <span id="nav-country-name">Ölkə</span>
-        <svg width="9" height="5" viewBox="0 0 9 5" fill="none"><path d="M1 1l3.5 3L8 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-      </button>
-      <div class="country-dropdown" id="country-dd">
-        <div class="country-dd-head">Ölkə seçin</div>
-      </div>
-    </div>
-    <button class="btn-ng" onclick="showPage('login')">Giriş</button>
-    <button class="btn-na" onclick="showPage('register')">Qeydiyyat</button>
+    <button class="btn-ng" id="nav-login-btn" onclick="showPage('login')">Giriş</button>
+    <button class="btn-na" id="nav-reg-btn" onclick="showPage('register')">Qeydiyyat</button>
   </div>
 </nav>
 
 <!-- ══════════════ HOME ══════════════ -->
 <div id="page-home" class="page active">
-  <section class="hero" style="grid-template-columns:1fr;min-height:70vh">
-    <div class="hero-orb hero-orb-1"></div>
-    <div class="hero-orb hero-orb-2"></div>
-    <div class="hero-left" style="border-right:none;align-items:center;padding:90px 68px 80px;text-align:center">
-      <div class="hero-bismillah-tag">
-        <span class="hero-bismillah-icon">☪️</span>
-        <span>Bağışlayan və Mehriban Allahın adı ilə</span>
-      </div>
-      <h1 class="hero-h1">Hər paylaşımın arxasında<br>bir <em>seçilmiş mütəxəssis</em> var.</h1>
-      <p class="hero-desc">Ekspertlər seçir. Siz izləyirsiniz. Bilik öz sahibinə çatır.</p>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;position:relative;z-index:1">
-        <button class="btn-cp" style="font-size:13px;padding:12px 28px" onclick="document.querySelector('.feed-layout').scrollIntoView({behavior:'smooth'})">Paylaşımlar</button>
-        <button class="btn-cg" style="font-size:13px;padding:12px 24px" onclick="showPage('shura')">Şura üzvləri →</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="how-section">
-    <div style="max-width:680px;margin:0 auto 28px;text-align:center">
-      <h2 class="sec-t" style="margin-bottom:0">Necə işləyir</h2>
-    </div>
-    <div class="how-timeline">
-      <div class="how-step">
-        <div class="how-step-num">1</div>
-        <div>
-          <div class="how-step-title">Şura seçir</div>
-          <div class="how-step-desc">Hər kateqoriya üçün müstəqil ekspert şurası var. Yalnız onların təsdiqlədikləri paylaşım edə bilər — alqoritm yox, insan qərarı.</div>
-        </div>
-      </div>
-      <div class="how-step">
-        <div class="how-step-num">2</div>
-        <div>
-          <div class="how-step-title">İzlə, hökm ver</div>
-          <div class="how-step-desc">Bir dəfə ödə, ömürlük izlə. Sonra vote et, şərh yaz, reytinqi sən formalaşdır.</div>
-        </div>
-      </div>
-      <div class="how-step">
-        <div class="how-step-num last">3</div>
-        <div>
-          <div class="how-step-title">Şəffaf bölgü</div>
-          <div class="how-step-desc">Hər satışın 70%-i paylaşımçıya, 20%-i platformaya, 10%-i şura fonduna gedir. Gizli kəsinti yoxdur.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CATEGORIES -->
 
   <!-- FEED -->
-  <div class="feed-layout">
+  <div class="feed-layout" style="padding-top:80px">
     <div class="feed-container" style="max-width:960px">
 
       <!-- header: title + tabs -->
       <div class="feed-header-row">
-        <h2 class="feed-title">Paylaşımlar</h2>
+        <h2 class="feed-title"><span id="feed-title-label">Tövsiyə olunur</span></h2>
         <div class="feed-tabs">
           <button class="feed-tab active" id="ftab-videos" onclick="switchFeedTab('videos',this)">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
@@ -841,7 +789,11 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:22px 44px
 
   <footer>
     <div class="foot-logo" onclick="showPage('home')"><div class="glass-ant"><svg viewBox="0 0 32 32"><use href="#ant"/></svg></div>antism</div>
-    <ul class="foot-links"><li><a onclick="showPage('terms')">Şərtlər</a></li><li><a onclick="showPage('privacy')">Gizlilik Siyasəti</a></li></ul>
+    <ul class="foot-links">
+      <li><a onclick="showPage('about')">Haqqımızda</a></li>
+      <li><a onclick="showPage('terms')">Şərtlər</a></li>
+      <li><a onclick="showPage('privacy')">Gizlilik Siyasəti</a></li>
+    </ul>
     <div class="foot-copy">© 2025 antism</div>
   </footer>
 </div>
@@ -1496,6 +1448,45 @@ async function dbSignIn(email, password) {
   return result;
 }
 async function dbSignOut() { return sbAuth.signOut(); }
+
+async function dbSignInWithGoogle() {
+  // Redirect to Supabase Google OAuth
+  const redirectTo = encodeURIComponent(window.location.origin + window.location.pathname);
+  window.location.href = `${SUPABASE_URL}/auth/v1/authorize?provider=google&redirect_to=${redirectTo}`;
+}
+
+// Handle OAuth redirect — Supabase puts tokens in URL hash (#access_token=...&refresh_token=...)
+async function handleAuthCallback() {
+  const hash = window.location.hash;
+  if (!hash || !hash.includes('access_token')) return false;
+
+  const params = new URLSearchParams(hash.substring(1));
+  const accessToken = params.get('access_token');
+  const refreshToken = params.get('refresh_token');
+  if (!accessToken) return false;
+
+  // Store token
+  sbAuth._token = accessToken;
+  localStorage.setItem('sb_token', accessToken);
+  if (refreshToken) localStorage.setItem('sb_refresh', refreshToken);
+
+  // Clean URL
+  window.history.replaceState(null, '', window.location.pathname);
+
+  // Get user info
+  const user = await dbGetUser();
+  if (!user) return false;
+
+  const name = user.user_metadata?.full_name || user.user_metadata?.name || user.email?.split('@')[0] || 'İstifadəçi';
+  const role = user.user_metadata?.role || 'user';
+  currentUser = { id: user.id, name, role, loggedIn: true, email: user.email };
+
+  await dbLoadFollows(user.id);
+  setupDashboard(name, role);
+  showPage('dashboard');
+  showToast('Xoş gəldiniz, ' + name.split(' ')[0] + '! 👋');
+  return true;
+}
 async function dbSignInWithGoogle() {
   // Redirect to Google OAuth via Supabase
   const redirectTo = window.location.href.split('?')[0];
@@ -1931,6 +1922,7 @@ function sendContrib(postId){
 
 // ── VOTE ──
 function tryVote(id,dir){
+  if(!currentUser?.loggedIn){ showAuthGate('Vote etmək üçün daxil olun'); return; }
   const p=POSTS.find(x=>x.id===id);
   if(!p||!p.purchased)return;
   if(p.vote===dir){p.vote=null;p.votes+=(dir==='up'?-1:1);}
@@ -2006,6 +1998,7 @@ function renderHomeStatuses(){
 }
 
 function likeHomeStatus(sid, crIdx){
+  if(!currentUser?.loggedIn){ showAuthGate('Vote etmək üçün daxil olun'); return; }
   const cr=CREATORS[crIdx];
   if(!cr) return;
   const s=(cr.statuses||[]).find(x=>x.id===sid);
@@ -2013,11 +2006,11 @@ function likeHomeStatus(sid, crIdx){
   s.liked=!s.liked;
   s.likes+=s.liked?1:-1;
   renderHomeStatuses();
-  // also update profile view if open
   if(currentProfileId===parseInt(crIdx)) renderProfileStatuses();
 }
 
 function bookmarkStatus(sid, crIdx){
+  if(!currentUser?.loggedIn){ showAuthGate('Saxlamaq üçün daxil olun'); return; }
   const cr=CREATORS[crIdx];
   if(!cr) return;
   const s=(cr.statuses||[]).find(x=>x.id===sid);
@@ -2032,23 +2025,62 @@ let showAllFeed=false;
 function renderFeed(){
   const q=(document.getElementById('feed-search')?.value||'').toLowerCase();
   const cat=document.getElementById('feed-cat')?.value||'';
-  const filtered=POSTS.filter(p=>{
+
+  // Determine which posts to show
+  let filtered;
+  let isRecommended=false;
+
+  if(currentUser?.loggedIn){
+    // Show posts from followed creators
+    const followedIdxs = CREATORS.map((cr,i)=>cr.following?i:-1).filter(i=>i>=0);
+    if(followedIdxs.length>0){
+      filtered = POSTS.filter(p=>followedIdxs.includes(p.creator));
+    } else {
+      // No follows yet — show recommendations (top voted)
+      filtered = [...POSTS].sort((a,b)=>b.votes-a.votes);
+      isRecommended=true;
+    }
+  } else {
+    // Guest — show top voted as recommendations
+    filtered = [...POSTS].sort((a,b)=>b.votes-a.votes);
+    isRecommended=true;
+  }
+
+  // Apply search and category filter
+  filtered = filtered.filter(p=>{
     const mq=!q||p.title.toLowerCase().includes(q)||p.cat.toLowerCase().includes(q)||CREATORS[p.creator].name.toLowerCase().includes(q);
     const mc=!cat||p.cat===cat;
-    const mco=selectedCountry==='all'||!p.countries||p.countries.length===0||p.countries.includes(selectedCountry);
-    return mq&&mc&&mco;
+    return mq&&mc;
   });
+
   const el=document.getElementById('feed-posts');
   const btn=document.getElementById('feed-show-all-wrap');
+  const titleEl=document.getElementById('feed-title-label');
   if(!el)return;
+
+  // Update feed title
+  if(titleEl){
+    if(isRecommended) titleEl.textContent='Tövsiyə olunur';
+    else titleEl.textContent='İzlədiklərim';
+  }
+
   const sorted=sortPosts(filtered);
   const limit=showAllFeed?sorted.length:6;
   const visible=sorted.slice(0,limit);
-  el.innerHTML=visible.length?visible.map(p=>renderPostCard(p)).join('')
-    :'<div style="grid-column:1/-1;background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:22px;text-align:center;color:var(--ink3);font-size:11px">Məzmun tapılmadı.</div>';
-  if(btn){
-    btn.style.display=(sorted.length>6&&!showAllFeed)?'block':'none';
+
+  // Empty state
+  if(!visible.length){
+    el.innerHTML=`<div style="grid-column:1/-1;background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:32px;text-align:center">
+      <div style="font-size:24px;margin-bottom:10px">🔍</div>
+      <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px">Məzmun tapılmadı</div>
+      <div style="font-size:11px;color:var(--ink3)">${currentUser?.loggedIn&&!isRecommended?'İzlədiyiniz ekspertlərin hələ paylaşımı yoxdur.':'Axtarışı dəyişin.'}</div>
+    </div>`;
+    if(btn) btn.style.display='none';
+    return;
   }
+
+  el.innerHTML=visible.map(p=>renderPostCard(p)).join('');
+  if(btn) btn.style.display=(sorted.length>6&&!showAllFeed)?'block':'none';
 }
 
 function showAllPosts(){
@@ -2129,7 +2161,7 @@ function openPost(id){
     pe.innerHTML='';
     vr.innerHTML=`<button class="v-vbtn ${p.vote==='up'?'up-a':''}" onclick="tryVoteV(${p.id},'up')"><svg viewBox="0 0 24 24" fill="${p.vote==='up'?'var(--accent)':'none'}" stroke="${p.vote==='up'?'var(--accent)':'currentColor'}" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>Bəyəndim</button><span class="v-vscore" id="vvs">${p.votes}</span><button class="v-vbtn ${p.vote==='down'?'dn-a':''}" onclick="tryVoteV(${p.id},'down')"><svg viewBox="0 0 24 24" fill="${p.vote==='down'?'var(--down)':'none'}" stroke="${p.vote==='down'?'var(--down)':'currentColor'}" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>Bəyənmədim</button>`;
   } else {
-    pe.innerHTML=`<div class="purch-card"><div class="purch-price">${p.price===0?'0 ₼':p.price+' ₼'}</div><div class="purch-note">BİR DƏFƏ ÖDƏ — ÖMÜRLÜK GİRİŞ</div><button class="purch-btn" onclick="showPage('login')">İndi al</button><div class="purch-perks"><div class="purch-perk"><div class="pdot"></div>Ömürlük giriş</div><div class="purch-perk"><div class="pdot"></div>Vote hüququ</div></div></div>`;
+    pe.innerHTML=`<div class="purch-card"><div class="purch-price">${p.price===0?'0 ₼':p.price+' ₼'}</div><div class="purch-note">BİR DƏFƏ ÖDƏ — ÖMÜRLÜK GİRİŞ</div><button class="purch-btn" onclick="showAuthGate('Satın almaq üçün daxil olun')">İndi al</button><div class="purch-perks"><div class="purch-perk"><div class="pdot"></div>Ömürlük giriş</div><div class="purch-perk"><div class="pdot"></div>Vote hüququ</div></div></div>`;
     vr.innerHTML='<span style="font-size:10.5px;color:var(--ink3)">🔒 Vote etmək üçün əvvəlcə izləyin</span>';
   }
 
@@ -2249,6 +2281,67 @@ function showToast(msg){
   if(!t){t=document.createElement('div');t.id='toast';t.style.cssText='position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);font-family:Geist Mono,monospace;font-size:11px;font-weight:700;padding:9px 18px;border-radius:3px;z-index:999;letter-spacing:.3px;transition:opacity .3s';document.body.appendChild(t);}
   t.textContent=msg;t.style.opacity='1';
   clearTimeout(t._to);t._to=setTimeout(()=>{t.style.opacity='0';},2200);
+}
+
+// ── ONBOARDING ──
+function toggleObCat(btn){
+  btn.classList.toggle('selected');
+  const count = document.querySelectorAll('.ob-cat-btn.selected').length;
+  const countEl = document.getElementById('ob-sel-count');
+  const continueBtn = document.getElementById('ob-continue-btn');
+  if(countEl) countEl.textContent = count + ' sahə seçildi';
+  if(continueBtn){
+    continueBtn.style.opacity = count > 0 ? '1' : '.4';
+    continueBtn.style.pointerEvents = count > 0 ? 'auto' : 'none';
+  }
+}
+
+function finishOnboarding(){
+  const selected = [...document.querySelectorAll('.ob-cat-btn.selected')].map(b=>b.dataset.cat);
+  if(currentUser) currentUser.interests = selected;
+  // Auto-follow creators in selected categories
+  if(selected.length){
+    CREATORS.forEach((cr,i)=>{
+      if(selected.some(cat=>cr.field.includes(cat)||cat.includes(cr.field))){
+        cr.following = true;
+      }
+    });
+  }
+  setupDashboard(currentUser?.name||'İstifadəçi', currentUser?.role||'user');
+  showPage('dashboard');
+  renderFeed();
+  showToast('Feed hazırlandı! 🎉');
+}
+
+function skipOnboarding(){
+  setupDashboard(currentUser?.name||'İstifadəçi', currentUser?.role||'user');
+  showPage('dashboard');
+}
+
+function showAuthGate(msg){
+  // Show a small modal prompting login with context message
+  let overlay = document.getElementById('auth-gate-overlay');
+  if(!overlay){
+    overlay = document.createElement('div');
+    overlay.id = 'auth-gate-overlay';
+    overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:9998;display:flex;align-items:center;justify-content:center;padding:20px';
+    overlay.onclick = (e) => { if(e.target===overlay) overlay.remove(); };
+    document.body.appendChild(overlay);
+  }
+  overlay.innerHTML = `
+    <div style="background:var(--surface);border:1px solid var(--border2);border-radius:6px;padding:28px 28px 24px;max-width:320px;width:100%;text-align:center;position:relative">
+      <button onclick="document.getElementById('auth-gate-overlay').remove()" style="position:absolute;top:10px;right:12px;background:none;border:none;color:var(--ink3);font-size:16px;cursor:pointer;line-height:1">✕</button>
+      <div style="width:40px;height:40px;background:var(--accent-l);border:1px solid var(--accent-m);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:6px">${msg||'Daxil olun'}</div>
+      <div style="font-size:11.5px;color:var(--ink3);margin-bottom:20px;line-height:1.6">Antism-ə qoşulun — pulsuz və sürətlidir.</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <button onclick="document.getElementById('auth-gate-overlay').remove();showPage('login')" style="font-family:'Geist Mono',monospace;font-size:12px;font-weight:700;color:#fff;background:var(--accent);border:none;border-radius:var(--radius);padding:10px;cursor:pointer;transition:background .2s">Daxil ol</button>
+        <button onclick="document.getElementById('auth-gate-overlay').remove();showPage('register')" style="font-family:'Geist Mono',monospace;font-size:12px;font-weight:600;color:var(--ink2);background:var(--bg3);border:1px solid var(--border2);border-radius:var(--radius);padding:9px;cursor:pointer;transition:border-color .2s">Qeydiyyat →</button>
+      </div>
+    </div>`;
+  overlay.style.display = 'flex';
 }
 
 function tryVoteV(id,dir){
@@ -2603,6 +2696,12 @@ function renderDashVideos(){
 }
 
 function setupDashboard(name,role){
+  // Update nav to show user avatar instead of login/register buttons
+  const navLogin = document.getElementById('nav-login-btn');
+  const navReg = document.getElementById('nav-reg-btn');
+  if(navLogin) navLogin.style.display='none';
+  if(navReg){ navReg.textContent=name.charAt(0).toUpperCase(); navReg.style.cssText='width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-family:Geist Mono,monospace;font-size:12px;font-weight:700;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center'; navReg.onclick=()=>showPage('dashboard'); }
+
   const av=document.getElementById('dash-av-icon');
   const nm=document.getElementById('dash-user-name');
   const rl=document.getElementById('dash-user-role');
@@ -2752,14 +2851,12 @@ async function doRegisterSA(){
   currentUser = { id: data?.user?.id||null, name:fullName, role, loggedIn:true, email };
 
   if(role === 'creator'){
-    // Go to creator onboarding form
     const onEl = document.getElementById('ob-name');
     if(onEl) onEl.value = fullName;
     showPage('creator-onboard');
   } else {
-    setupDashboard(fullName, 'user');
-    showPage('dashboard');
-    showToast('Xoş gəldiniz, '+name+'! 🎉');
+    // Go to interest selection onboarding
+    showPage('onboarding');
   }
 }
 
@@ -2834,36 +2931,24 @@ window.addEventListener('DOMContentLoaded', async ()=>{
   if(countEl) countEl.textContent=POSTS.length;
   document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-  // Handle Google OAuth redirect — token comes back in URL hash
-  const hash = window.location.hash;
-  if(hash.includes('access_token')){
-    const params = new URLSearchParams(hash.replace('#',''));
-    const token = params.get('access_token');
-    if(token){
-      sbAuth._token = token;
-      localStorage.setItem('sb_token', token);
-      // Clean URL
-      window.history.replaceState(null,'',window.location.pathname);
+  // 1. Check Google OAuth callback (#access_token in URL hash)
+  const isCallback = await handleAuthCallback();
+
+  if(!isCallback){
+    // 2. Check existing session (returning user)
+    const user = await dbGetUser();
+    if(user){
+      const name = user.user_metadata?.full_name || user.user_metadata?.name || user.email.split('@')[0];
+      const role = user.user_metadata?.role || 'user';
+      currentUser = {id:user.id, name, role, loggedIn:true, email:user.email};
+      await dbLoadFollows(user.id);
+      setupDashboard(name, role);
     }
   }
 
-  // Check if user already logged in (persistent session)
-  const user = await dbGetUser();
-  if(user){
-    const name = user.user_metadata?.full_name || user.user_metadata?.name || user.email.split('@')[0];
-    const role = user.user_metadata?.role || 'user';
-    currentUser = {id:user.id, name, role, loggedIn:true, email:user.email};
-    await dbLoadFollows(user.id);
-    setupDashboard(name, role);
-    // If redirected from Google, go to dashboard
-    if(hash.includes('access_token')) showPage('dashboard');
-  }
-
-  // Load real data from Supabase (non-blocking)
+  // 3. Load data from Supabase
   dbLoadPosts().catch(()=>{});
   dbLoadStatuses().then(()=>{ renderHomeStatuses(); }).catch(()=>{});
-
-  // Subscribe to realtime status updates
   dbSubscribeStatuses();
 });
 // ── SHURA DATA ──
@@ -3033,6 +3118,46 @@ function postAnnouncement(){
 </script>
 
 <!-- ══════════════ CREATOR ONBOARDING ══════════════ -->
+<!-- ══════════════ USER ONBOARDING ══════════════ -->
+<div id="page-onboarding" class="page">
+  <div style="min-height:100vh;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:80px 20px 40px">
+    <div style="width:100%;max-width:480px">
+      <div class="auth-box-logo" onclick="showPage('home')" style="display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;color:var(--ink);margin-bottom:32px;cursor:pointer"><div class="glass-ant"><svg viewBox="0 0 32 32"><use href="#ant"/></svg></div>antism</div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px">Xoş gəldiniz</div>
+      <h1 style="font-size:22px;font-weight:700;letter-spacing:-0.5px;color:var(--ink);margin-bottom:6px">Sizi nə maraqlandırır?</h1>
+      <p style="font-size:12px;color:var(--ink3);margin-bottom:24px;line-height:1.7">Seçimlərinizə əsasən feed fərdiləşdiriləcək. Sonradan istənilən vaxt dəyişə bilərsiniz.</p>
+
+      <div class="ob-cats-grid" id="ob-cats-grid">
+        <button class="ob-cat-btn" data-cat="Din və Fəlsəfə" onclick="toggleObCat(this)">
+          <span class="ob-cat-icon">🕌</span><span>Din və Fəlsəfə</span>
+        </button>
+        <button class="ob-cat-btn" data-cat="Texnologiya" onclick="toggleObCat(this)">
+          <span class="ob-cat-icon">🔬</span><span>Texnologiya</span>
+        </button>
+        <button class="ob-cat-btn" data-cat="Sağlamlıq" onclick="toggleObCat(this)">
+          <span class="ob-cat-icon">🩺</span><span>Sağlamlıq</span>
+        </button>
+        <button class="ob-cat-btn" data-cat="İqtisadiyyat" onclick="toggleObCat(this)">
+          <span class="ob-cat-icon">💼</span><span>İqtisadiyyat</span>
+        </button>
+        <button class="ob-cat-btn" data-cat="Hüquq" onclick="toggleObCat(this)">
+          <span class="ob-cat-icon">⚖️</span><span>Hüquq</span>
+        </button>
+        <button class="ob-cat-btn" data-cat="Fəlsəfə" onclick="toggleObCat(this)">
+          <span class="ob-cat-icon">🧠</span><span>Fəlsəfə</span>
+        </button>
+      </div>
+
+      <div style="margin-top:8px;font-size:10px;color:var(--ink3);text-align:center" id="ob-sel-count">0 sahə seçildi</div>
+
+      <div style="margin-top:24px;display:flex;flex-direction:column;gap:8px">
+        <button class="f-submit" id="ob-continue-btn" onclick="finishOnboarding()" style="opacity:.4;pointer-events:none">Davam et →</button>
+        <button onclick="skipOnboarding()" style="font-family:'Geist Mono',monospace;font-size:11px;color:var(--ink3);background:none;border:none;cursor:pointer;padding:6px;text-align:center">Keç →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div id="page-creator-onboard" class="page">
   <div style="padding-top:54px;min-height:100vh;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:80px 20px 40px">
     <div style="width:100%;max-width:520px">
@@ -3138,6 +3263,79 @@ function postAnnouncement(){
 </div>
 
 <!-- ══════════════ TERMS ══════════════ -->
+<!-- ══════════════ ABOUT ══════════════ -->
+<div id="page-about" class="page">
+  <div style="padding-top:54px;min-height:100vh;background:var(--bg)">
+    <div style="max-width:720px;margin:0 auto;padding:48px 24px">
+      <button class="v-back" onclick="goBack()" style="margin-bottom:20px">← Geri</button>
+      <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:10px">Platforma haqqında</div>
+      <h1 style="font-size:clamp(22px,3vw,34px);font-weight:700;letter-spacing:-1px;color:var(--ink);margin-bottom:6px;line-height:1.1">Antism nədir?</h1>
+      <p style="font-size:12px;color:var(--ink3);margin-bottom:32px;font-weight:300;line-height:1.7">Hər paylaşımın arxasında bir seçilmiş mütəxəssis var.</p>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:28px;font-size:12px;font-weight:300;color:var(--ink2);line-height:1.85;margin-bottom:16px">
+        <h2 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:10px">Missiyanımız</h2>
+        <p>Antism — rəqəmsal məkanda biliyin layiqli yerə çatması üçün yaradılmış platformadır. İnternetdə məlumat bolluğu var, lakin keyfiyyətli, etibarlı və dərin bilik tapmaq getdikcə çətinləşir. Biz bunu dəyişmək istəyirik.</p>
+        <br/>
+        <p>Hər kateqoriya üçün müstəqil ekspert şurası var. Yalnız şuranın təsdiqlədikləri paylaşım edə bilər — alqoritm yox, insan qərarı. Bu, platformanın keyfiyyət zəmanətidir.</p>
+      </div>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:28px;font-size:12px;font-weight:300;color:var(--ink2);line-height:1.85;margin-bottom:16px">
+        <h2 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:18px">Necə işləyir</h2>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="width:28px;height:28px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0">1</div>
+            <div><div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:4px">Şura seçir</div><div>Hər kateqoriya üçün müstəqil ekspert şurası var. Yalnız onların təsdiqlədikləri paylaşım edə bilər — alqoritm yox, insan qərarı.</div></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="width:28px;height:28px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0">2</div>
+            <div><div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:4px">İzlə, hökm ver</div><div>Bir dəfə ödə, ömürlük izlə. Sonra vote et, şərh yaz, reytinqi sən formalaşdır.</div></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="width:28px;height:28px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0">3</div>
+            <div><div style="font-size:12px;font-weight:700;color:var(--ink);margin-bottom:4px">Şəffaf bölgü</div><div>Hər satışın 70%-i paylaşımçıya, 20%-i platformaya, 10%-i şura fonduna gedir. Gizli kəsinti yoxdur.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:28px;font-size:12px;font-weight:300;color:var(--ink2);line-height:1.85;margin-bottom:16px">
+        <h2 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:10px">Dəyərlərimiz</h2>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div style="background:var(--bg3);border:1px solid var(--border);border-radius:3px;padding:14px">
+            <div style="font-size:18px;margin-bottom:6px">🎯</div>
+            <div style="font-weight:700;color:var(--ink);margin-bottom:4px;font-size:12px">Keyfiyyət</div>
+            <div style="font-size:11px">Kəmiyyət yox, keyfiyyət. Az, lakin dərin.</div>
+          </div>
+          <div style="background:var(--bg3);border:1px solid var(--border);border-radius:3px;padding:14px">
+            <div style="font-size:18px;margin-bottom:6px">🔍</div>
+            <div style="font-weight:700;color:var(--ink);margin-bottom:4px;font-size:12px">Şəffaflıq</div>
+            <div style="font-size:11px">Hər qərar, hər bölgü açıqdır.</div>
+          </div>
+          <div style="background:var(--bg3);border:1px solid var(--border);border-radius:3px;padding:14px">
+            <div style="font-size:18px;margin-bottom:6px">🤝</div>
+            <div style="font-weight:700;color:var(--ink);margin-bottom:4px;font-size:12px">Ədalət</div>
+            <div style="font-size:11px">Ekspert öz əməyinin haqqını alır.</div>
+          </div>
+          <div style="background:var(--bg3);border:1px solid var(--border);border-radius:3px;padding:14px">
+            <div style="font-size:18px;margin-bottom:6px">📚</div>
+            <div style="font-weight:700;color:var(--ink);margin-bottom:4px;font-size:12px">Dərinlik</div>
+            <div style="font-size:11px">Sürətli klik yox, həqiqi bilik.</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:28px;font-size:12px;font-weight:300;color:var(--ink2);line-height:1.85">
+        <h2 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:10px">Əlaqə</h2>
+        <p>Suallarınız, təklifləriniz və ya paylaşımçı müraciəti üçün:</p>
+        <br/>
+        <p style="color:var(--accent);font-weight:600">info@antism.com</p>
+        <br/>
+        <button class="btn-cp" style="font-size:12px;padding:10px 22px" onclick="showPage('apply')">Paylaşımçı müraciəti →</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <div id="page-terms" class="page">
   <div style="padding-top:54px;min-height:100vh;background:var(--bg)">
     <div style="max-width:720px;margin:0 auto;padding:48px 24px">
