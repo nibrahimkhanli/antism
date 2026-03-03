@@ -435,7 +435,46 @@ nav{position:fixed;top:0;left:0;right:0;z-index:400;height:54px;display:flex;ali
 .feed-tab:hover{color:var(--ink)}
 .feed-tab.active{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.15)}
 .feed-tab.active svg{opacity:1}
-/* ── STATUS CARDS ── */
+/* ── OXU FEED CARDS (unified clean style) ── */
+.oxu-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden;transition:box-shadow .2s,border-color .2s}
+.oxu-card:hover{border-color:var(--border2);box-shadow:0 4px 20px rgba(0,0,0,.12)}
+.oxu-card-header{display:flex;align-items:center;gap:12px;padding:16px 18px 0}
+.oxu-av{width:44px;height:44px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#fff;flex-shrink:0;cursor:pointer;transition:opacity .15s}
+.oxu-av:hover{opacity:.85}
+.oxu-author-info{flex:1;min-width:0}
+.oxu-author-name{font-size:14px;font-weight:700;color:var(--ink);cursor:pointer;line-height:1.2}
+.oxu-author-name:hover{color:var(--accent)}
+.oxu-author-meta{font-size:11px;color:var(--ink3);margin-top:2px}
+.oxu-time{font-size:11px;color:var(--ink3);white-space:nowrap;margin-left:auto}
+/* Note card body */
+.oxu-note-body{padding:12px 18px 0;font-size:14px;color:var(--ink);line-height:1.75;font-weight:400}
+/* Blog card cover */
+.oxu-cover{width:100%;height:200px;overflow:hidden;background:var(--bg3);margin-top:14px}
+.oxu-cover img{width:100%;height:100%;object-fit:cover;display:block}
+/* Blog card text */
+.oxu-blog-body{padding:14px 18px 0;cursor:pointer}
+.oxu-blog-title{font-size:16px;font-weight:700;color:var(--ink);line-height:1.35;margin-bottom:7px;letter-spacing:-.2px}
+.oxu-blog-title:hover{color:var(--accent)}
+.oxu-blog-summary{font-size:13px;color:var(--ink3);line-height:1.65;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+/* Media (note images) */
+.oxu-media{display:grid;gap:4px;margin-top:12px;border-radius:0;overflow:hidden}
+.oxu-media.two{grid-template-columns:1fr 1fr}
+.oxu-media img{width:100%;height:200px;object-fit:cover;display:block}
+/* Footer row */
+.oxu-footer{display:flex;align-items:center;gap:2px;padding:10px 12px;margin-top:12px;border-top:1px solid var(--border)}
+.oxu-tag{font-size:9px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:2px 8px;border-radius:20px;margin-right:auto}
+.oxu-tag.note{color:var(--ink3);background:var(--bg3);border:1px solid var(--border)}
+.oxu-tag.blog{color:var(--accent);background:var(--accent-l);border:1px solid var(--accent-m)}
+.oxu-tag.price{color:#3DB86A;background:rgba(61,184,106,.1);border:1px solid rgba(61,184,106,.25)}
+.oxu-tag.paid{color:var(--accent);background:var(--accent-l);border:1px solid var(--accent-m)}
+.oxu-btn{display:flex;align-items:center;gap:5px;font-family:'Geist Mono',monospace;font-size:11px;font-weight:600;color:var(--ink3);background:none;border:none;cursor:pointer;padding:6px 10px;border-radius:6px;transition:all .15s}
+.oxu-btn:hover{background:var(--bg3);color:var(--ink)}
+.oxu-btn.liked{color:var(--accent)}
+.oxu-btn.saved{color:var(--accent)}
+.oxu-btn svg{flex-shrink:0}
+.oxu-read-btn{font-family:'Geist Mono',monospace;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border:none;border-radius:6px;padding:6px 16px;cursor:pointer;margin-left:4px;transition:opacity .15s}
+.oxu-read-btn:hover{opacity:.85}
+/* STATUS CARDS — keep for profile page */
 .tweet-card{display:flex;gap:14px;padding:16px 18px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:10px;transition:border-color .15s,box-shadow .15s}
 .tweet-card:last-child{margin-bottom:0}
 .tweet-card:hover{border-color:var(--border2);box-shadow:0 2px 12px rgba(0,0,0,.18)}
@@ -454,8 +493,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:400;height:54px;display:flex;ali
 .tweet-action-btn:hover{background:var(--bg3)}
 .tweet-action-btn.vote-btn:hover{color:var(--accent);background:var(--accent-l)}
 .tweet-action-btn.vote-btn.liked{color:var(--accent)}
-.tweet-action-btn.comment-btn:hover{color:#1D9BF0;background:rgba(29,155,240,.08)}
-.tweet-action-btn.share-btn:hover{color:#00BA7C;background:rgba(0,186,124,.08)}
 .tweet-action-btn.save-btn:hover{color:var(--accent);background:var(--accent-l)}
 .tweet-action-btn.save-btn.saved{color:var(--accent)}
 .f-error{background:rgba(224,85,85,.1);border:1px solid rgba(224,85,85,.3);border-radius:3px;padding:9px 12px;font-size:11.5px;color:#E05555;margin-bottom:10px;line-height:1.5}
@@ -495,6 +532,105 @@ nav{position:fixed;top:0;left:0;right:0;z-index:400;height:54px;display:flex;ali
 .ob-cat-btn:hover{border-color:var(--border2);color:var(--ink)}
 .ob-cat-btn.selected{border-color:var(--accent);background:var(--accent-l);color:var(--ink)}
 .ob-cat-icon{font-size:18px;flex-shrink:0}
+/* ── ARTICLE CARDS ── */
+.article-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;margin-bottom:10px;transition:border-color .15s}
+.article-card:hover{border-color:var(--border2)}
+.article-card-head{display:flex;align-items:center;gap:7px;margin-bottom:9px}
+.article-free-badge{font-size:9px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#3DB86A;background:rgba(61,184,106,.1);border:1px solid rgba(61,184,106,.25);padding:2px 7px;border-radius:20px}
+.article-price-badge{font-size:9px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--accent);background:var(--accent-l);border:1px solid var(--accent-m);padding:2px 7px;border-radius:20px}
+.article-title{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:7px;letter-spacing:-.2px;line-height:1.3}
+.article-meta{display:flex;align-items:center;gap:6px;font-size:10px;color:var(--ink3);margin-bottom:9px;flex-wrap:wrap}
+.article-author{color:var(--accent);cursor:pointer;font-weight:600}
+.article-author:hover{text-decoration:underline}
+.article-body{font-size:11.5px;color:var(--ink3);line-height:1.7;margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.article-footer{display:flex;align-items:center;gap:8px}
+.article-read-btn{font-family:'Geist Mono',monospace;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border:none;border-radius:var(--radius);padding:7px 16px;cursor:pointer;transition:background .15s}
+.article-read-btn:hover{background:var(--accent-d)}
+.article-read-btn.paid{background:var(--bg3);color:var(--ink);border:1px solid var(--border2)}
+.article-read-btn.paid:hover{border-color:var(--accent);color:var(--accent)}
+.article-vote-btn{font-family:'Geist Mono',monospace;font-size:11px;font-weight:600;color:var(--ink3);background:none;border:1px solid var(--border);border-radius:var(--radius);padding:6px 12px;cursor:pointer;transition:all .15s;margin-left:auto}
+.article-vote-btn:hover{border-color:var(--accent);color:var(--accent)}
+/* ── VIDEO CARDS (YouTube style) ── */
+.izle-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.video-card{background:var(--surface);border-radius:10px;overflow:hidden;cursor:pointer;transition:transform .2s,box-shadow .2s;border:1px solid var(--border)}
+.video-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.2)}
+.video-thumb{position:relative;width:100%;aspect-ratio:16/9;background:var(--bg4);overflow:hidden}
+.video-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.video-card:hover .video-thumb img{transform:scale(1.04)}
+.video-duration{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.82);color:#fff;font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;letter-spacing:.3px}
+.video-price-badge{position:absolute;top:8px;left:8px;font-family:'Geist Mono',monospace;font-size:9px;font-weight:700;padding:3px 8px;border-radius:4px;letter-spacing:.3px}
+.video-price-badge.free{background:rgba(61,184,106,.9);color:#fff}
+.video-price-badge.paid{background:rgba(255,104,0,.9);color:#fff}
+.video-info{padding:12px 14px 0;display:flex;gap:10px}
+.video-av{width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;cursor:pointer}
+.video-av:hover{opacity:.85}
+.video-meta{flex:1;min-width:0}
+.video-title{font-size:13px;font-weight:600;color:var(--ink);line-height:1.4;margin-bottom:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.video-sub{font-size:11px;color:var(--ink3);display:flex;flex-direction:column;gap:2px}
+.video-dot{opacity:.4}
+.video-actions{display:flex;align-items:center;gap:2px;padding:8px 10px 10px;border-top:1px solid var(--border);margin-top:10px}
+.video-action-btn{display:flex;align-items:center;gap:4px;font-family:'Geist Mono',monospace;font-size:10.5px;font-weight:600;color:var(--ink3);background:none;border:none;cursor:pointer;padding:5px 8px;border-radius:6px;transition:all .15s}
+.video-action-btn:hover{background:var(--bg3);color:var(--ink)}
+.video-action-btn.voted{color:var(--accent)}
+.video-watch-btn{margin-left:auto;font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;color:#fff;background:var(--accent);border:none;border-radius:6px;padding:5px 14px;cursor:pointer;transition:opacity .15s}
+.video-watch-btn:hover{opacity:.85}
+/* ── ARTICLE CARDS (feed) ── */
+.article-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:12px;cursor:pointer;transition:border-color .15s,transform .1s}
+.article-card:hover{border-color:var(--border2);transform:translateY(-1px)}
+.article-cover{width:100%;height:180px;overflow:hidden;background:var(--bg3)}
+.article-cover img{width:100%;height:100%;object-fit:cover;display:block}
+.article-card-body{padding:16px 18px 14px}
+.article-card-head{display:flex;align-items:center;gap:7px;margin-bottom:10px}
+.article-free-badge{font-size:9px;font-weight:700;letter-spacing:.5px;color:#3DB86A;background:rgba(61,184,106,.1);border:1px solid rgba(61,184,106,.25);padding:2px 8px;border-radius:20px}
+.article-price-badge{font-size:9px;font-weight:700;letter-spacing:.5px;color:var(--accent);background:var(--accent-l);border:1px solid var(--accent-m);padding:2px 8px;border-radius:20px}
+.article-title{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:7px;letter-spacing:-.3px;line-height:1.35}
+.article-summary{font-size:12px;color:var(--ink3);line-height:1.65;margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.article-meta{display:flex;align-items:center;gap:6px;font-size:10px;color:var(--ink3);margin-bottom:12px}
+.article-avatar{width:20px;height:20px;border-radius:50%;background:var(--accent);color:#fff;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.article-author-name{color:var(--ink2);font-weight:600;cursor:pointer}
+.article-author-name:hover{color:var(--accent)}
+.article-dot{opacity:.4}
+.article-actions{display:flex;align-items:center;gap:6px;padding-top:10px;border-top:1px solid var(--border)}
+.art-action-btn{display:flex;align-items:center;gap:5px;font-family:'Geist Mono',monospace;font-size:10px;font-weight:600;color:var(--ink3);background:none;border:1px solid var(--border);border-radius:var(--radius);padding:5px 10px;cursor:pointer;transition:all .15s}
+.art-action-btn:hover{border-color:var(--accent);color:var(--accent)}
+.art-action-btn.big{font-size:11px;padding:8px 14px}
+.read-more-btn{margin-left:auto;background:var(--accent);color:#fff;border-color:var(--accent)}
+.read-more-btn:hover{background:var(--accent-d);border-color:var(--accent-d);color:#fff}
+/* ── ARTICLE DETAIL PAGE ── */
+.art-page-wrap{max-width:700px;margin:0 auto;padding:70px 24px 80px}
+.art-page-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px}
+.art-page-actions{display:flex;gap:6px}
+.art-hero-img{width:100%;height:340px;object-fit:cover;border-radius:var(--radius);margin-bottom:28px}
+.art-meta-top{display:flex;gap:7px;margin-bottom:16px}
+.art-h1{font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);letter-spacing:-1px;line-height:1.2;margin-bottom:14px}
+.art-lead{font-size:14px;color:var(--ink3);line-height:1.75;margin-bottom:24px;font-style:italic;border-left:3px solid var(--accent);padding-left:14px}
+.art-author-row{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.art-author-av{width:38px;height:38px;border-radius:50%;background:var(--accent);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.art-author-name{font-size:13px;font-weight:700;color:var(--ink);cursor:pointer}
+.art-author-name:hover{color:var(--accent)}
+.art-author-meta{font-size:10px;color:var(--ink3);margin-top:2px}
+.art-divider{height:1px;background:var(--border);margin:24px 0}
+.art-body{font-size:14px;color:var(--ink2);line-height:1.85}
+.art-body-p{margin-bottom:18px}
+.art-body-h3{font-size:16px;font-weight:700;color:var(--ink);margin:28px 0 10px;letter-spacing:-.2px}
+.art-body-italic{color:var(--ink3);font-style:italic;border-left:2px solid var(--border2);padding-left:14px;margin:18px 0}
+.art-body-quote{color:var(--ink2);font-style:italic;font-size:15px;border-left:3px solid var(--accent);padding:10px 16px;margin:20px 0;background:var(--bg3);border-radius:0 4px 4px 0}
+.art-paywall{position:relative;margin-top:-40px}
+.art-paywall-fade{height:100px;background:linear-gradient(transparent,var(--bg))}
+.art-paywall-box{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:28px;text-align:center;margin-top:0}
+.art-paywall-icon{font-size:28px;margin-bottom:10px}
+.art-paywall-title{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.art-paywall-sub{font-size:12px;color:var(--ink3);margin-bottom:18px}
+.art-paywall-btn{font-family:'Geist Mono',monospace;font-size:12px;font-weight:700;color:#fff;background:var(--accent);border:none;border-radius:var(--radius);padding:10px 28px;cursor:pointer}
+.art-bottom-actions{display:flex;gap:8px;flex-wrap:wrap}
+/* ── REFERRAL ── */
+.referral-key-row{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:8px;transition:border-color .15s}
+.referral-key-row.used{opacity:.5}
+.referral-key-code{font-family:'Geist Mono',monospace;font-size:13px;font-weight:700;color:var(--ink);letter-spacing:1.5px;flex:1}
+.referral-key-status{font-size:9px;font-weight:600;color:var(--ink3)}
+.referral-key-status.used-badge{color:var(--ink3);background:var(--bg4);border:1px solid var(--border);padding:2px 8px;border-radius:20px}
+.referral-copy-btn{display:flex;align-items:center;gap:5px;font-family:'Geist Mono',monospace;font-size:10px;font-weight:600;color:var(--accent);background:var(--accent-l);border:1px solid var(--accent-m);border-radius:var(--radius);padding:5px 12px;cursor:pointer;transition:all .15s;white-space:nowrap}
+.referral-copy-btn:hover{background:var(--accent);color:#fff}
 .status-media-btns{display:flex;gap:6px}
 .status-media-btn{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;cursor:pointer;color:var(--ink3);background:var(--bg3);border:1px solid var(--border2);transition:all .15s}
 .status-media-btn:hover{color:var(--accent);border-color:var(--accent);background:var(--accent-l)}
@@ -736,30 +872,54 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:22px 44px
       <div class="feed-header-row">
         <h2 class="feed-title"><span id="feed-title-label">Tövsiyə olunur</span></h2>
         <div class="feed-tabs">
-          <button class="feed-tab active" id="ftab-videos" onclick="switchFeedTab('videos',this)">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-            Videolar
+          <button class="feed-tab active" id="ftab-oxu" onclick="switchFeedTab('oxu',this)">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            Oxu
           </button>
-          <button class="feed-tab" id="ftab-statuses" onclick="switchFeedTab('statuses',this)">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            Statuslar
+          <button class="feed-tab" id="ftab-izle" onclick="switchFeedTab('izle',this)">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            İzlə
           </button>
         </div>
       </div>
 
-      <!-- VIDEOS TAB -->
-      <div id="feed-tab-videos">
+      <!-- OXU TAB (note + bloq) -->
+      <div id="feed-tab-oxu">
+        <div class="feed-filter" style="margin-bottom:14px">
+          <div class="feed-sw">
+            <span class="feed-si"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
+            <input class="feed-inp" id="oxu-search" type="text" placeholder="Paylaşımçı, mövzu axtar..." oninput="renderOxuFeed()"/>
+          </div>
+          <select class="feed-cat-sel" id="oxu-cat" onchange="renderOxuFeed()">
+            <option value="">Bütün kateqoriyalar</option>
+            <option>Din və Fəlsəfə</option><option>Texnologiya</option>
+            <option>Sağlamlıq</option><option>İqtisadiyyat</option>
+          </select>
+          <select class="feed-cat-sel" id="oxu-price" onchange="renderOxuFeed()">
+            <option value="">Ödənişli və pulsuz</option>
+            <option value="free">Yalnız pulsuz</option>
+            <option value="paid">Yalnız ödənişli</option>
+          </select>
+        </div>
+        <div id="feed-oxu"></div>
+      </div>
+
+      <!-- WEBINARS TAB -->
+      <div id="feed-tab-izle" style="display:none">
         <div class="feed-filter">
           <div class="feed-sw">
             <span class="feed-si"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
-            <input class="feed-inp" id="feed-search" type="text" placeholder="Video, paylaşımçı axtar..." oninput="showAllFeed=false;renderFeed()"/>
+            <input class="feed-inp" id="webinar-search" type="text" placeholder="İzlə, paylaşımçı axtar..." oninput="renderWebinars()"/>
           </div>
-          <select class="feed-cat-sel" id="feed-cat" onchange="showAllFeed=false;renderFeed()">
+          <select class="feed-cat-sel" id="webinar-cat" onchange="renderWebinars()">
             <option value="">Bütün kateqoriyalar</option>
-            <option>Din və Fəlsəfə</option>
-            <option>Texnologiya</option>
-            <option>Sağlamlıq</option>
-            <option>İqtisadiyyat</option>
+            <option>Din və Fəlsəfə</option><option>Texnologiya</option>
+            <option>Sağlamlıq</option><option>İqtisadiyyat</option>
+          </select>
+          <select class="feed-cat-sel" id="webinar-price-filter" onchange="renderWebinars()">
+            <option value="">Ödənişli və pulsuz</option>
+            <option value="free">Yalnız pulsuz</option>
+            <option value="paid">Yalnız ödənişli</option>
           </select>
           <div class="sort-btns">
             <button class="sort-btn active" onclick="setSort(this,'hot')">🔥 İsti</button>
@@ -767,21 +927,10 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:22px 44px
             <button class="sort-btn" onclick="setSort(this,'top')">↑ Top</button>
           </div>
         </div>
-        <div id="feed-posts"></div>
+        <div id="feed-izle"></div>
         <div id="feed-show-all-wrap" style="display:none;text-align:center;margin-top:18px">
           <button onclick="showAllPosts()" style="font-family:'Geist Mono',monospace;font-size:11px;font-weight:600;color:var(--ink2);background:var(--surface);border:1px solid var(--border2);border-radius:4px;padding:9px 28px;cursor:pointer;transition:border-color .15s,color .15s" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)'" onmouseout="this.style.borderColor='var(--border2)';this.style.color='var(--ink2)'">Hamısı →</button>
         </div>
-      </div>
-
-      <!-- STATUSES TAB -->
-      <div id="feed-tab-statuses" style="display:none">
-        <div class="feed-filter" style="margin-bottom:14px">
-          <div class="feed-sw">
-            <span class="feed-si"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
-            <input class="feed-inp" id="status-search" type="text" placeholder="Paylaşımçı, mövzu axtar..." oninput="renderHomeStatuses()"/>
-          </div>
-        </div>
-        <div id="home-statuses"></div>
       </div>
 
     </div>
@@ -796,6 +945,12 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:22px 44px
     </ul>
     <div class="foot-copy">© 2025 antism</div>
   </footer>
+</div>
+
+
+<!-- ══════════════ ARTICLE PAGE ══════════════ -->
+<div id="page-article" class="page">
+  <!-- Content injected by openArticle() -->
 </div>
 
 <!-- ══════════════ VIDEO PAGE ══════════════ -->
@@ -872,7 +1027,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:22px 44px
         <!-- TABS -->
         <div class="profile-tabs" id="profile-tabs">
           <button class="ptab active" onclick="switchProfileTab('videos',this)">Videolar</button>
-          <button class="ptab" onclick="switchProfileTab('statuses',this)">Statuslar</button>
+          <button class="ptab" onclick="switchProfileTab('statuses',this)">Note</button>
         </div>
         <div id="profile-tab-videos"><div id="profile-posts"></div></div>
         <div id="profile-tab-statuses" style="display:none">
@@ -911,10 +1066,10 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:22px 44px
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>Videolar
         </button>
         <button class="dash-nav-item" onclick="showDash('upload')" id="dnav-upload">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>Video yüklə
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>İzlə
         </button>
         <button class="dash-nav-item" onclick="showDash('status')" id="dnav-status">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Status
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Note
         </button>
         <button class="dash-nav-item" onclick="showDash('earnings')" id="dnav-earn">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Gəlirlər
@@ -928,20 +1083,12 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:22px 44px
         <button class="dash-nav-item" onclick="showDash('settings')">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Tənzimləmələr
         </button>
-        <!-- SHURA-ONLY NAV -->
-        <div id="shura-nav-section" style="display:none">
-          <div style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);padding:14px 12px 6px;opacity:.7">ŞUR A</div>
-          <button class="dash-nav-item" onclick="showDash('shura-overview')">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>İdarə Paneli
-          </button>
-          <button class="dash-nav-item" onclick="showDash('shura-applications')">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>Müraciətlər<span id="shura-badge" style="margin-left:auto;background:var(--accent);color:#fff;font-size:9px;font-weight:700;padding:1px 6px;border-radius:10px">5</span>
-          </button>
-          <button class="dash-nav-item" onclick="showDash('shura-videos')">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>Videolar
-          </button>
-          <button class="dash-nav-item" onclick="showDash('shura-announcements')">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0"/></svg>Elanlar
+        <!-- REFERRAL NAV (creator only) -->
+        <div id="referral-nav-section" style="display:none">
+          <div style="font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);padding:14px 12px 6px;opacity:.7">DƏVƏTLƏR</div>
+          <button class="dash-nav-item" onclick="showDash('referral')" id="dnav-referral">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Dəvətlər<span id="referral-badge" style="margin-left:auto;background:var(--accent);color:#fff;font-size:9px;font-weight:700;padding:1px 6px;border-radius:10px">3</span>
           </button>
         </div>
         <div style="margin-top:auto;padding-top:20px;padding:20px 0 0">
@@ -978,73 +1125,114 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:22px 44px
 
       <!-- STATUS PAGE -->
       <div class="dash-page" id="dash-status">
-        <div class="dash-section-title">Statuslar</div>
+        <div class="dash-section-title">Notlar</div>
         <div id="dash-status-compose"></div>
       </div>
 
       <!-- UPLOAD FORM -->
       <div class="dash-page" id="dash-upload">
-        <div class="dash-section-title">Yeni Video Yüklə</div>
-        <div class="upload-form">
-          <div class="upload-dropzone" onclick="document.getElementById('file-input').click()">
-            <div class="upload-dz-icon">📹</div>
-            <div class="upload-dz-t">Video faylı seçin</div>
-            <div class="upload-dz-s">MP4, MOV, AVI — maks. 2 GB</div>
-            <button class="upload-dz-btn" type="button">Fayl seç</button>
-            <input type="file" id="file-input" accept="video/*" style="display:none" onchange="onFileSelect(this)"/>
-          </div>
-          <div id="file-preview" style="display:none;margin-bottom:16px;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--radius);padding:10px 12px;display:none;align-items:center;gap:10px">
-            <span style="font-size:18px">🎬</span>
-            <div><div style="font-size:12px;font-weight:600;color:var(--ink)" id="file-name">–</div><div style="font-size:10px;color:var(--ink3)" id="file-size">–</div></div>
-            <span style="margin-left:auto;font-size:11px;color:#3DB86A;font-weight:700">✓ Hazır</span>
-          </div>
+        <div class="dash-section-title">Yeni Məzmun Paylaş</div>
+
+        <!-- Upload type selector -->
+        <div class="feed-tabs" style="margin-bottom:20px;display:inline-flex">
+          <button class="feed-tab active" id="utype-status" onclick="switchUploadType('status',this)">💬 Note</button>
+          <button class="feed-tab" id="utype-article" onclick="switchUploadType('article',this)">📄 Bloq</button>
+          <button class="feed-tab" id="utype-webinar" onclick="switchUploadType('webinar',this)">🎥 İzlə</button>
+        </div>
+
+        <!-- STATUS UPLOAD -->
+        <div id="upload-type-status" class="upload-form">
+          <div id="creator-status-compose-dash"></div>
+        </div>
+
+        <!-- ARTICLE UPLOAD -->
+        <div id="upload-type-article" class="upload-form" style="display:none">
           <div class="uf-row">
             <div class="uf-group">
-              <label class="uf-label">Video başlığı *</label>
-              <input class="uf-input" type="text" placeholder="Başlıq daxil edin..."/>
+              <label class="uf-label">Bloq başlığı *</label>
+              <input class="uf-input" id="art-title" type="text" placeholder="Başlıq daxil edin..."/>
             </div>
             <div class="uf-group">
               <label class="uf-label">Kateqoriya *</label>
-              <select class="uf-select">
-                <option>Din və Əxlaq</option><option>Elm və Texnologiya</option>
-                <option>Hüquq və Ədalət</option><option>Sağlamlıq</option>
-                <option>Fəlsəfə</option><option>İqtisadiyyat</option>
-                <option>Mədəniyyət</option><option>Tarix və Coğrafiya</option>
+              <select class="uf-select" id="art-cat">
+                <option>Din və Fəlsəfə</option><option>Texnologiya</option>
+                <option>Sağlamlıq</option><option>İqtisadiyyat</option>
+                <option>Hüquq</option><option>Mədəniyyət</option>
               </select>
             </div>
           </div>
           <div class="uf-row">
             <div class="uf-group">
-              <label class="uf-label">Qiymət (AZN)</label>
-              <input class="uf-input" type="number" placeholder="0 — pulsuz"/>
+              <label class="uf-label">Qiymət (AZN) — 0 = pulsuz</label>
+              <input class="uf-input" id="art-price" type="number" min="0" placeholder="0"/>
+            </div>
+            <div class="uf-group">
+              <label class="uf-label">Oxuma müddəti (dəqiqə)</label>
+              <input class="uf-input" id="art-readtime" type="number" min="1" placeholder="5"/>
+            </div>
+          </div>
+          <div class="uf-group">
+            <label class="uf-label">Bloq mətni *</label>
+            <textarea class="uf-textarea" id="art-body" rows="10" placeholder="Məqalənizi buraya yazın..."></textarea>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;margin-top:4px">
+            <button class="submit-upload-btn" onclick="submitArticle()">Paylaş</button>
+            <button class="cancel-btn" onclick="switchUploadType('status',document.getElementById('utype-status'))">Ləğv et</button>
+          </div>
+        </div>
+
+        <!-- WEBINAR UPLOAD -->
+        <div id="upload-type-webinar" class="upload-form" style="display:none">
+          <div class="upload-dropzone" onclick="document.getElementById('file-input').click()" style="margin-bottom:16px">
+            <div class="upload-dz-icon">🎥</div>
+            <div class="upload-dz-t">Video yükləyin</div>
+            <div class="upload-dz-s">MP4, MOV — maks. 2 GB (yazılmış vebinar üçün)</div>
+            <button class="upload-dz-btn" type="button">Fayl seç</button>
+            <input type="file" id="file-input" accept="video/*" style="display:none" onchange="onFileSelect(this)"/>
+          </div>
+          <div class="uf-row">
+            <div class="uf-group">
+              <label class="uf-label">İzlə başlığı *</label>
+              <input class="uf-input" id="web-title" type="text" placeholder="Başlıq daxil edin..."/>
+            </div>
+            <div class="uf-group">
+              <label class="uf-label">Kateqoriya *</label>
+              <select class="uf-select" id="web-cat">
+                <option>Din və Fəlsəfə</option><option>Texnologiya</option>
+                <option>Sağlamlıq</option><option>İqtisadiyyat</option>
+                <option>Hüquq</option><option>Mədəniyyət</option>
+              </select>
+            </div>
+          </div>
+          <div class="uf-row">
+            <div class="uf-group">
+              <label class="uf-label">Qiymət (AZN) — 0 = pulsuz</label>
+              <input class="uf-input" id="web-price" type="number" min="0" placeholder="0"/>
             </div>
             <div class="uf-group">
               <label class="uf-label">Müddət (dəqiqə)</label>
-              <input class="uf-input" type="number" placeholder="məs: 45"/>
+              <input class="uf-input" id="web-duration" type="number" min="1" placeholder="60"/>
+            </div>
+          </div>
+          <div class="uf-row">
+            <div class="uf-group">
+              <label class="uf-label">Növ</label>
+              <select class="uf-select" id="web-status">
+                <option value="video">Video</option>
+              </select>
+            </div>
+            <div class="uf-group" id="web-date-group">
+              <label class="uf-label">Tarix</label>
+              <input class="uf-input" id="web-date" type="date"/>
             </div>
           </div>
           <div class="uf-group">
             <label class="uf-label">Ətraflı təsvir *</label>
-            <textarea class="uf-textarea" rows="5" placeholder="Video haqqında ətraflı izahat verin. Mövzunun əhəmiyyəti, mənbələr, hədəf kütlə..."></textarea>
+            <textarea class="uf-textarea" id="web-desc" rows="4" placeholder="Vebinar haqqında ətraflı izahat..."></textarea>
           </div>
-          <div class="uf-group">
-            <label class="uf-label">Nə öyrəniləcək? (əsas nöqtələr)</label>
-            <div class="learn-list" id="learn-list">
-              <div class="learn-item"><input type="text" placeholder="məs: İmam Mehdinin gəlişinin 5 əsas əlaməti"/><button class="learn-rm" onclick="removeLearning(this)">×</button></div>
-              <div class="learn-item"><input type="text" placeholder="məs: Tarixi mənbələrin müqayisəli analizi"/><button class="learn-rm" onclick="removeLearning(this)">×</button></div>
-            </div>
-            <button class="add-learn-btn" onclick="addLearning()"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>Nöqtə əlavə et</button>
-          </div>
-          <div class="uf-group">
-            <label class="uf-label">Thumbnail şəkli</label>
-            <div style="border:1px dashed var(--border2);border-radius:var(--radius);padding:18px;text-align:center;cursor:pointer;font-size:11px;color:var(--ink3)" onclick="document.getElementById('thumb-input').click()">
-              🖼 Şəkil seçin (JPG, PNG — maks. 5 MB)
-              <input type="file" id="thumb-input" accept="image/*" style="display:none"/>
-            </div>
-          </div>
-          <div style="display:flex;align-items:center;margin-top:4px">
-            <button class="submit-upload-btn" onclick="submitVideo()">Yüklə və şuraya göndər</button>
-            <button class="cancel-btn" onclick="showDash('videos')">Ləğv et</button>
+          <div style="display:flex;align-items:center;gap:10px;margin-top:4px">
+            <button class="submit-upload-btn" onclick="submitWebinar()">Şuraya göndər</button>
+            <button class="cancel-btn" onclick="switchUploadType('status',document.getElementById('utype-status'))">Ləğv et</button>
           </div>
           <div style="margin-top:10px;font-size:10px;color:var(--ink3)">Yüklədikdən sonra şura 5–7 iş günü içərisində nəzərdən keçirəcək.</div>
         </div>
@@ -1099,58 +1287,23 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:22px 44px
         <div id="dash-saved-list"></div>
       </div>
 
-      <!-- ══ SHURA DASHBOARD PAGES ══ -->
-      <div class="dash-page" id="dash-shura-overview">
-        <div class="dash-section-title">Şura İdarə Paneli</div>
-        <div class="dash-stats-row" style="grid-template-columns:repeat(4,1fr);margin-bottom:24px">
-          <div class="ds-card"><div class="ds-val" style="color:#D4960A">5</div><div class="ds-lbl">Gözləyən</div></div>
-          <div class="ds-card"><div class="ds-val" style="color:#3DB86A">24</div><div class="ds-lbl">Qəbul</div></div>
-          <div class="ds-card"><div class="ds-val" style="color:#E05555">8</div><div class="ds-lbl">Rədd</div></div>
-          <div class="ds-card"><div class="ds-val">37</div><div class="ds-lbl">Cəmi</div></div>
+      <!-- ══ REFERRAL DASHBOARD PAGE ══ -->
+      <div class="dash-page" id="dash-referral">
+        <div class="dash-section-title">Dəvət Kodlarım</div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:14px">
+          <div style="font-size:11px;color:var(--ink3);line-height:1.75;margin-bottom:18px">
+            Hər kod ilə bir paylaşımçı dəvət edə bilərsən. Aktiv paylaşımlar etdikcə əlavə kodlar qazanacaqsan.
+          </div>
+          <div id="invite-keys-list"></div>
         </div>
-        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink3);margin-bottom:12px">Son Müraciətlər</div>
-        <div id="shura-recent-list"></div>
-        <button class="s-btn" style="max-width:220px;margin-top:16px" onclick="showDash('shura-applications')">Bütün müraciətlər →</button>
-      </div>
-
-      <div class="dash-page" id="dash-shura-applications">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px">
-          <div class="dash-section-title" style="margin:0">Müraciətlər</div>
-          <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <button class="shura-filter-btn active" onclick="filterApplications('all',this)">Hamısı</button>
-            <button class="shura-filter-btn" onclick="filterApplications('pending',this)">Gözləyən</button>
-            <button class="shura-filter-btn" onclick="filterApplications('approved',this)">Qəbul</button>
-            <button class="shura-filter-btn" onclick="filterApplications('rejected',this)">Rədd</button>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px">
+          <div style="font-size:11px;font-weight:700;color:var(--ink);margin-bottom:14px">Dəvət etdiklərim</div>
+          <div id="invited-creators-list">
+            <div style="font-size:11px;color:var(--ink3);text-align:center;padding:20px 0">Hələ heç kim dəvət edilməyib.</div>
           </div>
         </div>
-        <input class="uf-input" type="text" id="shura-search" placeholder="Ad, sahə axtar..." oninput="renderApplications()" style="max-width:300px;margin-bottom:14px;display:block"/>
-        <div id="shura-applications-list"></div>
       </div>
 
-      <div class="dash-page" id="dash-shura-videos">
-        <div class="dash-section-title">Video Nəzərdən Keçirmə</div>
-        <div style="display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap">
-          <button class="shura-filter-btn active" onclick="filterShuraVideos('all',this)">Hamısı</button>
-          <button class="shura-filter-btn" onclick="filterShuraVideos('pending',this)">Nəzərdə</button>
-          <button class="shura-filter-btn" onclick="filterShuraVideos('approved',this)">Təsdiqlənib</button>
-          <button class="shura-filter-btn" onclick="filterShuraVideos('rejected',this)">Rədd</button>
-        </div>
-        <div id="shura-videos-list"></div>
-      </div>
-
-      <div class="dash-page" id="dash-shura-announcements">
-        <div class="dash-section-title">Elanlar və Qərarlar</div>
-        <button class="s-btn" style="max-width:180px;margin-bottom:16px" onclick="toggleAnnForm()">+ Yeni elan</button>
-        <div id="new-ann-form" style="display:none;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:16px">
-          <div class="uf-group" style="margin-bottom:10px"><label class="uf-label">Başlıq</label><input class="uf-input" type="text" id="ann-title" placeholder="Elanın başlığı"/></div>
-          <div class="uf-group" style="margin-bottom:12px"><label class="uf-label">Məzmun</label><textarea class="uf-textarea" id="ann-body" rows="4" placeholder="Elan mətni..."></textarea></div>
-          <div style="display:flex;gap:8px">
-            <button class="s-btn" style="max-width:120px" onclick="postAnnouncement()">Yayımla</button>
-            <button class="cancel-btn" onclick="toggleAnnForm()">Ləğv et</button>
-          </div>
-        </div>
-        <div id="shura-ann-list"></div>
-      </div>
 
     </main>
   </div>
@@ -1175,7 +1328,6 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:22px 44px
         <div style="display:flex;gap:6px;flex-wrap:wrap">
           <button onclick="demoLogin('user')" style="flex:1;font-family:'Geist Mono',monospace;font-size:10px;font-weight:600;color:var(--ink2);background:var(--bg3);border:1px solid var(--border2);border-radius:3px;padding:7px;cursor:pointer">İstifadəçi</button>
           <button onclick="demoLogin('creator')" style="flex:1;font-family:'Geist Mono',monospace;font-size:10px;font-weight:600;color:var(--ink2);background:var(--bg3);border:1px solid var(--border2);border-radius:3px;padding:7px;cursor:pointer">Paylaşımçı</button>
-          <button onclick="loginAsShura()" style="flex:1;font-family:'Geist Mono',monospace;font-size:10px;font-weight:600;color:var(--accent);background:var(--accent-l);border:1px solid rgba(255,104,0,.3);border-radius:3px;padding:7px;cursor:pointer">🛡 Şura</button>
         </div>
       </div>
     </div>
@@ -1212,7 +1364,19 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:22px 44px
         </div>
         <div class="f-field-error" id="reg-pw-err"></div>
       </div>
-      <div class="f-group"><label class="f-label">Hesab növü</label><select class="f-select" id="reg-type-sa"><option value="user">İstifadəçi</option><option value="creator">Paylaşımçı müraciəti</option></select></div>
+      <div class="f-group">
+        <label class="f-label">Hesab növü</label>
+        <select class="f-select" id="reg-type-sa" onchange="toggleInviteField(this.value)">
+          <option value="user">İstifadəçi</option>
+          <option value="creator">Paylaşımçı</option>
+        </select>
+      </div>
+      <div class="f-group" id="invite-code-group" style="display:none">
+        <label class="f-label">Dəvət kodu <span style="color:var(--accent)">*</span></label>
+        <input class="f-input" id="reg-invite-code" type="text" placeholder="ANT-AD-XXXX" style="text-transform:uppercase;letter-spacing:1.5px;font-family:'Geist Mono',monospace" oninput="this.value=this.value.toUpperCase();clearFormError('reg-error','reg-invite-code')"/>
+        <div class="f-field-error" id="reg-invite-err"></div>
+        <div style="font-size:10px;color:var(--ink3);margin-top:5px">Paylaşımçı kimi qeydiyyat yalnız dəvət kodu ilə mümkündür</div>
+      </div>
       <button class="f-submit" onclick="doRegisterSA()">Qeydiyyatdan keç</button>
       <div class="f-terms">Davam etməklə <a href="#">Şərtləri</a> qəbul edirsiniz</div>
       <div class="f-switch" style="margin-top:9px">Artıq hesab var? <a onclick="showPage('login')">Giriş</a></div>
@@ -1235,27 +1399,6 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:22px 44px
       <div class="f-group"><label class="f-label">Niyə Antism?</label><textarea class="f-input" rows="3" style="resize:vertical" placeholder="Qısa izahat..."></textarea></div>
       <button class="f-submit">Müraciəti göndər</button>
     </div>
-  </div>
-</div>
-
-<!-- ══════════════ SHURA ══════════════ -->
-<div id="page-shura" class="page">
-  <div class="shura-page-wrap">
-    <div class="shura-hero">
-      <div class="shura-hero-lbl">Ekspertlər Şurası</div>
-      <h1 class="shura-hero-t">Platformanın <em>etik qapısı</em></h1>
-      <p class="shura-hero-s">Şura — antism platformasının keyfiyyət, şəffaflıq və hesabatçılıq mexanizmidir. Hər kateqoriyanın müstəqil şurası var.</p>
-    </div>
-    <div class="shura-body">
-      <div class="sec-ey" style="margin-bottom:14px">Kateqoriya Şuraları</div>
-      <div class="shura-full-grid" id="shura-grid"></div>
-      <div class="dec-title">Son Şura Qərarları</div>
-      <div class="dec-item"><div class="dec-top"><div class="dec-t">Dr. Rauf Quliyev — Din şurasına qəbul</div><span class="dec-badge ok">Təsdiqləndi</span></div><div class="dec-d">15 illik təcrübə, 4/4 səslə qəbul edildi.</div><div class="dec-date">28 Yanvar 2025</div></div>
-      <div class="dec-item"><div class="dec-top"><div class="dec-t">Anar Babayev — Sağlamlıq müraciəti</div><span class="dec-badge no">Rədd edildi</span></div><div class="dec-d">Mənbəsiz tibbi iddialar. 6 ay sonra yenidən müraciət tövsiyə olunur.</div><div class="dec-date">24 Yanvar 2025</div></div>
-      <div class="dec-item"><div class="dec-top"><div class="dec-t">Prof. Günel Əliyeva — Fəlsəfə dəvəti</div><span class="dec-badge ok">Təsdiqləndi</span></div><div class="dec-d">Şura aktiv axtarış nəticəsinde dəvət etdi. BDU Fəlsəfə dosenti.</div><div class="dec-date">20 Yanvar 2025</div></div>
-      <div class="dec-item"><div class="dec-top"><div class="dec-t">Kənan Məmmədov — İqtisadiyyat şikayəti</div><span class="dec-badge wait">Araşdırılır</span></div><div class="dec-d">Mənbəsiz statistik iddialar. 7 gün içinde cavab veriləcək.</div><div class="dec-date">30 Yanvar 2025</div></div>
-    </div>
-    <footer><div class="foot-logo" onclick="showPage('home')"><div class="glass-ant"><svg viewBox="0 0 32 32"><use href="#ant"/></svg></div>antism</div><ul class="foot-links"><li><a onclick="showPage('home')">Ana Səhifə</a></li><li><a onclick="showPage('terms')">Şərtlər</a></li><li><a onclick="showPage('privacy')">Gizlilik</a></li></ul><div class="foot-copy">© 2025 antism</div></footer>
   </div>
 </div>
 
@@ -1318,6 +1461,10 @@ const sbAuth = {
     });
     const data = await res.json();
     if(data.error) return { data:null, error:data.error };
+    // Supabase returns empty identities array when email already exists
+    if(data.user && Array.isArray(data.user.identities) && data.user.identities.length === 0){
+      return { data:null, error:{ message:'already registered' } };
+    }
     sbAuth._session = data;
     return { data, error:null };
   },
@@ -1673,49 +1820,49 @@ POSTS.forEach((p,i)=>{
 // ── FULL SHURA DATA per category ──
 const SHURA_MEMBERS={
   'Din və Əxlaq':[
-    {init:'E',name:'Dr. Elnur Həsənov',role:'Şura Sədri',exp:'İslam fiqhi · 15 il'},
+    {init:'E',name:'Dr. Elnur Həsənov',role:'Paylaşımçı',exp:'İslam fiqhi · 15 il'},
     {init:'F',name:'Fərid Quliyev',role:'Üzv',exp:'Hədis elmləri · 10 il'},
     {init:'N',name:'Nigar Əliyeva',role:'Üzv',exp:'İslam tarixi · 8 il'},
     {init:'R',name:'Dr. Rauf Babayev',role:'Üzv',exp:'Kəlam · 12 il'},
     {init:'S',name:'Şəhriyar İsmayılov',role:'Üzv',exp:'Müqayisəli din · 7 il'},
   ],
   'Elm və Texnologiya':[
-    {init:'S',name:'Samir Hüseynov',role:'Şura Sədri',exp:'AI tədqiqatçısı · 9 il'},
+    {init:'S',name:'Samir Hüseynov',role:'Paylaşımçı',exp:'AI tədqiqatçısı · 9 il'},
     {init:'C',name:'Cavid Babayev',role:'Üzv',exp:'Proqram mühəndisliyi · 11 il'},
     {init:'A',name:'Aysel Nəsirov',role:'Üzv',exp:'Data elmi · 6 il'},
     {init:'T',name:'Tural Əliyev',role:'Üzv',exp:'Kibertəhlükəsizlik · 8 il'},
   ],
   'Hüquq və Ədalət':[
-    {init:'R',name:'Rauf Məmmədov',role:'Şura Sədri',exp:'Konstitusiya hüququ · 14 il'},
+    {init:'R',name:'Rauf Məmmədov',role:'Paylaşımçı',exp:'Konstitusiya hüququ · 14 il'},
     {init:'Z',name:'Zəhra Hüseynova',role:'Üzv',exp:'İnsan haqları · 9 il'},
     {init:'O',name:'Orxan Nəcəfov',role:'Üzv',exp:'Beynəlxalq hüquq · 10 il'},
     {init:'L',name:'Lalə Rəhimova',role:'Üzv',exp:'Cinayət hüququ · 7 il'},
   ],
   'Sağlamlıq':[
-    {init:'L',name:'Prof. Leyla Əliyeva',role:'Şura Sədri',exp:'Terapevt · 18 il'},
+    {init:'L',name:'Prof. Leyla Əliyeva',role:'Paylaşımçı',exp:'Terapevt · 18 il'},
     {init:'M',name:'Müşfiq Rəhimov',role:'Üzv',exp:'Kardiologiya · 13 il'},
     {init:'G',name:'Günel Abbasova',role:'Üzv',exp:'Qidalanma · 8 il'},
     {init:'N',name:'Nərmin Xəlilova',role:'Üzv',exp:'Psixiatriya · 10 il'},
     {init:'K',name:'Kamran Əsgərov',role:'Üzv',exp:'Cərrahiyyə · 15 il'},
   ],
   'Fəlsəfə':[
-    {init:'G',name:'Günel Nəsirov',role:'Şura Sədri',exp:'Etika · Ontologiya · 11 il'},
+    {init:'G',name:'Günel Nəsirov',role:'Paylaşımçı',exp:'Etika · Ontologiya · 11 il'},
     {init:'V',name:'Vüsal Orucov',role:'Üzv',exp:'Siyasət fəlsəfəsi · 9 il'},
     {init:'A',name:'Anar Əliyev',role:'Üzv',exp:'Estetika · 7 il'},
   ],
   'İqtisadiyyat':[
-    {init:'E',name:'Dr. Elnur Həsənov',role:'Şura Sədri',exp:'Makroiqtisadiyyat · 12 il'},
+    {init:'E',name:'Dr. Elnur Həsənov',role:'Paylaşımçı',exp:'Makroiqtisadiyyat · 12 il'},
     {init:'T',name:'Turan Nəcəfov',role:'Üzv',exp:'Maliyyə · 10 il'},
     {init:'S',name:'Sevinc Quliyeva',role:'Üzv',exp:'İqtisadi tarix · 8 il'},
     {init:'R',name:'Ramil Abbasov',role:'Üzv',exp:'Biznes analitikası · 9 il'},
   ],
   'Mədəniyyət':[
-    {init:'A',name:'Aytən Babayeva',role:'Şura Sədri',exp:'Mədəniyyətşünas · 13 il'},
+    {init:'A',name:'Aytən Babayeva',role:'Paylaşımçı',exp:'Mədəniyyətşünas · 13 il'},
     {init:'N',name:'Nicat Həsənov',role:'Üzv',exp:'Musiqi tarixi · 8 il'},
     {init:'L',name:'Ləman Əlizadə',role:'Üzv',exp:'İncəsənət · 11 il'},
   ],
   'Tarix və Coğrafiya':[
-    {init:'E',name:'Dr. Emil Qasımov',role:'Şura Sədri',exp:'Orta əsrlər tarixi · 14 il'},
+    {init:'E',name:'Dr. Emil Qasımov',role:'Paylaşımçı',exp:'Orta əsrlər tarixi · 14 il'},
     {init:'S',name:'Samirə Hüseynova',role:'Üzv',exp:'Coğrafiya · 9 il'},
     {init:'F',name:'Fidan Nəcəfova',role:'Üzv',exp:'Arxeologiya · 7 il'},
     {init:'M',name:'Murad Quliyev',role:'Üzv',exp:'Geosiyasət · 11 il'},
@@ -1940,12 +2087,481 @@ function sortPosts(p){
 function switchFeedTab(tab, btn){
   document.querySelectorAll('.feed-tab').forEach(b=>b.classList.remove('active'));
   if(btn) btn.classList.add('active');
-  const vt=document.getElementById('feed-tab-videos');
-  const st=document.getElementById('feed-tab-statuses');
-  if(vt) vt.style.display = tab==='videos' ? 'block' : 'none';
-  if(st) st.style.display = tab==='statuses' ? 'block' : 'none';
-  if(tab==='videos') renderFeed();
-  if(tab==='statuses') renderHomeStatuses();
+  ['oxu','izle'].forEach(t=>{
+    const el = document.getElementById('feed-tab-'+t);
+    if(el) el.style.display = t===tab ? 'block' : 'none';
+  });
+  if(tab==='oxu') renderOxuFeed();
+  if(tab==='izle') renderWebinars();
+}
+
+function renderOxuFeed(){
+  const el = document.getElementById('feed-oxu');
+  if(!el) return;
+  const q = (document.getElementById('oxu-search')?.value||'').toLowerCase();
+  const cat = document.getElementById('oxu-cat')?.value||'';
+  const pf = document.getElementById('oxu-price')?.value||'';
+
+  let items = [];
+
+  // Add notes
+  CREATORS.forEach((cr,idx)=>{
+      (cr.statuses||[]).forEach(s=>{
+        items.push({ kind:'note', s, cr, idx, date: s.time||'', votes: s.likes||0 });
+      });
+  });
+
+  // Add articles
+  ARTICLES.forEach(a=>{
+    const cr = CREATORS[a.creator]||{};
+    const mp = !pf || (pf==='free'&&a.price===0) || (pf==='paid'&&a.price>0);
+    const mc = !cat || a.cat===cat;
+    if(mp && mc) items.push({ kind:'blog', a, cr, date: a.date, votes: a.votes });
+  });
+
+  // Filter by search
+  if(q){
+    items = items.filter(item=>{
+      if(item.kind==='note') return item.cr.name?.toLowerCase().includes(q) || item.s.text?.toLowerCase().includes(q);
+      return item.a.title?.toLowerCase().includes(q) || item.cr.name?.toLowerCase().includes(q);
+    });
+  }
+
+  // Sort by date descending (notes first since they're most recent)
+  items.sort((a,b)=> new Date(b.date||0) - new Date(a.date||0));
+
+  if(!items.length){
+    el.innerHTML=`<div style="background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:32px;text-align:center;color:var(--ink3);font-size:11px">Məzmun tapılmadı.</div>`;
+    return;
+  }
+
+  el.innerHTML = items.map(item=>{
+    if(item.kind==='note'){
+      const {s, cr, idx} = item;
+      const mediaHtml = s.mediaUrl ? `<div class="oxu-cover" style="height:${s.mediaType==='image'?'240px':'180px'};margin-top:12px"><img src="${s.mediaUrl}" alt="" loading="lazy"/></div>` : '';
+      return `<div class="oxu-card">
+        <div class="oxu-card-header">
+          <div class="oxu-av" onclick="openProfile(${idx})">${cr.name?.charAt(0)||'?'}</div>
+          <div class="oxu-author-info">
+            <div class="oxu-author-name" onclick="openProfile(${idx})">${cr.name||''}</div>
+            <div class="oxu-author-meta">${s.time||''}</div>
+          </div>
+        </div>
+        <div class="oxu-note-body">${s.text||''}</div>
+        ${mediaHtml}
+        <div class="oxu-footer">
+          <button class="oxu-btn ${s.liked?'liked':''}" onclick="likeHomeStatus('${s.id}','${idx}')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="${s.liked?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            ${s.likes||0}
+          </button>
+          <button class="oxu-btn" onclick="showAuthGate('Şərh yazmaq üçün daxil olun')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            ${s.comments||0}
+          </button>
+          <button class="oxu-btn ${s.bookmarked?'saved':''}" onclick="bookmarkStatus('${s.id}','${idx}')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="${s.bookmarked?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          </button>
+          <button class="oxu-btn" onclick="shareArticle('${s.id}')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </button>
+        </div>
+      </div>`;
+    } else {
+      const {a, cr} = item;
+      const isFree = a.price===0;
+      return `<div class="oxu-card" onclick="openArticle(${a.id})" style="cursor:pointer">
+        <div class="oxu-card-header">
+          <div class="oxu-av">${(cr.name||'?').charAt(0)}</div>
+          <div class="oxu-author-info">
+            <div class="oxu-author-name" onclick="event.stopPropagation();openProfile(${a.creator})">${cr.name||''}</div>
+            <div class="oxu-author-meta">${a.readTime} dəq · ${formatArticleDate(a.date)}</div>
+          </div>
+          <span class="oxu-time">${a.cat}</span>
+        </div>
+        ${a.cover?`<div class="oxu-cover"><img src="${a.cover}" alt="" loading="lazy"/></div>`:''}
+        <div class="oxu-blog-body">
+          <div class="oxu-blog-title">${a.title}</div>
+          <div class="oxu-blog-summary">${a.summary}</div>
+        </div>
+        <div class="oxu-footer">
+          <span class="oxu-tag ${isFree?'price':'paid'}">${isFree?'0 ₼':a.price+' ₼'}</span>
+          <button class="oxu-btn ${a.voted?'liked':''}" onclick="event.stopPropagation();tryVoteArticle(${a.id},1)">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="${a.voted?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            ${a.votes}
+          </button>
+          <button class="oxu-btn" onclick="event.stopPropagation();showAuthGate('Şərh yazmaq üçün daxil olun')">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </button>
+          <button class="oxu-btn ${a.bookmarked?'saved':''}" onclick="event.stopPropagation();bookmarkArticle(${a.id})">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="${a.bookmarked?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          </button>
+          <button class="oxu-btn" onclick="event.stopPropagation();shareArticle(${a.id})">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </button>
+          <button class="oxu-read-btn" onclick="event.stopPropagation();openArticle(${a.id})">Oxu →</button>
+        </div>
+      </div>`;
+    }
+  }).join('');
+}
+
+// ── ARTICLES DATA ──
+const ARTICLES = [
+  {
+    id:1, title:'Stevia: Şəkərin Alternativimi, Yoxsa Mif?',
+    creator:0, cat:'Sağlamlıq', price:0, votes:47, readTime:5, date:'2025-05-10',
+    cover:'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80',
+    summary:'Stevia bitkisi son illərdə sağlam həyat tərzi ardıcılları arasında böyük maraq qazanıb. Lakin elmi araşdırmalar nə deyir?',
+    sections:[
+      {type:'p', text:'Stevia rebaudiana — Cənubi Amerikanın endemik bitkisidir. Yarpaqları şəkərdən 200-300 dəfə şirindir, lakin kalorisi yoxdur. Bu özəllik onu qida sənayesinin diqqət mərkəzinə çevirdi.'},
+      {type:'h3', text:'Elmi araşdırmalar nə göstərir?'},
+      {type:'p', text:'2023-cü ildə aparılan meta-analiz 29 müstəqil tədqiqatın nəticələrini ümumiləşdirdi. Mülayim dozalarda stevia istifadəsinin qan şəkərinə, ürək-damar sisteminə və böyrəklərə zərər vermədiyini ortaya qoydu.'},
+      {type:'quote', text:'Bazar stevia məhsullarının əksəriyyəti xalis stevia deyil — maltodekstrin, eritritol və ya süni aromatlarla qarışdırılır.'},
+      {type:'h3', text:'Nə seçməli?'},
+      {type:'p', text:'Xalis stevia ekstraktı (steviosid 95%+) ən etibarlı seçimdir. Hər kq tortda cəmi 2q stevia, lakin şirinlik tam saxlanılır — BlueBake-də məhz bu formatdan istifadə edirik.'},
+      {type:'p', text:'Nəticə: stevia mif deyil — elmi əsaslı bir alternativdir. Ancaq etiketi oxumadan alma.'},
+    ]
+  },
+  {
+    id:2, title:'Gluten-free Bişirmənin Gizli Kimyası',
+    creator:1, cat:'Sağlamlıq', price:3, votes:34, readTime:8, date:'2025-05-08',
+    cover:'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=900&q=80',
+    summary:'Gluten-free un niyə fərqli davranır? Nişasta, protein balansı və tekstura arasındakı bağlantını anlamaq.',
+    sections:[
+      {type:'p', text:'Gluten — buğda, arpa və çovdarda olan protein kompleksidir. Xəmirə elastiklik verir. Glutensiz bişirəndə bu elastikliyi başqa yollarla əldə etmək lazımdır.'},
+      {type:'h3', text:'Alternativ strukturlar'},
+      {type:'p', text:'Psyllium husk su ilə birləşəndə gel əmələ gətirir, glutenin rolunu qismən üstlənir. Xanthan gum isə fermentasiya yolu ilə alınan polisaxarid olub məhsulun parçalanmasına mane olur.'},
+    ],
+    paywallSections:[
+      {type:'h3', text:'Nişasta nisbəti vacibdir'},
+      {type:'p', text:'Düyü unu + kartof nişastası + tapyoka — bu üçlü ən çox istifadə edilən gluten-free bazisdir. Optimal nisbət 2:1:1-dir. Bu nisbəti pozsanız tekstura ya quru, ya da yapışqan olur.'},
+      {type:'p', text:'Həmçinin bişirmə temperaturu adi xəmirdən 10-15°C aşağı olmalıdır — gluten-free xəmir daha tez qızarır.'},
+    ]
+  },
+  {
+    id:3, title:'Diabet Xəstələri üçün Desert Fəlsəfəsi',
+    creator:0, cat:'Sağlamlıq', price:0, votes:28, readTime:6, date:'2025-05-05',
+    cover:'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=900&q=80',
+    summary:'Şəkərsiz yaşamaq həzz almaqdan imtina demək deyil. Düzgün yanaşma ilə diabet xəstəsi də desert yeyə bilər.',
+    sections:[
+      {type:'p', text:'Diabet diaqnozu alan insanların əksəriyyəti ilk anda desertdən tamamilə imtina edir. Bu yanlışdır — düzgün yanaşmayla desert həyatın bir hissəsi olmağa davam edə bilər.'},
+      {type:'h3', text:'Qlükoz indeksi (GI) anlayışı'},
+      {type:'p', text:'Yüksək GI-li qidalar qan şəkərini sürətlə qaldırır. Aşağı GI-li alternativlər — stevia, eritritol, badam unu — bu problemi həll edir. Badam unlu keksin GI-si adi unlu keksin GI-sindən 3 dəfə aşağıdır.'},
+      {type:'quote', text:'Özünüzü tamamilə məhdudlaşdırmaq uzunmüddətli saxlanmır. Hədlər daxilində zövq almaq daha sağlam yanaşmadır.'},
+      {type:'p', text:'Biz BlueBake-də hər məhsulumuzun GI dəyərini hesablayırıq. Sertifikatlaşdırılmış qida mütəxəssisi ilə işləyirik ki, hər desert həm dadlı, həm də təhlükəsiz olsun.'},
+    ]
+  },
+  {
+    id:4, title:'Halal Qida Sertifikasiyasının Maliyyə Anatomiyası',
+    creator:2, cat:'Din və Fəlsəfə', price:5, votes:52, readTime:10, date:'2025-05-01',
+    cover:'https://images.unsplash.com/photo-1571167530149-c1105da4c2e8?w=900&q=80',
+    summary:'Halal sertifikat almaq nə qədər xərcləndirir? Prosedur necədir? Sertifikatlaşdırma orqanları arasında fərq varmı?',
+    sections:[
+      {type:'p', text:'Halal sertifikasiyası — dünya ərzaq ticarətinin ən sürətli böyüyən seqmentlərindən biridir. 2,1 milyard müsəlmanın istehlak qüvvəsi qlobal bazarları yenidən formalaşdırır.'},
+      {type:'h3', text:'Sertifikat prosesi'},
+      {type:'p', text:'Ərizə → Audit → Laboratoriya analizi → Şura qərarı → Sertifikat. Bu proses orta hesabla 3-6 ay çəkir.'},
+    ],
+    paywallSections:[
+      {type:'h3', text:'Maliyyə tərəfi — tam analiz'},
+      {type:'p', text:'İllik sertifikat haqqı şirkətin ölçüsündən asılı olaraq 800-15,000 USD arasında dəyişir. Kiçik müəssisələr üçün ilkin xərclər adətən 1,200-2,500 USD olur.'},
+      {type:'p', text:'ROI baxımından isə halal sertifikatı olan məhsullar qlobal bazarda 18-23% daha yüksək qiymətə satılır.'},
+    ]
+  },
+];
+
+let currentArticleId = null;
+
+function renderArticles(){
+  const el = document.getElementById('feed-articles');
+  if(!el) return;
+  const q = (document.getElementById('article-search')?.value||'').toLowerCase();
+  const cat = document.getElementById('article-cat')?.value||'';
+  const pf = document.getElementById('article-price-filter')?.value||'';
+
+  let list = ARTICLES.filter(a=>{
+    const mq = !q || a.title.toLowerCase().includes(q) || CREATORS[a.creator]?.name.toLowerCase().includes(q);
+    const mc = !cat || a.cat===cat;
+    const mp = !pf || (pf==='free'&&a.price===0) || (pf==='paid'&&a.price>0);
+    return mq&&mc&&mp;
+  });
+
+  if(!list.length){
+    el.innerHTML=`<div style="background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:32px;text-align:center;color:var(--ink3);font-size:11px">Bloq tapılmadı.</div>`;
+    return;
+  }
+
+  el.innerHTML = list.map(a=>{
+    const cr = CREATORS[a.creator]||{};
+    const isFree = a.price===0;
+    return `<div class="article-card" onclick="openArticle(${a.id})">
+      ${a.cover?`<div class="article-cover"><img src="${a.cover}" alt="" loading="lazy"/></div>`:''}
+      <div class="article-card-body">
+        <div class="article-card-head">
+          <span class="pcat">${a.cat}</span>
+          <span class="${isFree?'article-free-badge':'article-price-badge'}">${isFree?'0 ₼':a.price+' ₼'}</span>
+        </div>
+        <div class="article-title">${a.title}</div>
+        <div class="article-summary">${a.summary}</div>
+        <div class="article-meta">
+          <div class="article-avatar">${(cr.name||'?').charAt(0)}</div>
+          <span class="article-author-name">${cr.name||''}</span>
+          <span class="article-dot">·</span>
+          <span>${a.readTime} dəq</span>
+          <span class="article-dot">·</span>
+          <span>${formatArticleDate(a.date)}</span>
+        </div>
+        <div class="article-actions">
+          <button class="art-action-btn" onclick="event.stopPropagation();tryVoteArticle(${a.id},1)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="${a.voted?'var(--accent)':'none'}" stroke="${a.voted?'var(--accent)':'currentColor'}" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            ${a.votes}
+          </button>
+          <button class="art-action-btn" onclick="event.stopPropagation();shareArticle(${a.id})">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </button>
+          <button class="art-action-btn" onclick="event.stopPropagation();showAuthGate('Şərh yazmaq üçün daxil olun')">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </button>
+          <button class="art-action-btn" onclick="event.stopPropagation();bookmarkArticle(${a.id})">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="${a.bookmarked?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          </button>
+          <button class="art-action-btn read-more-btn" onclick="event.stopPropagation();openArticle(${a.id})">Oxu →</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function formatArticleDate(d){
+  if(!d) return '';
+  const months=['Yan','Fev','Mar','Apr','May','İyn','İyl','Avq','Sen','Okt','Nov','Dek'];
+  const dt=new Date(d);
+  return dt.getDate()+' '+months[dt.getMonth()]+' '+dt.getFullYear();
+}
+
+function renderSection(s){
+  if(s.type==='h3') return `<h3 class="art-body-h3">${s.text}</h3>`;
+  if(s.type==='quote') return `<blockquote class="art-body-quote">${s.text}</blockquote>`;
+  return `<p class="art-body-p">${s.text}</p>`;
+}
+
+function openArticle(id){
+  const a = ARTICLES.find(x=>x.id===id);
+  if(!a) return;
+  currentArticleId = id;
+  const cr = CREATORS[a.creator]||{};
+  const isFree = a.price===0;
+  const canRead = isFree || currentUser?.loggedIn;
+
+  let bodyHtml = (a.sections||[]).map(renderSection).join('');
+
+  if(!canRead && a.paywallSections?.length){
+    bodyHtml += `<div class="art-paywall">
+      <div class="art-paywall-fade"></div>
+      <div class="art-paywall-box">
+        <div class="art-paywall-icon">🔒</div>
+        <div class="art-paywall-title">Tam versiya ödənişlidir</div>
+        <div class="art-paywall-sub">Bu bloqu tam oxumaq üçün ${a.price} ₼ ödəyin</div>
+        <button class="art-paywall-btn" onclick="showAuthGate('Bloqu oxumaq üçün daxil olun')">Al — ${a.price} ₼</button>
+        <div style="font-size:10px;color:var(--ink3);margin-top:8px">Bir dəfə ödə, həmişə oxu</div>
+      </div>
+    </div>`;
+  } else if(canRead && a.paywallSections?.length){
+    bodyHtml += a.paywallSections.map(renderSection).join('');
+  }
+
+  const page = document.getElementById('page-article');
+  if(!page) return;
+  page.innerHTML = `<div class="art-page-wrap">
+    <div class="art-page-nav">
+      <button class="v-back" onclick="goBack()">← Geri</button>
+      <div class="art-page-actions">
+        <button class="art-action-btn" onclick="tryVoteArticle(${a.id},1)" title="Vote">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="${a.voted?'var(--accent)':'none'}" stroke="${a.voted?'var(--accent)':'currentColor'}" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          ${a.votes}
+        </button>
+        <button class="art-action-btn" onclick="shareArticle(${a.id})" title="Paylaş">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </button>
+        <button class="art-action-btn" onclick="bookmarkArticle(${a.id})" title="Saxla">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="${a.bookmarked?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+        </button>
+      </div>
+    </div>
+    <article class="art-article">
+      ${a.cover?`<img src="${a.cover}" class="art-hero-img" alt=""/>` : ''}
+      <div class="art-meta-top">
+        <span class="pcat">${a.cat}</span>
+        <span class="${isFree?'article-free-badge':'article-price-badge'}">${isFree?'0 ₼':a.price+' ₼'}</span>
+      </div>
+      <h1 class="art-h1">${a.title}</h1>
+      <p class="art-lead">${a.summary}</p>
+      <div class="art-author-row">
+        <div class="art-author-av">${(cr.name||'?').charAt(0)}</div>
+        <div>
+          <div class="art-author-name" onclick="openProfile(${a.creator})">${cr.name||''}</div>
+          <div class="art-author-meta">${a.readTime} dəq oxuma · ${formatArticleDate(a.date)}</div>
+        </div>
+      </div>
+      <div class="art-divider"></div>
+      <div class="art-body">${bodyHtml}</div>
+      ${canRead?`
+      <div class="art-divider"></div>
+      <div class="art-bottom-actions">
+        <button class="art-action-btn big" onclick="tryVoteArticle(${a.id},1)" title="Vote">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="${a.voted?'var(--accent)':'none'}" stroke="${a.voted?'var(--accent)':'currentColor'}" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          ${a.votes}
+        </button>
+        <button class="art-action-btn big" onclick="shareArticle(${a.id})" title="Paylaş">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </button>
+        <button class="art-action-btn big" onclick="bookmarkArticle(${a.id})" title="Saxla">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="${a.bookmarked?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+        </button>
+        <button class="art-action-btn big" onclick="showAuthGate('Şərh yazmaq üçün daxil olun')" title="Şərh">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </button>
+      </div>`:''}
+    </article>
+  </div>`;
+  showPage('article');
+}
+
+function shareArticle(id){
+  const a = ARTICLES.find(x=>x.id===id);
+  if(!a) return;
+  if(navigator.share){ navigator.share({title:a.title, url:window.location.href}); }
+  else { navigator.clipboard?.writeText(window.location.href); showToast('Link kopyalandı'); }
+}
+
+function bookmarkArticle(id){
+  if(!currentUser?.loggedIn){ showAuthGate('Saxlamaq üçün daxil olun'); return; }
+  const a = ARTICLES.find(x=>x.id===id);
+  if(!a) return;
+  a.bookmarked = !a.bookmarked;
+  showToast(a.bookmarked?'Bloq saxlanıldı ✓':'Saxlama ləğv edildi');
+  renderArticles();
+}
+
+// ── VIDEOS DATA ──
+const WEBINARS = [
+  { id:1, title:'Sağlam Şirniyyat Hazırlamağın Sirləri', creator:0, cat:'Sağlamlıq', price:0, votes:61, duration:'45:12', date:'2025-06-15', views:1840, thumb:'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=640&q=80' },
+  { id:2, title:'Qlükoz İndeksi Aşağı Reseptlər', creator:1, cat:'Sağlamlıq', price:12, votes:38, duration:'1:02:30', date:'2025-06-20', views:920, thumb:'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=640&q=80' },
+  { id:3, title:'Uşaqlar üçün Şəkərsiz Tort Reseptləri', creator:0, cat:'Sağlamlıq', price:0, votes:29, duration:'31:05', date:'2025-05-01', views:3200, thumb:'https://images.unsplash.com/photo-1558636508-e0db3814bd1d?w=640&q=80' },
+  { id:4, title:'Gluten-free Çörək Bişirmənin Əsasları', creator:2, cat:'Sağlamlıq', price:8, votes:54, duration:'52:44', date:'2025-04-18', views:2100, thumb:'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=640&q=80' },
+];
+
+function renderWebinars(){
+  const el = document.getElementById('feed-izle');
+  if(!el) return;
+  const q = (document.getElementById('webinar-search')?.value||'').toLowerCase();
+  const cat = document.getElementById('webinar-cat')?.value||'';
+  const pf = document.getElementById('webinar-price-filter')?.value||'';
+  let list = WEBINARS.filter(w=>{
+    const mq = !q || w.title.toLowerCase().includes(q) || CREATORS[w.creator]?.name.toLowerCase().includes(q);
+    const mc = !cat || w.cat===cat;
+    const mp = !pf || (pf==='free'&&w.price===0) || (pf==='paid'&&w.price>0);
+    return mq&&mc&&mp;
+  });
+  if(!list.length){
+    el.innerHTML=`<div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:32px;text-align:center;color:var(--ink3);font-size:11px">Video tapılmadı.</div>`;
+    return;
+  }
+  const fmtViews = n => n>=1000 ? (n/1000).toFixed(1).replace('.0','')+'K' : n;
+  el.innerHTML = `<div class="izle-grid">${list.map(w=>{
+    const cr = CREATORS[w.creator]||{};
+    const isFree = w.price===0;
+    return `<div class="video-card" onclick="showAuthGate('İzləmək üçün daxil olun')">
+      <div class="video-thumb">
+        <img src="${w.thumb}" alt="${w.title}" loading="lazy"/>
+        <span class="video-duration">${w.duration}</span>
+        <span class="video-price-badge ${isFree?'free':'paid'}">${isFree?'0 ₼':w.price+' ₼'}</span>
+      </div>
+      <div class="video-info">
+        <div class="video-av" onclick="event.stopPropagation();openProfile(${w.creator})">${(cr.name||'?').charAt(0)}</div>
+        <div class="video-meta">
+          <div class="video-title">${w.title}</div>
+          <div class="video-sub">
+            <span>${cr.name||''}</span>
+            <div style="display:flex;align-items:center;gap:5px;margin-top:2px">
+              <span>${fmtViews(w.views)} baxış</span>
+              <span class="video-dot">•</span>
+              <span>${formatArticleDate(w.date)}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="video-actions">
+        <button class="video-action-btn ${w.voted?'voted':''}" onclick="event.stopPropagation();tryVoteWebinar(${w.id},1)">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="${w.voted?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          ${w.votes}
+        </button>
+        <button class="video-action-btn" onclick="event.stopPropagation();showAuthGate('Şərh yazmaq üçün daxil olun')">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </button>
+        <button class="video-action-btn" onclick="event.stopPropagation();shareArticle(${w.id})">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </button>
+        <button class="video-watch-btn" onclick="event.stopPropagation();showAuthGate('İzləmək üçün daxil olun')">İzlə →</button>
+      </div>
+    </div>`;
+  }).join('')}</div>`;
+}
+
+function tryVoteArticle(id, dir){
+  if(!currentUser?.loggedIn){ showAuthGate('Vote etmək üçün daxil olun'); return; }
+  const a = ARTICLES.find(x=>x.id===id);
+  if(!a) return;
+  a.voted = !a.voted;
+  a.votes += a.voted ? 1 : -1;
+  renderArticles();
+  // if on article detail page, re-render it
+  if(currentArticleId===id) openArticle(id);
+}
+
+function tryVoteWebinar(id, dir){
+  if(!currentUser?.loggedIn){ showAuthGate('Vote etmək üçün daxil olun'); return; }
+  const w = WEBINARS.find(x=>x.id===id);
+  if(w){ w.votes+=dir; renderWebinars(); }
+}
+
+function switchUploadType(type, btn){
+  document.querySelectorAll('#dash-upload .feed-tab').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  ['status','article','webinar'].forEach(t=>{
+    const el = document.getElementById('upload-type-'+t);
+    if(el) el.style.display = t===type ? 'block' : 'none';
+  });
+  if(type==='status') renderCreatorStatusCompose();
+}
+
+function submitArticle(){
+  const title = document.getElementById('art-title')?.value.trim();
+  const body = document.getElementById('art-body')?.value.trim();
+  const cat = document.getElementById('art-cat')?.value;
+  const price = parseFloat(document.getElementById('art-price')?.value||0);
+  const readTime = parseInt(document.getElementById('art-readtime')?.value||5);
+  if(!title||!body){ showToast('Başlıq və mətn daxil edin'); return; }
+  const newArt = { id: Date.now(), title, body, cat, price, readTime, creator:0, votes:0, date:new Date().toISOString().split('T')[0] };
+  ARTICLES.unshift(newArt);
+  showToast('Məqalə paylaşıldı! ✓');
+  document.getElementById('art-title').value='';
+  document.getElementById('art-body').value='';
+}
+
+function submitWebinar(){
+  const title = document.getElementById('web-title')?.value.trim();
+  const desc = document.getElementById('web-desc')?.value.trim();
+  const cat = document.getElementById('web-cat')?.value;
+  const price = parseFloat(document.getElementById('web-price')?.value||0);
+  const duration = document.getElementById('web-duration')?.value+'dəq';
+  const status = document.getElementById('web-status')?.value||'upcoming';
+  const date = document.getElementById('web-date')?.value;
+  if(!title){ showToast('Başlıq daxil edin'); return; }
+  const newWeb = { id: Date.now(), title, cat, price, duration, status, date, creator:0, votes:0, seats:50, enrolled:0 };
+  WEBINARS.unshift(newWeb);
+  showToast('Video yükləndi! ✓');
+  document.getElementById('web-title').value='';
+  document.getElementById('web-desc').value='';
 }
 
 function renderHomeStatuses(){
@@ -1960,7 +2576,7 @@ function renderHomeStatuses(){
     cr.name.toLowerCase().includes(q)||s.text.toLowerCase().includes(q)||cr.field.toLowerCase().includes(q)
   ) : all;
   if(!filtered.length){
-    el.innerHTML='<div style="padding:32px;text-align:center;color:var(--ink3);font-size:12px;background:var(--surface);border:1px solid var(--border);border-radius:3px">Status tapılmadı.</div>';
+    el.innerHTML='<div style="padding:32px;text-align:center;color:var(--ink3);font-size:12px;background:var(--surface);border:1px solid var(--border);border-radius:3px">Note tapılmadı.</div>';
     return;
   }
   el.innerHTML=filtered.map(({s,cr,idx})=>{
@@ -2017,7 +2633,7 @@ function bookmarkStatus(sid, crIdx){
   const s=(cr.statuses||[]).find(x=>x.id===sid);
   if(!s) return;
   s.bookmarked=!s.bookmarked;
-  showToast(s.bookmarked?'Statuslar saxlanıldı':'Saxlama ləğv edildi');
+  showToast(s.bookmarked?'Note saxlanıldı':'Saxlama ləğv edildi');
   renderHomeStatuses();
 }
 
@@ -2672,10 +3288,7 @@ function showDash(id){
     el.innerHTML=`<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px">${saved.map(p=>renderPostCard(p)).join('')}</div>`;
   }
   if(id==='status') renderCreatorStatusCompose();
-  if(id==='shura-overview') renderShuraOverview();
-  if(id==='shura-applications') renderApplications();
-  if(id==='shura-videos') renderShuraVideos();
-  if(id==='shura-announcements') renderShuraAnnouncements();
+  if(id==='referral') renderReferralDash();
 }
 
 function renderDashVideos(){
@@ -2726,10 +3339,12 @@ function setupDashboard(name,role){
   const isCreator=role==='creator';
   if(av) av.textContent=name.charAt(0).toUpperCase();
   if(nm) nm.textContent=name;
-  if(rl) rl.textContent=role==='creator'?'Paylaşımçı':role==='shura'?'Şura üzvü':'İstifadəçi';
-  // show/hide shura nav
-  const shurNav=document.getElementById('shura-nav-section');
-  if(shurNav) shurNav.style.display=role==='shura'?'block':'none';
+  if(rl) rl.textContent=role==='creator'?'Paylaşımçı':'İstifadəçi';
+  // show/hide referral nav (creator only)
+  const refNav=document.getElementById('referral-nav-section');
+  if(refNav) refNav.style.display=isCreator?'block':'none';
+  // init referral keys for creator
+  if(isCreator) initReferralKeys(name);
   if(wt) wt.textContent='Salam, '+name.split(' ')[0]+'!';
   if(sn) sn.value=name;
   // hide creator-only nav items for regular users
@@ -2793,17 +3408,10 @@ async function doLogin(){
 }
 
 function demoLogin(role){
-  const name = role==='creator' ? 'Dr. Elnur Həsənov' : 'İstifadəçi';
+  const name = role==='creator' ? 'Nihad İsmayılov' : 'İstifadəçi';
   currentUser={name, role, loggedIn:true};
   setupDashboard(name, role);
   showPage('dashboard');
-}
-
-function loginAsShura(){
-  currentUser={name:'Dr. Elnur Həsənov',role:'shura',loggedIn:true};
-  setupDashboard('Dr. Elnur Həsənov','shura');
-  showPage('dashboard');
-  setTimeout(()=>showDash('shura-overview'),100);
 }
 
 // Standalone register page
@@ -2814,12 +3422,19 @@ async function doRegisterSA(){
   const email=(document.getElementById('reg-email-sa')?.value||'').trim();
   const pw=document.getElementById('r-pw')?.value||'';
   const role=document.getElementById('reg-type-sa')?.value||'user';
+  const inviteCode=(document.getElementById('reg-invite-code')?.value||'').trim().toUpperCase();
   let valid=true;
 
   if(!name){ showFieldError('reg-name-sa','reg-name-err','Ad daxil edin'); valid=false; }
   if(!surname){ showFieldError('reg-surname-sa','reg-sn-err','Soyad daxil edin'); valid=false; }
   if(!email){ showFieldError('reg-email-sa','reg-email-err','E-poçt ünvanı daxil edin'); valid=false; }
   else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ showFieldError('reg-email-sa','reg-email-err','Düzgün e-poçt formatı daxil edin'); valid=false; }
+
+  // Invite code required for creators
+  if(role==='creator'){
+    if(!inviteCode){ showFieldError('reg-invite-code','reg-invite-err','Dəvət kodu daxil edin'); valid=false; }
+    else if(!validateInviteCode(inviteCode)){ showFieldError('reg-invite-code','reg-invite-err','Bu kod etibarsız və ya artıq istifadə edilib'); valid=false; }
+  }
 
   // Strong password validation
   if(!pw){ showFieldError('r-pw','reg-pw-err','Şifrə daxil edin'); valid=false; }
@@ -2836,6 +3451,9 @@ async function doRegisterSA(){
   }
 
   if(!valid){ showFormError('reg-error','Zəhmət olmasa bütün xanaları düzgün doldurun'); return; }
+
+  // Mark invite code as used
+  if(role==='creator' && inviteCode) markInviteCodeUsed(inviteCode);
 
   const fullName = name+' '+surname;
   const btn = document.querySelector('#page-register .f-submit');
@@ -2959,8 +3577,7 @@ function showPage(id){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   const pg=document.getElementById('page-'+id);
   if(pg){pg.classList.add('active');window.scrollTo(0,0);}
-  if(id==='home'){renderFeed();renderHomeStatuses();}
-  if(id==='shura')renderShura();
+  if(id==='home'){renderOxuFeed();}
   if(id==='profile'){renderProfilePosts();renderProfileStatuses();}
   if(id==='dashboard')renderDashVideos();
 }
@@ -2968,7 +3585,7 @@ function showPage(id){
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.06});
 window.addEventListener('DOMContentLoaded', async ()=>{
   initCountryDD();
-  renderFeed(); renderHomeStatuses();
+  renderOxuFeed();
   const countEl=document.getElementById('hero-post-count');
   if(countEl) countEl.textContent=POSTS.length;
   document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
@@ -3155,6 +3772,119 @@ function postAnnouncement(){
   toggleAnnForm();
   renderShuraAnnouncements();
   showToast('Elan yayımlandı');
+}
+
+// ═══════════════════════════════════════════
+// REFERRAL SYSTEM
+// ═══════════════════════════════════════════
+
+// In production these come from Supabase DB.
+// For now: demo keys stored in localStorage.
+function generateKey(){
+  const rand = Math.random().toString(36).substring(2,6).toUpperCase();
+  return `ANT-${rand}`;
+}
+
+function getInviteKeys(){
+  const stored = localStorage.getItem('ant_invite_keys');
+  if(stored) return JSON.parse(stored);
+  return null;
+}
+
+function saveInviteKeys(keys){
+  localStorage.setItem('ant_invite_keys', JSON.stringify(keys));
+}
+
+// Called when creator logs in — generate 3 keys if not already created
+function initReferralKeys(creatorName){
+  let keys = getInviteKeys();
+  if(!keys){
+    keys = [
+      { code: generateKey(creatorName), used: false, usedBy: null, createdAt: new Date().toISOString() },
+      { code: generateKey(creatorName), used: false, usedBy: null, createdAt: new Date().toISOString() },
+      { code: generateKey(creatorName), used: false, usedBy: null, createdAt: new Date().toISOString() },
+    ];
+    saveInviteKeys(keys);
+  }
+  renderReferralDash();
+}
+
+function renderReferralDash(){
+  const keysEl = document.getElementById('invite-keys-list');
+  const invitedEl = document.getElementById('invited-creators-list');
+  if(!keysEl) return;
+
+  const keys = getInviteKeys() || [];
+  const available = keys.filter(k=>!k.used).length;
+
+  // Update badge
+  const badge = document.getElementById('referral-badge');
+  if(badge) badge.textContent = available;
+
+  keysEl.innerHTML = keys.map((k,i)=>`
+    <div class="referral-key-row ${k.used?'used':''}">
+      <div class="referral-key-code">${k.code}</div>
+      ${k.used
+        ? `<span class="referral-key-status used-badge">İstifadə edildi${k.usedBy?' · '+k.usedBy:''}</span>`
+        : `<button class="referral-copy-btn" onclick="copyInviteKey('${k.code}',this)">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Kopyala
+          </button>`
+      }
+    </div>`).join('');
+
+  // Invited creators list
+  const used = keys.filter(k=>k.used);
+  if(invitedEl){
+    if(!used.length){
+      invitedEl.innerHTML=`<div style="font-size:11px;color:var(--ink3);text-align:center;padding:20px 0">Hələ heç kim dəvət edilməyib.</div>`;
+    } else {
+      invitedEl.innerHTML = used.map(k=>`
+        <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border)">
+          <div style="width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center">${(k.usedBy||'?')[0]}</div>
+          <div>
+            <div style="font-size:12px;font-weight:600;color:var(--ink)">${k.usedBy||'Naməlum'}</div>
+            <div style="font-size:10px;color:var(--ink3)">Kod: ${k.code}</div>
+          </div>
+          <div style="margin-left:auto;font-size:10px;color:#3DB86A;font-weight:700">✓ Aktiv</div>
+        </div>`).join('');
+    }
+  }
+}
+
+function copyInviteKey(code, btn){
+  navigator.clipboard?.writeText(code).then(()=>{
+    const orig = btn.innerHTML;
+    btn.textContent = '✓ Kopyalandı';
+    btn.style.color = '#3DB86A';
+    setTimeout(()=>{ btn.innerHTML=orig; btn.style.color=''; }, 2000);
+  });
+  showToast('Kod kopyalandı: '+code);
+}
+
+// Validate invite code on registration
+function validateInviteCode(code){
+  // In production: check Supabase DB
+  // For demo: check all creators' keys in localStorage
+  // Accept any ANT-XXX-XXXX format that exists and is unused
+  const keys = getInviteKeys() || [];
+  return keys.some(k => k.code === code && !k.used);
+}
+
+function markInviteCodeUsed(code){
+  const keys = getInviteKeys() || [];
+  const key = keys.find(k=>k.code===code);
+  if(key){
+    key.used = true;
+    // usedBy will be set after registration completes
+    saveInviteKeys(keys);
+  }
+}
+
+// Show/hide invite code field based on account type
+function toggleInviteField(role){
+  const group = document.getElementById('invite-code-group');
+  if(group) group.style.display = role==='creator' ? 'block' : 'none';
 }
 
 </script>
@@ -3369,7 +4099,7 @@ function postAnnouncement(){
         <h2 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:10px">Əlaqə</h2>
         <p>Suallarınız, təklifləriniz və ya paylaşımçı müraciəti üçün:</p>
         <br/>
-        <p style="color:var(--accent);font-weight:600">info@antism.com</p>
+        <p style="color:var(--accent);font-weight:600"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="264f484049664748524f554b0845494b">[email&#160;protected]</a></p>
         <br/>
         <button class="btn-cp" style="font-size:12px;padding:10px 22px" onclick="showPage('apply')">Paylaşımçı müraciəti →</button>
       </div>
@@ -3430,12 +4160,7 @@ function postAnnouncement(){
         <p style="margin-bottom:18px">Bütün məlumatlar SSL/TLS şifrələməsi ilə qorunur. Şifrələr hashlanmış formada saxlanır. Müntəzəm təhlükəsizlik yoxlamaları aparılır. Məlumat pozuntusu baş verdiyi halda 72 saat ərzində istifadəçilər xəbərdar edilir.</p>
 
         <div style="font-size:11px;font-weight:700;color:var(--ink);letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px">5. Sizin Hüquqlarınız</div>
-        <p style="margin-bottom:0">Məlumatlarınıza giriş, düzəliş və silinmə hüququnuz var. Hesabınızı ləğv etmək istədikdə bütün şəxsi məlumatlarınız 30 gün ərzində silinəcək. Əlaqə: privacy@antism.az</p>
+        <p style="margin-bottom:0">Məlumatlarınıza giriş, düzəliş və silinmə hüququnuz var. Hesabınızı ləğv etmək istədikdə bütün şəxsi məlumatlarınız 30 gün ərzində silinəcək. Əlaqə: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c6b6b4afb0a7a5bf86a7a8b2afb5abe8a7bc">[email&#160;protected]</a></p>
       </div>
     </div>
-    <footer><div class="foot-logo" style="cursor:default"><div class="glass-ant"><svg viewBox="0 0 32 32"><use href="#ant"/></svg></div>antism</div><ul class="foot-links"><li><a onclick="showPage('terms')">Şərtlər</a></li><li><a style="color:var(--ink);pointer-events:none">Gizlilik Siyasəti</a></li></ul><div class="foot-copy">© 2025 antism</div></footer>
-  </div>
-</div>
-
-</body>
-</html>
+    <footer><div class="foot-logo" style="cursor:default"><div class="glass-ant"><svg viewBox="0 0 32 32"><use href="#ant"/></svg></div>antism</div><ul class
