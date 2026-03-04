@@ -18,6 +18,21 @@
 html{scroll-behavior:smooth}
 body{font-family:'Geist Mono',monospace;background:var(--bg);color:var(--ink);overflow-x:hidden;line-height:1.5;font-size:14px}
 .page{display:none}.page.active{display:block}
+/* ── LIKE STATES ── */
+.liked svg, .like-active svg { fill:#E8445A !important; stroke:#E8445A !important; }
+.liked, .like-active { color:#E8445A !important; }
+.like-active { border-color:rgba(232,68,90,.3) !important; background:rgba(232,68,90,.06) !important; }
+
+/* ── LIKE BUTTON STATES ── */
+.like-active { color: #E8445A !important; border-color: rgba(232,68,90,.35) !important; background: rgba(232,68,90,.08) !important; }
+.like-active svg { fill: #E8445A !important; stroke: #E8445A !important; }
+.oxu-btn.liked { color: #E8445A; }
+.oxu-btn.liked svg { fill: #E8445A; stroke: #E8445A; }
+.video-action-btn.liked { color: #E8445A; }
+.video-action-btn.liked svg { fill: #E8445A; stroke: #E8445A; }
+.tweet-action-btn.like-btn.liked { color: #E8445A; }
+.tweet-action-btn.like-btn.liked svg { fill: #E8445A; stroke: #E8445A; }
+
 a{text-decoration:none}
 
 /* ══ NAV ══ */
@@ -41,7 +56,7 @@ a{text-decoration:none}
 .lnav-user-name{font-size:13px;font-weight:700;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .lnav-user-role{font-size:11px;color:var(--ink3)}
 /* main content offset */
-.page-with-lnav{margin-left:260px}
+.page-with-lnav{margin-left:260px;padding-top:60px}
 /* top nav hidden when left nav active */
 nav{display:none}
 /* mobile: show top nav, hide left nav */
@@ -206,7 +221,7 @@ nav{display:none}
 .post-thumb{width:100%;height:170px;flex-shrink:0;position:relative;overflow:hidden;background:var(--bg4)}
 .post-body{flex:1;padding:10px 12px;min-width:0;display:flex;flex-direction:column;gap:6px}
 .post-actions{display:flex;align-items:center;gap:4px;padding:8px 12px;border-top:1px solid var(--border);background:var(--bg3);margin-top:auto}
-.post-vote-inline{display:flex;align-items:center;gap:3px}
+.post-like-inline{display:flex;align-items:center;gap:3px}
 .post-actions-right{display:flex;align-items:center;gap:4px;margin-left:auto}
 /* thumb overlay badges */
 .thumb-cat-tag{position:absolute;top:8px;left:8px;font-size:8.5px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);padding:3px 7px;border-radius:3px;pointer-events:none;z-index:2}
@@ -305,15 +320,12 @@ nav{display:none}
 .cml-c{font-size:10px;color:var(--ink3)}
 
 /* ══ VIDEO EXTRA SECTIONS ══ */
-.v-section{margin-top:20px;padding-top:18px;border-top:1px solid var(--border)}
-.v-section-title{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ink2);margin-bottom:14px;display:flex;align-items:center;gap:8px}
 .v-section-title::after{content:'';flex:1;height:1px;background:var(--border)}
 /* learnings */
 .learn-bullets{display:flex;flex-direction:column;gap:8px}
 .learn-bp{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:var(--ink2);line-height:1.55}
 .learn-bp::before{content:'';display:block;width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;margin-top:5px}
 /* share strip */
-.v-share-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
 .share-chip{display:flex;align-items:center;gap:6px;font-family:'Geist Mono',monospace;font-size:11px;font-weight:600;color:var(--ink3);background:var(--bg3);border:1px solid var(--border2);padding:6px 12px;border-radius:3px;cursor:pointer;transition:border-color .15s,color .15s}
 .share-chip:hover{border-color:var(--ink2);color:var(--ink)}
 .share-chip svg{width:13px;height:13px;flex-shrink:0}
@@ -340,26 +352,22 @@ nav{display:none}
 .submit-review-btn:hover{background:var(--accent-d)}
 .review-gate{font-size:11px;color:var(--ink3);font-style:italic;padding:10px 0}
 .review-gate a{color:var(--accent);cursor:pointer}
-.video-page-wrap{padding-top:54px}
-.video-container{max-width:1060px;margin:0 auto;padding:18px 20px;display:grid;grid-template-columns:1fr 272px;gap:18px}
-.v-back{font-family:'Geist Mono',monospace;font-size:11px;font-weight:600;color:var(--ink3);background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:4px;margin-bottom:11px;transition:color .15s}
-.v-back:hover{color:var(--accent)}
-.v-post-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
-.v-player{width:100%;aspect-ratio:16/9;background:#0A0A0A;position:relative;display:flex;align-items:center;justify-content:center}
-.v-lock{position:absolute;inset:0;background:rgba(0,0,0,.78);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
-.v-lock-ico{font-size:28px}
-.v-lock-t{font-size:13px;font-weight:700;color:var(--ink)}
-.v-lock-s{font-size:10px;color:var(--ink3)}
-.v-body{padding:15px 17px}
-.v-meta-row{display:flex;align-items:center;gap:6px;margin-bottom:8px;flex-wrap:wrap}
-.v-title{font-size:17px;font-weight:700;color:var(--ink);letter-spacing:-.3px;line-height:1.3;margin-bottom:9px}
-.v-desc{font-size:13.5px;font-weight:300;color:var(--ink2);line-height:1.75;margin-bottom:13px}
-.v-vote-row{display:flex;align-items:center;gap:5px;padding-top:11px;border-top:1px solid var(--border)}
-.v-vbtn{display:flex;align-items:center;gap:3px;font-family:'Geist Mono',monospace;font-size:11px;font-weight:600;color:var(--ink3);background:none;border:none;padding:5px 8px;border-radius:20px;cursor:pointer;transition:background .12s}
-.v-vbtn:hover{background:var(--bg4)}
-.v-vbtn.up-a{color:var(--accent)}.v-vbtn.dn-a{color:var(--down)}
-.v-vbtn svg{width:14px;height:14px}
-.v-vscore{font-size:11px;font-weight:700;color:var(--ink2)}
+@media(max-width:860px){}
+.v-back:hover{color:var(--ink)}
+.v-player img
+.v-player-overlay:hover{background:rgba(0,0,0,.6)}
+.v-player-overlay:hover
+.v-play-btn svg{width:26px;height:26px;fill:white;margin-left:3px}
+.v-creator-row:hover
+.v-action-btn:hover{background:var(--bg3);color:var(--ink);border-color:var(--border2)}
+.v-action-btn.active{color:var(--accent);border-color:rgba(255,104,0,.3);background:rgba(255,104,0,.06)}.v-action-btn.like-active{color:#E8445A;border-color:rgba(232,68,90,.3);background:rgba(232,68,90,.06)}.v-action-btn.like-active svg{fill:#E8445A;stroke:#E8445A}
+.v-action-btn svg{width:13px;height:13px;flex-shrink:0}
+.v-buy-btn:hover{opacity:.88}
+.v-related-item:hover{background:var(--bg3)}
+.v-related-thumb img{width:100%;height:100%;object-fit:cover}
+.v-likebtn:hover{background:var(--bg3);color:var(--ink)}
+.v-likebtn.up-a{color:#E8445A;border-color:rgba(232,68,90,.3);background:rgba(232,68,90,.06)}
+.v-likebtn svg{width:13px;height:13px}
 /* purchase */
 .purch-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:10px}
 .purch-price{font-size:22px;font-weight:700;color:var(--ink);letter-spacing:-.4px;margin-bottom:2px}
@@ -521,6 +529,7 @@ nav{display:none}
 .oxu-btn:hover{background:var(--bg3);color:var(--ink)}
 .oxu-btn.liked{color:var(--accent)}
 .oxu-btn.saved{color:var(--accent)}
+.oxu-btn.liked{color:#E8445A}.oxu-btn.liked svg{fill:#E8445A;stroke:#E8445A}
 .oxu-btn svg{flex-shrink:0}
 .oxu-read-btn{font-family:'Geist Mono',monospace;font-size:11px;font-weight:700;color:var(--on-accent);background:var(--accent);border:none;border-radius:6px;padding:6px 16px;cursor:pointer;margin-left:4px;transition:opacity .15s}
 .oxu-read-btn:hover{opacity:.85}
@@ -541,8 +550,8 @@ nav{display:none}
 .tweet-actions{display:flex;align-items:center;gap:4px;padding-top:10px;border-top:1px solid var(--border)}
 .tweet-action-btn{display:flex;align-items:center;gap:5px;font-family:'Geist Mono',monospace;font-size:11px;font-weight:600;color:var(--ink3);background:none;border:none;cursor:pointer;padding:5px 10px;border-radius:8px;transition:all .15s}
 .tweet-action-btn:hover{background:var(--bg3)}
-.tweet-action-btn.vote-btn:hover{color:var(--accent);background:var(--accent-l)}
-.tweet-action-btn.vote-btn.liked{color:var(--accent)}
+.tweet-action-btn.like-btn:hover{color:#E8445A;background:rgba(232,68,90,.08)}
+.tweet-action-btn.like-btn.liked{color:#E8445A}
 .tweet-action-btn.save-btn:hover{color:var(--accent);background:var(--accent-l)}
 .tweet-action-btn.save-btn.saved{color:var(--accent)}
 .f-error{background:rgba(224,85,85,.1);border:1px solid rgba(224,85,85,.3);border-radius:3px;padding:9px 12px;font-size:11.5px;color:#E05555;margin-bottom:10px;line-height:1.5}
@@ -598,14 +607,18 @@ nav{display:none}
 .article-read-btn:hover{background:var(--accent-d)}
 .article-read-btn.paid{background:var(--bg3);color:var(--ink);border:1px solid var(--border2)}
 .article-read-btn.paid:hover{border-color:var(--accent);color:var(--accent)}
-.article-vote-btn{font-family:'Geist Mono',monospace;font-size:11px;font-weight:600;color:var(--ink3);background:none;border:1px solid var(--border);border-radius:var(--radius);padding:6px 12px;cursor:pointer;transition:all .15s;margin-left:auto}
-.article-vote-btn:hover{border-color:var(--accent);color:var(--accent)}
+.article-like-btn{font-family:'Geist Mono',monospace;font-size:11px;font-weight:600;color:var(--ink3);background:none;border:1px solid var(--border);border-radius:var(--radius);padding:6px 12px;cursor:pointer;transition:all .15s;margin-left:auto}
+.article-like-btn:hover{border-color:var(--accent);color:var(--accent)}
 /* ── VIDEO CARDS (YouTube style) ── */
 .izle-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
 .video-card{background:var(--surface);border-radius:10px;overflow:hidden;cursor:pointer;transition:transform .2s,box-shadow .2s;border:1px solid var(--border)}
 .video-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.2)}
 .video-thumb{position:relative;width:100%;aspect-ratio:16/9;background:var(--bg4);overflow:hidden}
 .video-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.video-play-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0);transition:background .2s}
+.video-thumb:hover .video-play-overlay{background:rgba(0,0,0,.35)}
+.video-play-overlay svg{opacity:0;transform:scale(.8);transition:opacity .2s,transform .2s}
+.video-thumb:hover .video-play-overlay svg{opacity:1;transform:scale(1)}
 .video-card:hover .video-thumb img{transform:scale(1.04)}
 .video-duration{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.82);color:#fff;font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;letter-spacing:.3px}
 .video-price-badge{position:absolute;top:8px;left:8px;font-family:'Geist Mono',monospace;font-size:9px;font-weight:700;padding:3px 8px;border-radius:4px;letter-spacing:.3px}
@@ -641,38 +654,22 @@ nav{display:none}
 .article-author-name:hover{color:var(--accent)}
 .article-dot{opacity:.4}
 .article-actions{display:flex;align-items:center;gap:6px;padding-top:10px;border-top:1px solid var(--border)}
-.art-action-btn{display:flex;align-items:center;gap:5px;font-family:'Geist Mono',monospace;font-size:10px;font-weight:600;color:var(--ink3);background:none;border:1px solid var(--border);border-radius:var(--radius);padding:5px 10px;cursor:pointer;transition:all .15s}
 .art-action-btn:hover{border-color:var(--accent);color:var(--accent)}
 .art-action-btn.big{font-size:11px;padding:8px 14px}
 .read-more-btn{margin-left:auto;background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
 .read-more-btn:hover{background:var(--accent-d);border-color:var(--accent-d);color:#fff}
 /* ── ARTICLE DETAIL PAGE ── */
-.art-page-wrap{max-width:700px;margin:0 auto;padding:70px 24px 80px}
-.art-page-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px}
-.art-page-actions{display:flex;gap:6px}
-.art-hero-img{width:100%;height:340px;object-fit:cover;border-radius:var(--radius);margin-bottom:28px}
-.art-meta-top{display:flex;gap:7px;margin-bottom:16px}
-.art-h1{font-size:clamp(22px,3.5vw,36px);font-weight:800;color:var(--ink);letter-spacing:-1px;line-height:1.2;margin-bottom:14px}
-.art-lead{font-size:14px;color:var(--ink3);line-height:1.75;margin-bottom:24px;font-style:italic;border-left:3px solid var(--accent);padding-left:14px}
-.art-author-row{display:flex;align-items:center;gap:12px;margin-bottom:20px}
-.art-author-av{width:38px;height:38px;border-radius:50%;background:var(--accent);color:var(--on-accent);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.art-author-name{font-size:13px;font-weight:700;color:var(--ink);cursor:pointer}
+.art-back-btn:hover{color:var(--ink)}
+.art-back-btn svg{width:14px;height:14px}
+.art-top-btn:hover{background:var(--bg3);color:var(--ink);border-color:var(--border)}
+.art-top-btn.active{color:var(--accent)}.art-top-btn.like-active{color:#E8445A}.art-top-btn.like-active svg{fill:#E8445A;stroke:#E8445A}
+.art-top-btn svg{width:13px;height:13px;flex-shrink:0}
 .art-author-name:hover{color:var(--accent)}
-.art-author-meta{font-size:10px;color:var(--ink3);margin-top:2px}
-.art-divider{height:1px;background:var(--border);margin:24px 0}
-.art-body{font-size:14px;color:var(--ink2);line-height:1.85}
-.art-body-p{margin-bottom:18px}
-.art-body-h3{font-size:16px;font-weight:700;color:var(--ink);margin:28px 0 10px;letter-spacing:-.2px}
-.art-body-italic{color:var(--ink3);font-style:italic;border-left:2px solid var(--border2);padding-left:14px;margin:18px 0}
-.art-body-quote{color:var(--ink2);font-style:italic;font-size:15px;border-left:3px solid var(--accent);padding:10px 16px;margin:20px 0;background:var(--bg3);border-radius:0 4px 4px 0}
-.art-paywall{position:relative;margin-top:-40px}
-.art-paywall-fade{height:100px;background:linear-gradient(transparent,var(--bg))}
-.art-paywall-box{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:28px;text-align:center;margin-top:0}
-.art-paywall-icon{font-size:28px;margin-bottom:10px}
-.art-paywall-title{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:6px}
-.art-paywall-sub{font-size:12px;color:var(--ink3);margin-bottom:18px}
-.art-paywall-btn{font-family:'Geist Mono',monospace;font-size:12px;font-weight:700;color:var(--on-accent);background:var(--accent);border:none;border-radius:var(--radius);padding:10px 28px;cursor:pointer}
-.art-bottom-actions{display:flex;gap:8px;flex-wrap:wrap}
+.art-paywall-btn:hover{opacity:.88}
+.art-bottom-btn:hover{color:var(--ink);border-color:var(--border2)}
+.art-bottom-btn.active{color:#E8445A;border-color:rgba(232,68,90,.3);background:rgba(232,68,90,.06)}.art-bottom-btn.like-active{color:#E8445A;border-color:rgba(232,68,90,.3);background:rgba(232,68,90,.06)}.art-bottom-btn.like-active svg{fill:#E8445A;stroke:#E8445A}
+.art-bottom-btn svg{width:14px;height:14px;flex-shrink:0}
+.art-related-card:hover{border-color:var(--border2)}
 /* ── REFERRAL ── */
 .referral-key-row{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:8px;transition:border-color .15s}
 .referral-key-row.used{opacity:.5}
@@ -870,10 +867,547 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:22px 44px
   .hero-h1{font-size:28px}
   .how-section,.cats-section,.cta-section{padding-left:16px;padding-right:16px}
   .series-strip,.debate-banner,.contrib-box{flex-direction:column;align-items:flex-start}
-  .v-meta-row{flex-direction:column;align-items:flex-start;gap:6px}
+}
+
+/* ══ ARTICLE DETAIL PAGE ══════════════════════════════════════ */
+.art-page{max-width:700px;margin:0 auto;padding:32px 28px 120px}
+.art-topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+.art-back-btn{display:inline-flex;align-items:center;gap:6px;font-family:'Geist Mono',monospace;font-size:11px;font-weight:600;color:var(--ink3);background:none;border:none;cursor:pointer;padding:6px 0;letter-spacing:.5px;transition:color .15s}
+.art-back-btn:hover{color:var(--ink)}
+.art-back-btn svg{width:14px;height:14px}
+.art-actions{display:flex;align-items:center;gap:6px}
+.art-top-btn{display:inline-flex;align-items:center;gap:5px;font-family:'Geist Mono',monospace;font-size:11px;font-weight:600;padding:6px 11px;border-radius:5px;border:1px solid var(--border);background:none;color:var(--ink3);cursor:pointer;transition:all .15s;white-space:nowrap}
+.art-top-btn svg{width:13px;height:13px;flex-shrink:0}
+.art-top-btn:hover{background:var(--bg3);color:var(--ink);border-color:var(--border2)}
+.art-top-btn.active{color:var(--accent);border-color:rgba(255,104,0,.3);background:rgba(255,104,0,.06)}
+.art-top-btn.liked{color:#E8445A;border-color:rgba(232,68,90,.3);background:rgba(232,68,90,.06)}
+.art-top-btn.liked svg,.art-top-btn.liked svg{fill:#E8445A;stroke:#E8445A}
+
+.art-hero{width:100%;height:360px;object-fit:cover;border-radius:10px;margin-bottom:24px;display:block}
+.art-meta-row{display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.art-cat-badge{font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);background:rgba(255,104,0,.1);padding:3px 9px;border-radius:3px}
+.art-free-badge{font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:#3DB86A;background:rgba(61,184,106,.1);padding:3px 9px;border-radius:3px}
+.art-paid-badge{font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:var(--accent);background:rgba(255,104,0,.1);padding:3px 9px;border-radius:3px}
+.art-h1{font-size:26px;font-weight:800;line-height:1.3;color:var(--ink);margin-bottom:14px;letter-spacing:-.3px}
+.art-lead{font-size:16px;color:var(--ink2);line-height:1.75;margin-bottom:22px;font-style:italic;border-left:3px solid var(--accent);padding-left:14px}
+.art-author{display:flex;align-items:center;gap:12px;padding:14px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:28px;cursor:pointer}
+.art-author:hover .art-author-name{color:var(--accent)}
+.art-av{width:38px;height:38px;border-radius:50%;background:var(--accent);color:#fff;font-family:'Geist Mono',monospace;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.art-author-name{font-size:13px;font-weight:700;color:var(--ink)}
+.art-author-meta{font-size:11px;color:var(--ink3);margin-top:2px}
+.art-body{font-size:16px;color:var(--ink2);line-height:1.85}
+.art-p{margin-bottom:22px}
+.art-h3{font-size:17px;font-weight:800;color:var(--ink);margin:32px 0 14px;letter-spacing:-.2px}
+.art-blockquote{border-left:3px solid var(--accent);padding:10px 18px;margin:24px 0;color:var(--ink2);font-style:italic;background:var(--surface);border-radius:0 6px 6px 0}
+.art-image-block{margin:24px 0}
+.art-image-block img{width:100%;border-radius:8px;display:block}
+.art-image-caption{font-size:11px;color:var(--ink3);text-align:center;margin-top:6px}
+
+/* Paywall gate — gradient fade + CTA */
+.art-paywall-wrap{position:relative;margin-top:8px}
+.art-paywall-fade{position:absolute;top:-80px;left:0;right:0;height:100px;background:linear-gradient(to bottom,transparent,var(--bg));pointer-events:none;z-index:1}
+.art-paywall-gate{border:1px solid var(--border);border-radius:12px;padding:36px 28px;text-align:center;background:var(--surface);margin-top:0}
+.art-paywall-icon{font-size:28px;margin-bottom:12px}
+.art-paywall-title{font-size:17px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.art-paywall-sub{font-size:14px;color:var(--ink3);line-height:1.6;margin-bottom:22px}
+.art-paywall-price{font-family:'Geist Mono',monospace;font-size:28px;font-weight:800;color:var(--accent);margin-bottom:6px}
+.art-paywall-note{font-size:11px;color:var(--ink3);margin-bottom:22px}
+.art-paywall-btn{font-family:'Geist Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.5px;padding:12px 32px;border-radius:6px;border:none;background:var(--accent);color:#fff;cursor:pointer;transition:opacity .15s}
+.art-paywall-btn:hover{opacity:.88}
+.art-paywall-perks{display:flex;flex-direction:column;gap:6px;margin-top:18px;text-align:left;max-width:220px;margin-inline:auto}
+.art-paywall-perk{font-size:12px;color:var(--ink3);display:flex;align-items:center;gap:7px}
+.art-paywall-perk::before{content:'✓';color:#3DB86A;font-weight:700}
+
+/* Bottom action bar */
+.art-bottombar{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-top:1px solid var(--border);margin-top:28px;gap:8px;flex-wrap:wrap}
+.art-bottom-btn{display:inline-flex;align-items:center;gap:6px;font-family:'Geist Mono',monospace;font-size:11px;font-weight:600;padding:7px 13px;border-radius:5px;border:1px solid var(--border);background:none;color:var(--ink3);cursor:pointer;transition:all .15s}
+.art-bottom-btn svg{width:14px;height:14px;flex-shrink:0}
+.art-bottom-btn:hover{background:var(--bg3);color:var(--ink);border-color:var(--border2)}
+.art-bottom-btn.active{color:var(--accent);border-color:rgba(255,104,0,.3);background:rgba(255,104,0,.06)}
+.art-bottom-btn.liked{color:#E8445A;border-color:rgba(232,68,90,.3);background:rgba(232,68,90,.06)}
+.art-bottom-btn.liked svg{fill:#E8445A;stroke:#E8445A}
+
+/* Related articles */
+.art-related{margin-top:40px;padding-top:24px;border-top:1px solid var(--border)}
+.art-related-title{font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);margin-bottom:16px}
+.art-related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.art-related-card{padding:14px;border:1px solid var(--border);border-radius:8px;cursor:pointer;transition:border-color .15s;background:var(--surface)}
+.art-related-card:hover{border-color:var(--border2)}
+.art-related-cat{font-family:'Geist Mono',monospace;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.art-related-ttl{font-size:12px;font-weight:700;color:var(--ink);line-height:1.4;margin-bottom:6px}
+.art-related-meta{font-size:10px;color:var(--ink3)}
+
+/* ══ VIDEO DETAIL PAGE ═════════════════════════════════════════ */
+.vid-page{max-width:1100px;margin:0 auto;padding:24px 24px 80px;display:grid;grid-template-columns:1fr 300px;gap:24px;align-items:start}
+.vid-main{min-width:0}
+.vid-sidebar{min-width:0}
+.vid-back{display:inline-flex;align-items:center;gap:6px;font-family:'Geist Mono',monospace;font-size:11px;font-weight:600;color:var(--ink3);background:none;border:none;cursor:pointer;padding:0 0 16px;letter-spacing:.5px;transition:color .15s}
+.vid-back:hover{color:var(--ink)}
+.vid-back svg{width:14px;height:14px}
+.vid-player{width:100%;aspect-ratio:16/9;background:#0a0a0a;border-radius:10px;overflow:hidden;position:relative;margin-bottom:16px}
+.vid-player img{width:100%;height:100%;object-fit:cover;display:block}
+.vid-player-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.45);cursor:pointer;transition:background .15s}
+.vid-player-overlay:hover{background:rgba(0,0,0,.55)}
+.vid-play-btn{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.15);backdrop-filter:blur(4px);border:2px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;transition:transform .15s,background .15s}
+.vid-player-overlay:hover .vid-play-btn{transform:scale(1.08);background:rgba(255,255,255,.22)}
+.vid-play-btn svg{width:26px;height:26px;fill:white;margin-left:3px}
+.vid-lock{position:absolute;inset:0;background:rgba(0,0,0,.8);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.vid-lock-icon{font-size:32px}
+.vid-lock-title{font-size:14px;font-weight:700;color:#fff}
+.vid-lock-sub{font-size:12px;color:rgba(255,255,255,.6)}
+.vid-card{padding:16px 0}
+.vid-title{font-size:20px;font-weight:800;color:var(--ink);margin-bottom:12px;line-height:1.35}
+.vid-meta-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.vid-creator-chip{display:flex;align-items:center;gap:8px;cursor:pointer;transition:opacity .15s}
+.vid-creator-chip:hover{opacity:.8}
+.vid-av{width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;font-family:'Geist Mono',monospace;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.vid-creator-name{font-size:13px;font-weight:700;color:var(--ink)}
+.vid-stats{display:flex;align-items:center;gap:14px;font-family:'Geist Mono',monospace;font-size:11px;color:var(--ink3);flex-wrap:wrap;margin-bottom:14px}
+.vid-action-bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.vid-action-btn{display:inline-flex;align-items:center;gap:6px;font-family:'Geist Mono',monospace;font-size:11px;font-weight:600;padding:7px 13px;border-radius:5px;border:1px solid var(--border);background:none;color:var(--ink3);cursor:pointer;transition:all .15s}
+.vid-action-btn svg{width:13px;height:13px;flex-shrink:0}
+.vid-action-btn:hover{background:var(--bg3);color:var(--ink);border-color:var(--border2)}
+.vid-action-btn.active{color:var(--accent)}
+.vid-action-btn.liked{color:#E8445A;border-color:rgba(232,68,90,.3);background:rgba(232,68,90,.06)}
+.vid-action-btn.liked svg{fill:#E8445A;stroke:#E8445A}
+
+/* Video sidebar */
+.vid-purchase{border:1px solid var(--border);border-radius:10px;padding:22px;background:var(--surface);margin-bottom:16px;text-align:center}
+.vid-price-big{font-family:'Geist Mono',monospace;font-size:30px;font-weight:800;color:var(--accent)}
+.vid-price-sub{font-size:12px;color:var(--ink3);margin-top:2px;margin-bottom:18px}
+.vid-buy-btn{font-family:'Geist Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.5px;width:100%;padding:11px 0;border-radius:6px;border:none;background:var(--accent);color:#fff;cursor:pointer;transition:opacity .15s;margin-bottom:14px}
+.vid-buy-btn:hover{opacity:.88}
+.vid-perk{font-size:12px;color:var(--ink3);display:flex;align-items:center;gap:7px;text-align:left;margin-bottom:6px}
+.vid-perk::before{content:'✓';color:#3DB86A;font-weight:700}
+.vid-related-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--surface);margin-bottom:10px}
+.vid-related-head{font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ink3);padding:16px 16px 8px}
+.vid-related-item{display:flex;gap:10px;padding:8px 12px;cursor:pointer;transition:background .15s;align-items:center}
+.vid-related-item:hover{background:var(--bg3)}
+.vid-related-thumb{width:72px;height:48px;border-radius:5px;overflow:hidden;flex-shrink:0}
+.vid-related-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.vid-related-title{font-size:12px;font-weight:700;color:var(--ink);line-height:1.4;margin-bottom:3px}
+.vid-related-meta{font-size:10px;color:var(--ink3)}
+
+@media(max-width:860px){
+  .vid-page{grid-template-columns:1fr}
+  .vid-sidebar{order:3}
+  .art-related-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:540px){
+  .art-page{padding:20px 16px 100px}
+  .art-h1{font-size:21px}
+  .art-related-grid{grid-template-columns:1fr}
+  .vid-page{padding:16px 14px 80px}
 }
 </style>
+
 <script defer>
+// ── Section renderer ──────────────────────────────────────────
+function renderSection(s) {
+  if (!s) return '';
+  switch (s.type) {
+    case 'h3':    return '<h3 class="art-h3">' + s.text + '</h3>';
+    case 'quote': return '<blockquote class="art-blockquote">' + s.text + '</blockquote>';
+    case 'image': return '<div class="art-image-block"><img src="' + s.url + '" alt="' + (s.caption||'') + '"/>' + (s.caption ? '<div class="art-image-caption">' + s.caption + '</div>' : '') + '</div>';
+    default:      return '<p class="art-p">' + s.text + '</p>';
+  }
+}
+
+// ── SVG helpers (no inline strings, no quote hell) ─────────────
+function _svgHeart(fill, stroke) {
+  const s = document.createElementNS('http://www.w3.org/2000/svg','svg');
+  s.setAttribute('viewBox','0 0 24 24'); s.setAttribute('fill',fill);
+  s.setAttribute('stroke',stroke); s.setAttribute('stroke-width','2');
+  s.setAttribute('width','14'); s.setAttribute('height','14');
+  const p = document.createElementNS('http://www.w3.org/2000/svg','path');
+  p.setAttribute('d','M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z');
+  s.appendChild(p); return s;
+}
+function _svgBookmark(fill) {
+  const s = document.createElementNS('http://www.w3.org/2000/svg','svg');
+  s.setAttribute('viewBox','0 0 24 24'); s.setAttribute('fill',fill);
+  s.setAttribute('stroke','currentColor'); s.setAttribute('stroke-width','2');
+  s.setAttribute('width','14'); s.setAttribute('height','14');
+  const p = document.createElementNS('http://www.w3.org/2000/svg','path');
+  p.setAttribute('d','M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z');
+  s.appendChild(p); return s;
+}
+function _svgShare() {
+  const s = document.createElementNS('http://www.w3.org/2000/svg','svg');
+  s.setAttribute('viewBox','0 0 24 24'); s.setAttribute('fill','none');
+  s.setAttribute('stroke','currentColor'); s.setAttribute('stroke-width','2');
+  s.setAttribute('width','14'); s.setAttribute('height','14');
+  ['circle:18,5,3','circle:6,12,3','circle:18,19,3'].forEach(x => {
+    const [,cx,cy,r] = x.split(':')[1].split(','); // unused pattern
+  });
+  s.innerHTML = '<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>';
+  return s;
+}
+function _svgBack() {
+  const s = document.createElementNS('http://www.w3.org/2000/svg','svg');
+  s.setAttribute('viewBox','0 0 24 24'); s.setAttribute('fill','none');
+  s.setAttribute('stroke','currentColor'); s.setAttribute('stroke-width','2');
+  s.setAttribute('width','14'); s.setAttribute('height','14');
+  const p = document.createElementNS('http://www.w3.org/2000/svg','polyline');
+  p.setAttribute('points','15 18 9 12 15 6'); s.appendChild(p); return s;
+}
+function _mkBtn(cls, onclick, ...children) {
+  const b = document.createElement('button');
+  b.className = cls; b.onclick = onclick;
+  children.forEach(ch => typeof ch === 'string' ? b.append(ch) : b.appendChild(ch));
+  return b;
+}
+
+// ── openArticle ────────────────────────────────────────────────
+function openArticle(id) {
+  const a = ARTICLES.find(x => x.id === id);
+  if (!a) { showToast('Bloq tapılmadı'); return; }
+  currentArticleId = id;
+
+  const pg = document.getElementById('page-article');
+  if (!pg) return;
+
+  const cr      = CREATORS[a.creator] || {};
+  const isFree  = a.price === 0;
+  const canRead = isFree || currentUser?.loggedIn;
+
+  // ── Root wrapper
+  const wrap = document.createElement('div');
+  wrap.className = 'art-page';
+
+  // ── Top bar: back + actions
+  const topbar = document.createElement('div');
+  topbar.className = 'art-topbar';
+
+  const backBtn = _mkBtn('art-back-btn', goBack, _svgBack(), ' Geri');
+
+  const actions = document.createElement('div');
+  actions.className = 'art-actions';
+
+  const heartFill   = a.liked      ? '#E8445A'      : 'none';
+  const heartStroke = a.liked      ? '#E8445A'      : 'currentColor';
+  const bmFill      = a.bookmarked ? 'currentColor' : 'none';
+
+  const likeSpan = document.createElement('span'); likeSpan.textContent = ' ' + a.votes;
+  const likeBtn  = _mkBtn('art-top-btn' + (a.liked ? ' liked' : ''), () => likeArticle(id),
+    _svgHeart(heartFill, heartStroke), likeSpan);
+  likeBtn.id = 'art-like-btn';
+  likeBtn.dataset.likeArticle = id;
+
+  const bmBtn = _mkBtn('art-top-btn' + (a.bookmarked ? ' active' : ''), () => articleBookmark(id),
+    _svgBookmark(bmFill));
+  bmBtn.id = 'art-bm-btn';
+  bmBtn.append(' ' + (a.bookmarked ? 'Saxlanıldı' : 'Saxla'));
+
+  const shareBtn = _mkBtn('art-top-btn', () => articleShare(id), _svgShare(), ' Paylaş');
+
+  actions.append(likeBtn, bmBtn, shareBtn);
+  topbar.append(backBtn, actions);
+  wrap.appendChild(topbar);
+
+  // ── Hero image
+  if (a.cover) {
+    const img = document.createElement('img');
+    img.src = a.cover; img.className = 'art-hero'; img.alt = '';
+    wrap.appendChild(img);
+  }
+
+  // ── Meta row: category + price badge
+  const metaRow = document.createElement('div');
+  metaRow.className = 'art-meta-row';
+  const catBadge = document.createElement('span');
+  catBadge.className = 'art-cat-badge'; catBadge.textContent = a.cat;
+  const priceBadge = document.createElement('span');
+  priceBadge.className = isFree ? 'art-free-badge' : 'art-paid-badge';
+  priceBadge.textContent = isFree ? 'Pulsuz' : a.price + ' ₼';
+  metaRow.append(catBadge, priceBadge);
+  wrap.appendChild(metaRow);
+
+  // ── Title + lead
+  const h1 = document.createElement('h1');
+  h1.className = 'art-h1'; h1.textContent = a.title;
+  wrap.appendChild(h1);
+
+  if (a.summary) {
+    const lead = document.createElement('p');
+    lead.className = 'art-lead'; lead.textContent = a.summary;
+    wrap.appendChild(lead);
+  }
+
+  // ── Author bar
+  const authorBar = document.createElement('div');
+  authorBar.className = 'art-author';
+  authorBar.onclick = () => openProfile(a.creator);
+  const av = document.createElement('div');
+  av.className = 'art-av'; av.textContent = (cr.name || '?').charAt(0);
+  const authorInfo = document.createElement('div');
+  const authorName = document.createElement('div');
+  authorName.className = 'art-author-name'; authorName.textContent = cr.name || '';
+  const authorMeta = document.createElement('div');
+  authorMeta.className = 'art-author-meta';
+  authorMeta.textContent = a.readTime + ' dəq oxuma · ' + formatArticleDate(a.date);
+  authorInfo.append(authorName, authorMeta);
+  authorBar.append(av, authorInfo);
+  wrap.appendChild(authorBar);
+
+  // ── Body
+  const body = document.createElement('div');
+  body.className = 'art-body';
+  (a.sections || []).forEach(s => body.insertAdjacentHTML('beforeend', renderSection(s)));
+
+  if (canRead) {
+    // Logged in or free: show all paywall sections too
+    (a.paywallSections || []).forEach(s => body.insertAdjacentHTML('beforeend', renderSection(s)));
+  } else if ((a.paywallSections || []).length) {
+    // Not logged in + paid: show paywall gate
+    const pwWrap = document.createElement('div');
+    pwWrap.className = 'art-paywall-wrap';
+    const fade = document.createElement('div'); fade.className = 'art-paywall-fade';
+    const gate = document.createElement('div'); gate.className = 'art-paywall-gate';
+    gate.innerHTML =
+      '<div class="art-paywall-icon">🔒</div>' +
+      '<div class="art-paywall-title">Tam məqalə ödənişlidir</div>' +
+      '<div class="art-paywall-sub">Bu məzmunu oxumaq üçün bir dəfə ödəyin — ömürlük giriş əldə edin.</div>' +
+      '<div class="art-paywall-price">' + a.price + ' ₼</div>' +
+      '<div class="art-paywall-note">Bir dəfə ödə · Ömürlük giriş</div>' +
+      '<div class="art-paywall-perks">' +
+        '<div class="art-paywall-perk">Tam məqaləni oxu</div>' +
+        '<div class="art-paywall-perk">Bütün premium məzmuna giriş</div>' +
+        '<div class="art-paywall-perk">Offline oxu imkanı</div>' +
+      '</div>';
+    const buyBtn = document.createElement('button');
+    buyBtn.className = 'art-paywall-btn';
+    buyBtn.textContent = 'Al — ' + a.price + ' ₼';
+    buyBtn.onclick = () => openAuthModal('login');
+    gate.appendChild(buyBtn);
+    pwWrap.append(fade, gate);
+    body.appendChild(pwWrap);
+  }
+
+  wrap.appendChild(body);
+
+  // ── Bottom action bar (only when readable)
+  if (canRead) {
+    const bar = document.createElement('div');
+    bar.className = 'art-bottombar';
+
+    const leftGroup = document.createElement('div');
+    leftGroup.style.cssText = 'display:flex;gap:8px';
+
+    const likeBtnB = _mkBtn('art-bottom-btn' + (a.liked ? ' liked' : ''), () => likeArticle(id),
+      _svgHeart(heartFill, heartStroke));
+    likeBtnB.id = 'art-like-btn2';
+    likeBtnB.dataset.likeArticle = id;
+    const likeSpanB = document.createElement('span');
+    likeSpanB.id = 'art-like-count2'; likeSpanB.textContent = a.votes + ' Bəyən';
+    likeBtnB.appendChild(likeSpanB);
+
+    const bmBtnB = _mkBtn('art-bottom-btn' + (a.bookmarked ? ' active' : ''), () => articleBookmark(id),
+      _svgBookmark(bmFill));
+    bmBtnB.id = 'art-bm-btn2';
+    bmBtnB.append(' ' + (a.bookmarked ? 'Saxlanıldı' : 'Saxla'));
+
+    leftGroup.append(likeBtnB, bmBtnB);
+
+    const shareBtnB = _mkBtn('art-bottom-btn', () => articleShare(id), _svgShare(), ' Paylaş');
+
+    bar.append(leftGroup, shareBtnB);
+    wrap.appendChild(bar);
+  }
+
+  // ── Related articles
+  const others = ARTICLES.filter(x => x.id !== id).slice(0, 3);
+  if (others.length) {
+    const rel = document.createElement('div');
+    rel.className = 'art-related';
+    const relTitle = document.createElement('div');
+    relTitle.className = 'art-related-title'; relTitle.textContent = 'Davam et';
+    const grid = document.createElement('div');
+    grid.className = 'art-related-grid';
+    others.forEach(x => {
+      const card = document.createElement('div');
+      card.className = 'art-related-card';
+      card.onclick = () => openArticle(x.id);
+      card.innerHTML =
+        '<div class="art-related-cat">' + x.cat + '</div>' +
+        '<div class="art-related-ttl">' + x.title + '</div>' +
+        '<div class="art-related-meta">' + x.readTime + ' dəq · ' + (x.price === 0 ? 'Pulsuz' : x.price + ' ₼') + '</div>';
+      grid.appendChild(card);
+    });
+    rel.append(relTitle, grid);
+    wrap.appendChild(rel);
+  }
+
+  pg.innerHTML = '';
+  pg.appendChild(wrap);
+  showPage('article');
+}
+
+// ── openVideo ──────────────────────────────────────────────────
+function openVideo(id) {
+  const w = VIDEOS.find(x => x.id === id);
+  if (!w) { showToast('Video tapılmadı'); return; }
+  window.currentVideoCreator = w.creator;
+
+  const pg = document.getElementById('page-video');
+  if (!pg) return;
+
+  const cr       = CREATORS[w.creator] || {};
+  const isFree   = w.price === 0;
+  const canWatch = isFree || currentUser?.loggedIn;
+  const lFill    = w.liked      ? '#E8445A'      : 'none';
+  const lStroke  = w.liked      ? '#E8445A'      : 'currentColor';
+  const bmFill   = w.bookmarked ? 'currentColor' : 'none';
+  const fmtN     = n => n >= 1000 ? (n / 1000).toFixed(1) + 'K' : String(n);
+
+  // ── Page layout
+  const layout = document.createElement('div');
+  layout.className = 'vid-page';
+
+  // ── MAIN COLUMN ─────────────────────────────────────────
+  const main = document.createElement('div');
+  main.className = 'vid-main';
+
+  // Back button
+  const backBtn = _mkBtn('vid-back', goBack, _svgBack(), ' Geri');
+  main.appendChild(backBtn);
+
+  // Player
+  const player = document.createElement('div');
+  player.className = 'vid-player';
+  if (w.thumb) {
+    const thumb = document.createElement('img');
+    thumb.src = w.thumb; thumb.alt = ''; player.appendChild(thumb);
+  }
+  if (canWatch) {
+    const overlay = document.createElement('div');
+    overlay.className = 'vid-player-overlay';
+    overlay.onclick = () => showToast('Video tezliklə aktiv olacaq');
+    overlay.innerHTML = '<div class="vid-play-btn"><svg viewBox="0 0 24 24" fill="white" width="26" height="26"><polygon points="5,3 19,12 5,21"/></svg></div>';
+    player.appendChild(overlay);
+  } else {
+    const lock = document.createElement('div');
+    lock.className = 'vid-lock';
+    lock.innerHTML = '<div class="vid-lock-icon">🔒</div><div class="vid-lock-title">Bu video ödənişlidir</div><div class="vid-lock-sub">Baxmaq üçün satın alın</div>';
+    player.appendChild(lock);
+  }
+  main.appendChild(player);
+
+  // Video card: title, meta, stats, actions
+  const card = document.createElement('div');
+  card.className = 'vid-card';
+
+  const title = document.createElement('div');
+  title.className = 'vid-title'; title.textContent = w.title;
+  card.appendChild(title);
+
+  const metaRow = document.createElement('div');
+  metaRow.className = 'vid-meta-row';
+  const creatorChip = document.createElement('div');
+  creatorChip.className = 'vid-creator-chip';
+  creatorChip.onclick = () => openProfile(w.creator);
+  const avEl = document.createElement('div');
+  avEl.className = 'vid-av'; avEl.textContent = (cr.name || '?').charAt(0);
+  const crName = document.createElement('span');
+  crName.className = 'vid-creator-name'; crName.textContent = cr.name || '';
+  creatorChip.append(avEl, crName);
+  const catBadge = document.createElement('span');
+  catBadge.className = 'art-cat-badge'; catBadge.textContent = w.cat;
+  const priceBadge = document.createElement('span');
+  priceBadge.className = isFree ? 'art-free-badge' : 'art-paid-badge';
+  priceBadge.textContent = isFree ? 'Pulsuz' : w.price + ' ₼';
+  metaRow.append(creatorChip, catBadge, priceBadge);
+  card.appendChild(metaRow);
+
+  const stats = document.createElement('div');
+  stats.className = 'vid-stats';
+  stats.innerHTML =
+    '<span>👁 ' + fmtN(w.views) + '</span>' +
+    '<span>⏱ ' + w.duration + '</span>' +
+    '<span>📅 ' + formatArticleDate(w.date) + '</span>';
+  card.appendChild(stats);
+
+  // Action bar
+  const actionBar = document.createElement('div');
+  actionBar.className = 'vid-action-bar';
+
+  const likeBtn = _mkBtn('vid-action-btn' + (w.liked ? ' liked' : ''), () => videoLike(id));
+  likeBtn.id = 'vid-like-btn';
+  likeBtn.dataset.likeVideo = id;
+  likeBtn.appendChild(_svgHeart(lFill, lStroke));
+  const likeCountEl = document.createElement('span');
+  likeCountEl.id = 'vid-like-count'; likeCountEl.textContent = ' ' + w.votes + ' Bəyən';
+  likeBtn.appendChild(likeCountEl);
+
+  const bmBtn = _mkBtn('vid-action-btn' + (w.bookmarked ? ' active' : ''), () => videoBookmark(id),
+    _svgBookmark(bmFill));
+  bmBtn.id = 'vid-bm-btn';
+  bmBtn.append(' ' + (w.bookmarked ? 'Saxlanıldı' : 'Saxla'));
+
+  const shareBtn = _mkBtn('vid-action-btn', () => videoShare(id), _svgShare(), ' Paylaş');
+
+  actionBar.append(likeBtn, bmBtn, shareBtn);
+  card.appendChild(actionBar);
+  main.appendChild(card);
+
+  // ── SIDEBAR ──────────────────────────────────────────────
+  const sidebar = document.createElement('div');
+  sidebar.className = 'vid-sidebar';
+
+  // Purchase card (only for paid + not logged in)
+  if (!canWatch) {
+    const purchase = document.createElement('div');
+    purchase.className = 'vid-purchase';
+    const priceBig = document.createElement('div');
+    priceBig.className = 'vid-price-big'; priceBig.textContent = w.price + ' ₼';
+    const priceSub = document.createElement('div');
+    priceSub.className = 'vid-price-sub'; priceSub.textContent = 'Bir dəfə ödə · Ömürlük giriş';
+    const buyBtn = document.createElement('button');
+    buyBtn.className = 'vid-buy-btn'; buyBtn.textContent = 'İndi al';
+    buyBtn.onclick = () => openAuthModal('login');
+    const perks = document.createElement('div');
+    ['Ömürlük giriş', 'HD keyfiyyət', 'Yükləmə hüququ'].forEach(txt => {
+      const p = document.createElement('div'); p.className = 'vid-perk'; p.textContent = txt;
+      perks.appendChild(p);
+    });
+    purchase.append(priceBig, priceSub, buyBtn, perks);
+    sidebar.appendChild(purchase);
+  }
+
+  // Related videos
+  const relCard = document.createElement('div');
+  relCard.className = 'vid-related-card';
+  const relHead = document.createElement('div');
+  relHead.className = 'vid-related-head'; relHead.textContent = 'Digər videolar';
+  relCard.appendChild(relHead);
+
+  VIDEOS.filter(x => x.id !== id).slice(0, 5).forEach(x => {
+    const item = document.createElement('div');
+    item.className = 'vid-related-item';
+    item.onclick = () => openVideo(x.id);
+    const thumb = document.createElement('div');
+    thumb.className = 'vid-related-thumb';
+    const img = document.createElement('img');
+    img.src = x.thumb; img.loading = 'lazy'; thumb.appendChild(img);
+    const info = document.createElement('div');
+    info.style.cssText = 'flex:1;min-width:0';
+    info.innerHTML =
+      '<div class="vid-related-title">' + x.title + '</div>' +
+      '<div class="vid-related-meta">' + (x.price === 0 ? 'Pulsuz' : x.price + ' ₼') + ' · ' + x.duration + '</div>';
+    item.append(thumb, info);
+    relCard.appendChild(item);
+  });
+
+  sidebar.appendChild(relCard);
+
+  layout.append(main, sidebar);
+  pg.innerHTML = '';
+  pg.appendChild(layout);
+  showPage('video');
+}
+
+
+
 // ── SUPABASE ──
 const SUPABASE_URL = 'https://ybwqpzlsilicgyharedc.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inlid3FwemxzaWxpY2d5aGFyZWRjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI0Mzk2MDAsImV4cCI6MjA4ODAxNTYwMH0.ajiXqwanrOdKu9JNkxN8BKmCLw2Bw48_IWvq4keuTds';
@@ -1386,12 +1920,6 @@ function selectCountry(code){
 }
 
 // close dropdown when clicking outside
-document.addEventListener('click',e=>{
-  const wrap=document.getElementById('country-wrap');
-  if(wrap&&!wrap.contains(e.target)){
-    document.getElementById('country-dd')?.classList.remove('open');
-  }
-});
 
 // ── EYE TOGGLE ──
 function toggleEye(id,btn){
@@ -1457,8 +1985,8 @@ function renderPostCard(p){
   const upStr=p.vote==='up'?'var(--accent)':'currentColor';
   const dnFill=p.vote==='down'?'var(--down)':'none';
   const dnStr=p.vote==='down'?'var(--down)':'currentColor';
-  const upC=p.vote==='up'?'up-a':'';
-  const dnC=p.vote==='down'?'dn-a':'';
+  const upC=p.liked?'liked':'';
+  const dnC=p.liked?'':''; // down vote removed
   const avatarInner=cr.photo
     ?`<img src="${cr.photo}" alt="${cr.init}" onerror="this.style.display='none';this.parentNode.textContent='${cr.init}'">`
     :cr.init;
@@ -1474,7 +2002,7 @@ function renderPostCard(p){
       <div class="post-title">${p.title}</div>
     </div>
     <div class="post-actions" onclick="event.stopPropagation()">
-      <div class="post-vote-inline">
+      <div class="post-like-inline">
         <button class="vbtn ${upC} ${locked?'locked':''}" onclick="${locked?'':'tryVote('+p.id+',\'up\')'}" title="${locked?'İzlədikdən sonra vote et':''}" style="width:28px;height:28px">
           <svg viewBox="0 0 24 24" fill="${upFill}" stroke="${upStr}" stroke-width="2.2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
         </button>
@@ -1644,14 +2172,20 @@ function sendContrib(postId){
 }
 
 // ── VOTE ──
-function tryVote(id,dir){
-  if(!currentUser?.loggedIn){ showAuthGate('Vote etmək üçün daxil olun'); return; }
-  const p=POSTS.find(x=>x.id===id);
-  if(!p||!p.purchased)return;
-  if(p.vote===dir){p.vote=null;p.votes+=(dir==='up'?-1:1);}
-  else{if(p.vote==='up')p.votes--;if(p.vote==='down')p.votes++;p.vote=dir;p.votes+=(dir==='up'?1:-1);}
-  renderFeed();
+function tryVote(id, dir){
+  if(!currentUser?.loggedIn){ openAuthModal('login'); return; }
+  const p = POSTS.find(x=>x.id===id);
+  if(!p || !p.purchased) return;
+  p.liked = !p.liked;
+  p.votes += p.liked ? 1 : -1;
+  const fill = p.liked ? '#E8445A' : 'none';
+  document.querySelectorAll(`[onclick*="tryVote(${id},"]`).forEach(btn=>{
+    const svg = btn.querySelector('svg');
+    if(svg) svg.setAttribute('fill', p.liked ? (btn.onclick?.toString().includes('up') ? '#E8445A' : 'none') : 'none');
+  });
+  showToast(p.liked ? '❤️ Bəyənildi' : 'Bəyən geri alındı');
 }
+
 
 function sortPosts(p){
   const a=[...p];
@@ -1667,7 +2201,7 @@ function switchFeedTab(tab, btn){
     if(el) el.style.display = t===tab ? 'block' : 'none';
   });
   if(tab==='oxu') renderOxuFeed();
-  if(tab==='izle') renderWebinars();
+  if(tab==='izle') renderVideos();
 }
 
 function renderOxuFeed(){
@@ -1726,7 +2260,7 @@ function renderOxuFeed(){
         ${mediaHtml}
         <div class="oxu-footer">
           <button class="oxu-btn ${s.liked?'liked':''}" onclick="likeHomeStatus('${s.id}','${idx}')">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="${s.liked?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="${s.liked?'#E8445A':'none'}" stroke="${s.liked?'#E8445A':'currentColor'}" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
             ${s.likes||0}
           </button>
           <button class="oxu-btn" onclick="showAuthGate('Şərh yazmaq üçün daxil olun')">
@@ -1760,8 +2294,8 @@ function renderOxuFeed(){
         </div>
         <div class="oxu-footer">
           <span class="oxu-tag ${isFree?'price':'paid'}">${isFree?'0 ₼':a.price+' ₼'}</span>
-          <button class="oxu-btn ${a.voted?'liked':''}" onclick="event.stopPropagation();tryVoteArticle(${a.id},1)">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="${a.voted?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <button class="oxu-btn ${a.liked?'liked':''}" data-like-article="${a.id}" onclick="event.stopPropagation();likeArticle(${a.id})">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="${a.liked?'#E8445A':'none'}" stroke="${a.liked?'#E8445A':'currentColor'}" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
             ${a.votes}
           </button>
           <button class="oxu-btn" onclick="event.stopPropagation();showAuthGate('Şərh yazmaq üçün daxil olun')">
@@ -1886,8 +2420,8 @@ function renderArticles(){
           <span>${formatArticleDate(a.date)}</span>
         </div>
         <div class="article-actions">
-          <button class="art-action-btn" onclick="event.stopPropagation();tryVoteArticle(${a.id},1)">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="${a.voted?'var(--accent)':'none'}" stroke="${a.voted?'var(--accent)':'currentColor'}" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <button class="art-action-btn" onclick="event.stopPropagation();likeArticle(${a.id},1)">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="${a.liked?'#E8445A':'none'}" stroke="${a.liked?'var(--accent)':'currentColor'}" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
             ${a.votes}
           </button>
           <button class="art-action-btn" onclick="event.stopPropagation();shareArticle(${a.id})">
@@ -1913,93 +2447,44 @@ function formatArticleDate(d){
   return dt.getDate()+' '+months[dt.getMonth()]+' '+dt.getFullYear();
 }
 
-function renderSection(s){
-  if(s.type==='h3') return `<h3 class="art-body-h3">${s.text}</h3>`;
-  if(s.type==='quote') return `<blockquote class="art-body-quote">${s.text}</blockquote>`;
-  return `<p class="art-body-p">${s.text}</p>`;
-}
 
-function openArticle(id){
+
+
+
+
+function articleBookmark(id){
+  if(!currentUser?.loggedIn){ openAuthModal('login'); return; }
   const a = ARTICLES.find(x=>x.id===id);
   if(!a) return;
-  currentArticleId = id;
+  a.bookmarked = !a.bookmarked;
+  // Update both bookmark buttons
+  ['art-bm-btn','art-bm-btn2'].forEach(bid=>{
+    const btn = document.getElementById(bid);
+    if(!btn) return;
+    btn.classList.toggle('active', a.bookmarked);
+    const svg = btn.querySelector('svg');
+    if(svg) svg.setAttribute('fill', a.bookmarked ? 'currentColor' : 'none');
+    btn.lastChild.textContent = a.bookmarked ? 'Saxlanıldı' : 'Saxla';
+  });
   const cr = CREATORS[a.creator]||{};
-  const isFree = a.price===0;
-  const canRead = isFree || currentUser?.loggedIn;
-
-  let bodyHtml = (a.sections||[]).map(renderSection).join('');
-
-  if(!canRead && a.paywallSections?.length){
-    bodyHtml += `<div class="art-paywall">
-      <div class="art-paywall-fade"></div>
-      <div class="art-paywall-box">
-        <div class="art-paywall-icon">🔒</div>
-        <div class="art-paywall-title">Tam versiya ödənişlidir</div>
-        <div class="art-paywall-sub">Bu bloqu tam oxumaq üçün ${a.price} ₼ ödəyin</div>
-        <button class="art-paywall-btn" onclick="showAuthGate('Bloqu oxumaq üçün daxil olun')">Al — ${a.price} ₼</button>
-        <div style="font-size:10px;color:var(--ink3);margin-top:8px">Bir dəfə ödə, həmişə oxu</div>
-      </div>
-    </div>`;
-  } else if(canRead && a.paywallSections?.length){
-    bodyHtml += a.paywallSections.map(renderSection).join('');
-  }
-
-  const page = document.getElementById('page-article');
-  if(!page) return;
-  page.innerHTML = `<div class="art-page-wrap">
-    <div class="art-page-nav">
-      <button class="v-back" onclick="goBack()">← Geri</button>
-      <div class="art-page-actions">
-        <button class="art-action-btn" onclick="tryVoteArticle(${a.id},1)" title="Vote">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="${a.voted?'var(--accent)':'none'}" stroke="${a.voted?'var(--accent)':'currentColor'}" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          ${a.votes}
-        </button>
-        <button class="art-action-btn" onclick="shareArticle(${a.id})" title="Paylaş">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-        </button>
-        <button class="art-action-btn" onclick="bookmarkArticle(${a.id})" title="Saxla">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="${a.bookmarked?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
-        </button>
-      </div>
-    </div>
-    <article class="art-article">
-      ${a.cover?`<img src="${a.cover}" class="art-hero-img" alt=""/>` : ''}
-      <div class="art-meta-top">
-        <span class="pcat">${a.cat}</span>
-        <span class="${isFree?'article-free-badge':'article-price-badge'}">${isFree?'0 ₼':a.price+' ₼'}</span>
-      </div>
-      <h1 class="art-h1">${a.title}</h1>
-      <p class="art-lead">${a.summary}</p>
-      <div class="art-author-row">
-        <div class="art-author-av">${(cr.name||'?').charAt(0)}</div>
-        <div>
-          <div class="art-author-name" onclick="openProfile(${a.creator})">${cr.name||''}</div>
-          <div class="art-author-meta">${a.readTime} dəq oxuma · ${formatArticleDate(a.date)}</div>
-        </div>
-      </div>
-      <div class="art-divider"></div>
-      <div class="art-body">${bodyHtml}</div>
-      ${canRead?`
-      <div class="art-divider"></div>
-      <div class="art-bottom-actions">
-        <button class="art-action-btn big" onclick="tryVoteArticle(${a.id},1)" title="Vote">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="${a.voted?'var(--accent)':'none'}" stroke="${a.voted?'var(--accent)':'currentColor'}" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          ${a.votes}
-        </button>
-        <button class="art-action-btn big" onclick="shareArticle(${a.id})" title="Paylaş">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-        </button>
-        <button class="art-action-btn big" onclick="bookmarkArticle(${a.id})" title="Saxla">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="${a.bookmarked?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
-        </button>
-        <button class="art-action-btn big" onclick="showAuthGate('Şərh yazmaq üçün daxil olun')" title="Şərh">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        </button>
-      </div>`:''}
-    </article>
-  </div>`;
-  showPage('article');
+  syncSavedPanelItem({ uid:'a'+id, saved:a.bookmarked, type:'oxu', cat:a.cat,
+    title:a.title, price:a.price, emoji:'📝', creatorName:cr.name||'' });
+  // Also sync feed cards
+  document.querySelectorAll(`[onclick*="bookmarkArticle(${id})"]`).forEach(btn=>{
+    btn.classList.toggle('saved', a.bookmarked);
+    const svg = btn.querySelector('svg');
+    if(svg) svg.setAttribute('fill', a.bookmarked ? 'currentColor' : 'none');
+  });
+  showToast(a.bookmarked ? 'Saxlanıldı ✓' : 'Saxlamadan çıxarıldı');
 }
+
+function articleShare(id){
+  const a = ARTICLES.find(x=>x.id===id);
+  const title = a?.title || 'Antism';
+  if(navigator.share){ navigator.share({ title, url: location.href }); }
+  else { navigator.clipboard?.writeText(location.href); showToast('Link kopyalandı'); }
+}
+
 
 function shareArticle(id){
   const a = ARTICLES.find(x=>x.id===id);
@@ -2025,20 +2510,20 @@ function bookmarkArticle(id){
 }
 
 // ── VIDEOS DATA ──
-const WEBINARS = [
+const VIDEOS = [
   { id:1, title:'Sağlam Şirniyyat Hazırlamağın Sirləri', creator:0, cat:'Sağlamlıq', price:0, votes:61, duration:'45:12', date:'2025-06-15', views:1840, thumb:'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=640&q=80' },
   { id:2, title:'Qlükoz İndeksi Aşağı Reseptlər', creator:1, cat:'Sağlamlıq', price:12, votes:38, duration:'1:02:30', date:'2025-06-20', views:920, thumb:'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=640&q=80' },
   { id:3, title:'Uşaqlar üçün Şəkərsiz Tort Reseptləri', creator:0, cat:'Sağlamlıq', price:0, votes:29, duration:'31:05', date:'2025-05-01', views:3200, thumb:'https://images.unsplash.com/photo-1558636508-e0db3814bd1d?w=640&q=80' },
   { id:4, title:'Gluten-free Çörək Bişirmənin Əsasları', creator:2, cat:'Sağlamlıq', price:8, votes:54, duration:'52:44', date:'2025-04-18', views:2100, thumb:'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=640&q=80' },
 ];
 
-function renderWebinars(){
+function renderVideos(){
   const el = document.getElementById('feed-izle');
   if(!el) return;
-  const q = (document.getElementById('webinar-search')?.value||'').toLowerCase();
-  const cat = document.getElementById('webinar-cat')?.value||'';
-  const pf = document.getElementById('webinar-price-filter')?.value||'';
-  let list = WEBINARS.filter(w=>{
+  const q = (document.getElementById('video-search')?.value||'').toLowerCase();
+  const cat = document.getElementById('video-cat')?.value||'';
+  const pf = document.getElementById('video-price-filter')?.value||'';
+  let list = VIDEOS.filter(w=>{
     const mq = !q || w.title.toLowerCase().includes(q) || CREATORS[w.creator]?.name.toLowerCase().includes(q);
     const mc = !cat || w.cat===cat;
     const mp = !pf || (pf==='free'&&w.price===0) || (pf==='paid'&&w.price>0);
@@ -2052,15 +2537,18 @@ function renderWebinars(){
   el.innerHTML = `<div class="izle-grid">${list.map(w=>{
     const cr = CREATORS[w.creator]||{};
     const isFree = w.price===0;
-    return `<div class="video-card" onclick="showAuthGate('İzləmək üçün daxil olun')">
-      <div class="video-thumb">
+    return `<div class="video-card">
+      <div class="video-thumb" onclick="openVideo(${w.id})" style="cursor:pointer">
         <img src="${w.thumb}" alt="${w.title}" loading="lazy"/>
         <span class="video-duration">${w.duration}</span>
         <span class="video-price-badge ${isFree?'free':'paid'}">${isFree?'0 ₼':w.price+' ₼'}</span>
+        <div class="video-play-overlay">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+        </div>
       </div>
       <div class="video-info">
-        <div class="video-av" onclick="event.stopPropagation();openProfile(${w.creator})">${(cr.name||'?').charAt(0)}</div>
-        <div class="video-meta">
+        <div class="video-av" onclick="openProfile(${w.creator})">${(cr.name||'?').charAt(0)}</div>
+        <div class="video-meta" onclick="openVideo(${w.id})" style="cursor:pointer">
           <div class="video-title">${w.title}</div>
           <div class="video-sub">
             <span>${cr.name||''}</span>
@@ -2073,43 +2561,78 @@ function renderWebinars(){
         </div>
       </div>
       <div class="video-actions">
-        <button class="video-action-btn ${w.voted?'voted':''}" onclick="event.stopPropagation();tryVoteWebinar(${w.id},1)">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="${w.voted?'currentColor':'none'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <button class="video-action-btn ${w.liked?'liked':''}" data-like-video="${w.id}" onclick="likeVideo(${w.id})">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="${w.liked?'#E8445A':'none'}" stroke="${w.liked?'#E8445A':'currentColor'}" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           ${w.votes}
         </button>
-        <button class="video-action-btn" onclick="event.stopPropagation();showAuthGate('Şərh yazmaq üçün daxil olun')">
+        <button class="video-action-btn" onclick="showAuthGate('Şərh yazmaq üçün daxil olun')">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         </button>
-        <button class="video-action-btn" onclick="event.stopPropagation();shareArticle(${w.id})">
+        <button class="video-action-btn" onclick="shareArticle(${w.id})">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
         </button>
-        <button class="video-watch-btn" onclick="event.stopPropagation();showAuthGate('İzləmək üçün daxil olun')">İzlə →</button>
       </div>
     </div>`;
   }).join('')}</div>`;
 }
 
-function tryVoteArticle(id, dir){
-  if(!currentUser?.loggedIn){ showAuthGate('Vote etmək üçün daxil olun'); return; }
-  const a = ARTICLES.find(x=>x.id===id);
-  if(!a) return;
-  a.voted = !a.voted;
-  a.votes += a.voted ? 1 : -1;
-  renderArticles();
-  // if on article detail page, re-render it
-  if(currentArticleId===id) openArticle(id);
+function likeArticle(id) {
+  const a = ARTICLES.find(x => x.id === id);
+  if (!a) return;
+  a.liked = !a.liked;
+  a.votes += a.liked ? 1 : -1;
+  const fill   = a.liked ? '#E8445A' : 'none';
+  const stroke = a.liked ? '#E8445A' : 'currentColor';
+  // Feed cards via data attribute
+  document.querySelectorAll('[data-like-article="' + id + '"]').forEach(btn => {
+    btn.classList.toggle('liked', a.liked);
+    const svg = btn.querySelector('svg');
+    if (svg) { svg.setAttribute('fill', fill); svg.setAttribute('stroke', stroke); }
+  });
+  // Detail page buttons
+  ['art-like-btn', 'art-like-btn2'].forEach(btnId => {
+    const btn = document.getElementById(btnId);
+    if (!btn) return;
+    btn.classList.toggle('like-active', a.liked);
+    const svg = btn.querySelector('svg');
+    if (svg) { svg.setAttribute('fill', fill); svg.setAttribute('stroke', stroke); }
+    const cnt = btn.querySelector('span');
+    if (cnt) cnt.textContent = a.votes;
+  });
+  if (currentUser?.loggedIn) {
+    syncLikesPanel({ uid: 'a' + id, liked: a.liked, type: 'oxu', cat: a.cat,
+      title: a.title, price: a.price, emoji: '📝',
+      creatorName: (CREATORS[a.creator] || {}).name || '' });
+  }
+  showToast(a.liked ? '❤️ Bəyənildi' : 'Bəyən geri alındı');
 }
 
-function tryVoteWebinar(id, dir){
-  if(!currentUser?.loggedIn){ showAuthGate('Vote etmək üçün daxil olun'); return; }
-  const w = WEBINARS.find(x=>x.id===id);
-  if(w){ w.votes+=dir; renderWebinars(); }
+
+function likeVideo(id) {
+  const w = VIDEOS.find(x => x.id === id);
+  if (!w) return;
+  w.liked = !w.liked;
+  w.votes += w.liked ? 1 : -1;
+  const fill   = w.liked ? '#E8445A' : 'none';
+  const stroke = w.liked ? '#E8445A' : 'currentColor';
+  document.querySelectorAll('[data-like-video="' + id + '"]').forEach(btn => {
+    btn.classList.toggle('liked', w.liked);
+    const svg = btn.querySelector('svg');
+    if (svg) { svg.setAttribute('fill', fill); svg.setAttribute('stroke', stroke); }
+  });
+  if (currentUser?.loggedIn) {
+    syncLikesPanel({ uid: 'v' + id, liked: w.liked, type: 'izle', cat: w.cat,
+      title: w.title, price: w.price, emoji: '🎬',
+      creatorName: (CREATORS[w.creator] || {}).name || '' });
+  }
+  showToast(w.liked ? '❤️ Bəyənildi' : 'Bəyən geri alındı');
 }
+
 
 function switchUploadType(type, btn){
   document.querySelectorAll('#dash-upload .feed-tab').forEach(b=>b.classList.remove('active'));
   if(btn) btn.classList.add('active');
-  ['status','article','webinar'].forEach(t=>{
+  ['status','article','video'].forEach(t=>{
     const el = document.getElementById('upload-type-'+t);
     if(el) el.style.display = t===type ? 'block' : 'none';
   });
@@ -2130,7 +2653,7 @@ function submitArticle(){
   document.getElementById('art-body').value='';
 }
 
-function submitWebinar(){
+function submitVideo(){
   const title = document.getElementById('web-title')?.value.trim();
   const desc = document.getElementById('web-desc')?.value.trim();
   const cat = document.getElementById('web-cat')?.value;
@@ -2140,7 +2663,7 @@ function submitWebinar(){
   const date = document.getElementById('web-date')?.value;
   if(!title){ showToast('Başlıq daxil edin'); return; }
   const newWeb = { id: Date.now(), title, cat, price, duration, status, date, creator:0, votes:0, seats:50, enrolled:0 };
-  WEBINARS.unshift(newWeb);
+  VIDEOS.unshift(newWeb);
   showToast('Video yükləndi! ✓');
   document.getElementById('web-title').value='';
   document.getElementById('web-desc').value='';
@@ -2176,7 +2699,7 @@ function renderHomeStatuses(){
         ${s.mediaType==='image'&&s.mediaUrl ? `<div class="tweet-media"><img src="${s.mediaUrl}" alt="media" onclick="event.stopPropagation()"/></div>` : ''}
         ${s.mediaType==='video'&&s.mediaUrl ? `<div class="tweet-media"><video src="${s.mediaUrl}" controls onclick="event.stopPropagation()"></video></div>` : ''}
         <div class="tweet-actions">
-          <button class="tweet-action-btn vote-btn ${s.liked?'liked':''}" onclick="likeHomeStatus('${s.id}','${idx}')">
+          <button class="tweet-action-btn like-btn ${s.liked?'liked':''}" onclick="likeHomeStatus('${s.id}','${idx}')">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="${s.liked?'var(--accent)':'none'}" stroke="${s.liked?'var(--accent)':'currentColor'}" stroke-width="1.8"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
             <span>${s.likes}</span>
           </button>
@@ -2197,7 +2720,6 @@ function renderHomeStatuses(){
 }
 
 function likeHomeStatus(sid, crIdx){
-  if(!currentUser?.loggedIn){ showAuthGate('Vote etmək üçün daxil olun'); return; }
   const cr=CREATORS[crIdx];
   if(!cr) return;
   const s=(cr.statuses||[]).find(x=>x.id===sid);
@@ -2330,6 +2852,69 @@ function renderCatMini(){
 // ── OPEN POST ──
 let currentReviewStars=5;
 
+
+
+
+function videoLike(id) {
+  likeVideo(id);
+  const w = VIDEOS.find(x => x.id === id);
+  if (!w) return;
+  const fill   = w.liked ? '#E8445A' : 'none';
+  const stroke = w.liked ? '#E8445A' : 'currentColor';
+  const btn = document.getElementById('vid-like-btn');
+  if (btn) {
+    btn.classList.toggle('like-active', w.liked);
+    const svg = btn.querySelector('svg');
+    if (svg) { svg.setAttribute('fill', fill); svg.setAttribute('stroke', stroke); }
+    const cnt = document.getElementById('vid-like-count');
+    if (cnt) cnt.textContent = w.votes;
+  }
+}
+
+
+function videoBookmark(id){
+  if(!currentUser?.loggedIn){ openAuthModal('login'); return; }
+  const w = VIDEOS.find(x=>x.id===id);
+  if(!w) return;
+  w.bookmarked = !w.bookmarked;
+  const btn = document.getElementById('vid-bm-btn');
+  if(btn){
+    btn.classList.toggle('active', w.bookmarked);
+    btn.querySelector('svg').setAttribute('fill', w.bookmarked ? 'currentColor' : 'none');
+    btn.lastChild.textContent = ' ' + (w.bookmarked ? 'Saxlanıldı' : 'Saxla');
+  }
+  const cr = CREATORS[w.creator]||{};
+  syncSavedPanelItem({ uid:'v'+id, saved:w.bookmarked, type:'izle', cat:w.cat,
+    title:w.title, price:w.price, emoji:'🎬', creatorName:cr.name||'' });
+  showToast(w.bookmarked ? 'Video saxlanıldı ✓' : 'Saxlamadan çıxarıldı');
+}
+
+function videoShare(id){
+  const w = VIDEOS.find(x=>x.id===id);
+  const title = w?.title || 'Antism';
+  if(navigator.share){ navigator.share({ title, url: location.href }); }
+  else { navigator.clipboard?.writeText(location.href); showToast('Link kopyalandı'); }
+}
+
+
+function likeVideoDetail(id){
+  if(!currentUser?.loggedIn){ showAuthGate('Bəyənmək üçün daxil olun'); return; }
+  const w = VIDEOS.find(x=>x.id===id);
+  if(!w) return;
+  w.liked = !w.liked;
+  w.votes += w.liked ? 1 : -1;
+  const vvsEl = document.getElementById('vvs');
+  if(vvsEl) vvsEl.textContent = w.votes;
+  const btn = document.querySelector('.v-likebtn.up-a') || document.querySelector('.v-likebtn');
+  if(btn){
+    btn.classList.toggle('up-a', w.liked);
+    const svg = btn.querySelector('svg');
+    if(svg) svg.setAttribute('fill', w.liked ? 'var(--accent)' : 'none');
+  }
+  renderVideos();
+}
+
+
 function openPost(id){
   const p=POSTS.find(x=>x.id===id);
   if(!p)return;
@@ -2364,10 +2949,14 @@ function openPost(id){
   const vr=document.getElementById('v-vote-row');
   if(p.purchased){
     pe.innerHTML='';
-    vr.innerHTML=`<button class="v-vbtn ${p.vote==='up'?'up-a':''}" onclick="tryVoteV(${p.id},'up')"><svg viewBox="0 0 24 24" fill="${p.vote==='up'?'var(--accent)':'none'}" stroke="${p.vote==='up'?'var(--accent)':'currentColor'}" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>Bəyəndim</button><span class="v-vscore" id="vvs">${p.votes}</span><button class="v-vbtn ${p.vote==='down'?'dn-a':''}" onclick="tryVoteV(${p.id},'down')"><svg viewBox="0 0 24 24" fill="${p.vote==='down'?'var(--down)':'none'}" stroke="${p.vote==='down'?'var(--down)':'currentColor'}" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>Bəyənmədim</button>`;
+    vr.innerHTML=`<button class="v-likebtn ${p.liked?'up-a':''}" onclick="tryVote(${p.id},'up')">
+      <svg viewBox="0 0 24 24" fill="${p.liked?'#E8445A':'none'}" stroke="${p.liked?'#E8445A':'currentColor'}" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      Bəyən
+    </button>
+    <span class="v-vscore" id="vvs">${p.votes}</span>`;
   } else {
-    pe.innerHTML=`<div class="purch-card"><div class="purch-price">${p.price===0?'0 ₼':p.price+' ₼'}</div><div class="purch-note">BİR DƏFƏ ÖDƏ — ÖMÜRLÜK GİRİŞ</div><button class="purch-btn" onclick="showAuthGate('Satın almaq üçün daxil olun')">İndi al</button><div class="purch-perks"><div class="purch-perk"><div class="pdot"></div>Ömürlük giriş</div><div class="purch-perk"><div class="pdot"></div>Vote hüququ</div></div></div>`;
-    vr.innerHTML='<span style="font-size:10.5px;color:var(--ink3)">🔒 Vote etmək üçün əvvəlcə izləyin</span>';
+    pe.innerHTML=`<div class="purch-card"><div class="purch-price">${p.price===0?'0 ₼':p.price+' ₼'}</div><div class="purch-note">BİR DƏFƏ ÖDƏ — ÖMÜRLÜK GİRİŞ</div><button class="purch-btn" onclick="showAuthGate('Satın almaq üçün daxil olun')">İndi al</button><div class="purch-perks"><div class="purch-perk"><div class="pdot"></div>Ömürlük giriş</div><div class="purch-perk"><div class="pdot"></div>Bəyən hüququ</div></div></div>`;
+    vr.innerHTML='<span style="font-size:10.5px;color:var(--ink3)">🔒 Bəyənmək üçün əvvəlcə izləyin</span>';
   }
 
   // CONTRIBUTION WIDGET — inject into sidebar after v-purchase
@@ -2883,6 +3472,66 @@ function checkSavedEmpty(){
   }
 }
 
+// ── LIKES PANEL ──
+function syncLikesPanel(item){
+  var grid    = document.getElementById('likes-items-grid');
+  var emptyEl = document.getElementById('likes-empty');
+  var listEl  = document.getElementById('dash-likes-list');
+  if(!grid) return;
+  var existing = grid.querySelector('[data-like-id="' + item.uid + '"]');
+  if(item.liked && !existing){
+    var card = document.createElement('div');
+    card.className = 'saved-card';
+    card.dataset.likeId = item.uid;
+    card.style.cssText = 'background:var(--surface);border:1px solid var(--border);border-radius:10px;display:flex;gap:14px;padding:14px 16px;cursor:pointer;transition:border-color .15s';
+    card.onmouseover = function(){ this.style.borderColor='var(--border2)'; };
+    card.onmouseout  = function(){ this.style.borderColor='var(--border)'; };
+    var priceHtml = item.price===0
+      ? '<span style="color:#3DB86A;font-weight:600">Pulsuz</span>'
+      : '<span style="color:var(--accent);font-weight:600">'+item.price+' ₼</span>';
+    // Use DOM API - no string concat with quotes
+    var thumb = document.createElement('div');
+    thumb.style.cssText = 'width:72px;height:72px;border-radius:8px;background:var(--bg4);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:28px';
+    thumb.textContent = item.emoji || '❤️';
+    var info = document.createElement('div');
+    info.style.cssText = 'flex:1;min-width:0';
+    info.innerHTML = '<div style="font-size:11px;font-weight:700;color:#E8445A;letter-spacing:.5px;text-transform:uppercase;margin-bottom:4px">'+item.cat+'</div>'
+      + '<div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px;line-height:1.3">'+item.title+'</div>'
+      + '<div style="font-size:11px;color:var(--ink3);display:flex;align-items:center;gap:8px"><span>'+item.creatorName+'</span><span>·</span>'+priceHtml+'</div>';
+    var del = document.createElement('button');
+    del.style.cssText = 'background:none;border:none;cursor:pointer;color:var(--ink3);padding:4px;flex-shrink:0';
+    del.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>';
+    del.onmouseover = function(){ this.style.color='#E8445A'; };
+    del.onmouseout  = function(){ this.style.color='var(--ink3)'; };
+    del.onclick = function(e){
+      e.stopPropagation();
+      card.remove();
+      checkLikesEmpty();
+    };
+    card.appendChild(thumb);
+    card.appendChild(info);
+    card.appendChild(del);
+    grid.prepend(card);
+    if(emptyEl) emptyEl.style.display = 'none';
+    if(listEl)  listEl.style.display  = 'block';
+  } else if(!item.liked && existing){
+    existing.remove();
+    checkLikesEmpty();
+  }
+}
+
+function checkLikesEmpty(){
+  var grid    = document.getElementById('likes-items-grid');
+  var emptyEl = document.getElementById('likes-empty');
+  var listEl  = document.getElementById('dash-likes-list');
+  if(!grid) return;
+  if(grid.children.length === 0){
+    if(emptyEl) emptyEl.style.display = 'block';
+    if(listEl)  listEl.style.display  = 'none';
+  }
+}
+
+
 function showDash(id){
   document.querySelectorAll('.dash-page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.dash-nav-item').forEach(b=>b.classList.remove('active'));
@@ -2917,6 +3566,15 @@ function showDash(id){
 
   if(id==='status') renderCreatorStatusCompose();
   if(id==='referral') renderReferralDash();
+  if(id==='likes'){
+    var grid = document.getElementById('likes-items-grid');
+    var emptyEl = document.getElementById('likes-empty');
+    var listEl  = document.getElementById('dash-likes-list');
+    if(grid && grid.children.length === 0){
+      if(emptyEl) emptyEl.style.display = 'block';
+      if(listEl)  listEl.style.display  = 'none';
+    }
+  }
 }
 
 function renderDashVideos(){
@@ -3198,6 +3856,13 @@ function lnavGo(dest){
     document.getElementById('lnav-bookmarks')?.classList.add('active');
     return;
   }
+  if(dest === 'likes'){
+    if(!currentUser?.loggedIn){ openAuthModal('login'); return; }
+    showPage('dashboard');
+    showDash('likes');
+    document.getElementById('lnav-likes')?.classList.add('active');
+    return;
+  }
   if(dest === 'dashboard-upload'){
     showPage('dashboard');
     showDash('upload');
@@ -3290,6 +3955,11 @@ function filterByTrend(cat){
   if(sel){ sel.value = cat; renderOxuFeed(); }
 }
 
+function goBack(){
+  const dest = lastPage || 'home';
+  showPage(dest);
+}
+
 function showPage(id){
   lastPage = document.querySelector('.page.active')?.id?.replace('page-','')||'home';
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -3305,8 +3975,15 @@ function showPage(id){
   if(id==='dashboard') renderDashVideos();
 }
 
-const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.06});
 window.addEventListener('DOMContentLoaded', async ()=>{
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.06});
+  document.addEventListener('click',e=>{
+  const wrap=document.getElementById('country-wrap');
+  if(wrap&&!wrap.contains(e.target)){
+    document.getElementById('country-dd')?.classList.remove('open');
+  }
+});
+
   initCountryDD();
   renderOxuFeed();
   renderRightPanel();
@@ -3612,6 +4289,7 @@ function toggleInviteField(role){
 }
 
 </script>
+</script>
 </head>
 <body>
 
@@ -3657,6 +4335,11 @@ function toggleInviteField(role){
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
     Bildirişlər
     <span class="lnav-badge" id="lnav-notif-badge" style="display:none">3</span>
+  </button>
+
+  <button class="lnav-item" id="lnav-likes" onclick="lnavGo('likes')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+    Bəyəndiklərim
   </button>
 
   <button class="lnav-item" id="lnav-bookmarks" onclick="lnavGo('bookmarks')">
@@ -3756,19 +4439,19 @@ function toggleInviteField(role){
         <div id="feed-oxu"></div>
       </div>
 
-      <!-- WEBINARS TAB -->
+      <!-- VIDEOS TAB -->
       <div id="feed-tab-izle" style="display:none">
         <div class="feed-filter">
           <div class="feed-sw">
             <span class="feed-si"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
-            <input class="feed-inp" id="webinar-search" type="text" placeholder="İzlə, kreator axtar..." oninput="renderWebinars()"/>
+            <input class="feed-inp" id="video-search" type="text" placeholder="İzlə, kreator axtar..." oninput="renderVideos()"/>
           </div>
-          <select class="feed-cat-sel" id="webinar-cat" onchange="renderWebinars()">
+          <select class="feed-cat-sel" id="video-cat" onchange="renderVideos()">
             <option value="">Bütün kateqoriyalar</option>
             <option>Din və Fəlsəfə</option><option>Texnologiya</option>
             <option>Sağlamlıq</option><option>İqtisadiyyat</option>
           </select>
-          <select class="feed-cat-sel" id="webinar-price-filter" onchange="renderWebinars()">
+          <select class="feed-cat-sel" id="video-price-filter" onchange="renderVideos()">
             <option value="">Ödənişli və pulsuz</option>
             <option value="free">Yalnız pulsuz</option>
             <option value="paid">Yalnız ödənişli</option>
@@ -3803,19 +4486,18 @@ function toggleInviteField(role){
           <div id="rp-trends"></div>
         </div>
 
+      <!-- Page links -->
+      <div style="padding:16px 12px 8px;display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--border);margin-top:8px">
+        <a onclick="showPage('about')" style="font-size:11px;color:var(--ink3);cursor:pointer;transition:color .15s" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--ink3)'">Haqqımızda</a>
+        <a onclick="showPage('terms')" style="font-size:11px;color:var(--ink3);cursor:pointer;transition:color .15s" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--ink3)'">Şərtlər</a>
+        <a onclick="showPage('privacy')" style="font-size:11px;color:var(--ink3);cursor:pointer;transition:color .15s" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--ink3)'">Gizlilik Siyasəti</a>
+      </div>
+
       </div><!-- /right-panel -->
 
     </div><!-- /feed-with-right -->
 
-  <footer>
-    <div class="foot-logo" onclick="showPage('home')"><div class="glass-ant"><svg viewBox="0 0 32 32"><use href="#ant"/></svg></div>antism</div>
-    <ul class="foot-links">
-      <li><a onclick="showPage('about')">Haqqımızda</a></li>
-      <li><a onclick="showPage('terms')">Şərtlər</a></li>
-      <li><a onclick="showPage('privacy')">Gizlilik Siyasəti</a></li>
-    </ul>
-    <div class="foot-copy">© 2025 antism</div>
-  </footer>
+  
 </div>
 
 
@@ -3826,46 +4508,7 @@ function toggleInviteField(role){
 
 <!-- ══════════════ VIDEO PAGE ══════════════ -->
 <div id="page-video" class="page page-with-lnav">
-  <div class="video-page-wrap">
-    <div class="video-container">
-      <div>
-        <button class="v-back" onclick="goBack()">← Geri</button>
-        <div class="v-post-card">
-          <div class="v-player"><div class="v-lock" id="vlock"><div class="v-lock-ico">🔒</div><div class="v-lock-t">Bu video ödənişlidir</div><div class="v-lock-s">Baxmaq üçün satın alın</div></div></div>
-          <div class="v-body">
-            <div class="v-meta-row" style="justify-content:space-between"><span style="display:flex;align-items:center;gap:7px;cursor:pointer" onclick="openProfile(currentVideoCreator)"><span class="pav" id="v-av"></span><span style="font-size:12px;font-weight:600;color:var(--ink)" id="v-creator"></span></span><span class="pcat" id="v-cat"></span></div>
-            <div class="v-title" id="v-title"></div>
-            <div class="v-desc" id="v-desc"></div>
-            <div class="v-vote-row" id="v-vote-row"><span style="font-size:10.5px;color:var(--ink3)">🔒 Vote etmək üçün əvvəlcə izləyin</span></div>
-
-            <!-- LEARNINGS -->
-            <div class="v-section" id="v-learnings-section">
-              <div class="v-section-title">Nələr öyrənəcəksiniz</div>
-              <div class="learn-bullets" id="v-learnings"></div>
-            </div>
-
-            <!-- SHARE -->
-            <div class="v-section">
-              <div class="v-section-title">Paylaş</div>
-              <div class="v-share-row" id="v-share-row"></div>
-            </div>
-
-            <!-- REVIEWS -->
-            <div class="v-section">
-              <div class="v-section-title">Rəylər</div>
-              <div class="reviews-list" id="v-reviews"></div>
-              <div id="v-write-review"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <aside class="sidebar">
-        <div id="v-purchase"></div>
-        <div class="sc"><div class="sc-head">Digər videolar</div><div style="padding:7px" id="v-related"></div></div>
-      </aside>
-    </div>
-    <footer><div class="foot-logo" onclick="showPage('home')"><div class="glass-ant"><svg viewBox="0 0 32 32"><use href="#ant"/></svg></div>antism</div><ul class="foot-links"><li><a onclick="showPage('home')">Ana Səhifə</a></li><li><a onclick="showPage('terms')">Şərtlər</a></li><li><a onclick="showPage('privacy')">Gizlilik</a></li></ul><div class="foot-copy">© 2025 antism</div></footer>
-  </div>
+  <!-- Injected by openVideo() -->
 </div>
 
 <!-- ══════════════ PROFILE ══════════════ -->
@@ -3916,7 +4559,7 @@ function toggleInviteField(role){
         </div>
       </aside>
     </div>
-    <footer><div class="foot-logo" onclick="showPage('home')"><div class="glass-ant"><svg viewBox="0 0 32 32"><use href="#ant"/></svg></div>antism</div><ul class="foot-links"><li><a onclick="showPage('home')">Ana Səhifə</a></li><li><a onclick="showPage('terms')">Şərtlər</a></li><li><a onclick="showPage('privacy')">Gizlilik</a></li></ul><div class="foot-copy">© 2025 antism</div></footer>
+    
   </div>
 </div>
 
@@ -3947,6 +4590,9 @@ function toggleInviteField(role){
         </button>
         <button class="dash-nav-item" onclick="showDash('saved')">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>Saxlanılmış
+        </button>
+        <button class="dash-nav-item" onclick="showDash('likes')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>Bəyəndiklərim
         </button>
         <button class="dash-nav-item" onclick="showDash('notifications')">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>Bildirişlər
@@ -4011,7 +4657,7 @@ function toggleInviteField(role){
         <div class="feed-tabs" style="margin-bottom:20px;display:inline-flex">
           <button class="feed-tab active" id="utype-status" onclick="switchUploadType('status',this)">💬 Note</button>
           <button class="feed-tab" id="utype-article" onclick="switchUploadType('article',this)">📄 Bloq</button>
-          <button class="feed-tab" id="utype-webinar" onclick="switchUploadType('webinar',this)">🎥 İzlə</button>
+          <button class="feed-tab" id="utype-video" onclick="switchUploadType('video',this)">🎥 İzlə</button>
         </div>
 
         <!-- STATUS UPLOAD -->
@@ -4056,11 +4702,11 @@ function toggleInviteField(role){
         </div>
 
         <!-- WEBINAR UPLOAD -->
-        <div id="upload-type-webinar" class="upload-form" style="display:none">
+        <div id="upload-type-video" class="upload-form" style="display:none">
           <div class="upload-dropzone" onclick="document.getElementById('file-input').click()" style="margin-bottom:16px">
             <div class="upload-dz-icon">🎥</div>
             <div class="upload-dz-t">Video yükləyin</div>
-            <div class="upload-dz-s">MP4, MOV — maks. 2 GB (yazılmış vebinar üçün)</div>
+            <div class="upload-dz-s">MP4, MOV — maks. 2 GB (video faylı üçün)</div>
             <button class="upload-dz-btn" type="button">Fayl seç</button>
             <input type="file" id="file-input" accept="video/*" style="display:none" onchange="onFileSelect(this)"/>
           </div>
@@ -4102,10 +4748,10 @@ function toggleInviteField(role){
           </div>
           <div class="uf-group">
             <label class="uf-label">Ətraflı təsvir *</label>
-            <textarea class="uf-textarea" id="web-desc" rows="4" placeholder="Vebinar haqqında ətraflı izahat..."></textarea>
+            <textarea class="uf-textarea" id="web-desc" rows="4" placeholder="Video haqqında ətraflı izahat..."></textarea>
           </div>
           <div style="display:flex;align-items:center;gap:10px;margin-top:4px">
-            <button class="submit-upload-btn" onclick="submitWebinar()">Şuraya göndər</button>
+            <button class="submit-upload-btn" onclick="submitVideo()">Şuraya göndər</button>
             <button class="cancel-btn" onclick="switchUploadType('status',document.getElementById('utype-status'))">Ləğv et</button>
           </div>
           <div style="margin-top:10px;font-size:10px;color:var(--ink3)">Yüklədikdən sonra şura 5–7 iş günü içərisində nəzərdən keçirəcək.</div>
@@ -4132,7 +4778,23 @@ function toggleInviteField(role){
         <div style="margin-top:12px;font-size:10px;color:var(--ink3)">Gəlirlər hər ayın 1-də hesabınıza köçürülür.</div>
       </div>
 
-      <!-- NOTIFICATIONS -->
+      <!
+
+        <!-- ─── LIKES PAGE ─── -->
+        <div class="dash-page" id="dash-likes">
+          <h2 class="dash-section-title">Bəyəndiklərim</h2>
+          <div id="likes-empty" style="display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:48px 24px;text-align:center">
+            <div style="font-size:36px;margin-bottom:12px">🤍</div>
+            <div style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:6px">Hələ bəyənilmiş məzmun yoxdur</div>
+            <div style="font-size:12px;color:var(--ink3);margin-bottom:20px">Blog və ya videonu bəyənəndə buraya düşür</div>
+            <button onclick="lnavGo('home')" style="font-family:'Geist Mono',monospace;font-size:11px;font-weight:700;color:var(--on-accent);background:var(--accent);border:none;border-radius:6px;padding:9px 20px;cursor:pointer">Məzmun kəşf et →</button>
+          </div>
+          <div id="dash-likes-list" style="display:none">
+            <div id="likes-items-grid" style="display:flex;flex-direction:column;gap:10px"></div>
+          </div>
+        </div>
+
+-- NOTIFICATIONS -->
       <div class="dash-page" id="dash-notifications">
         <div class="dash-section-title">Bildirişlər</div>
 
@@ -4771,7 +5433,7 @@ function toggleInviteField(role){
       </div>
 
     </div>
-    <footer><div class="foot-logo" onclick="showPage('home')" style="cursor:pointer"><div class="glass-ant"><svg viewBox="0 0 32 32"><use href="#ant"/></svg></div>antism</div><ul class="foot-links"><li><a onclick="showPage('home')">Ana Səhifə</a></li><li><a onclick="showPage('terms')">Şərtlər</a></li><li><a onclick="showPage('privacy')">Gizlilik</a></li></ul><div class="foot-copy">© 2025 antism</div></footer>
+    
   </div>
 </div>
 
@@ -4873,36 +5535,10 @@ function toggleInviteField(role){
         <p style="margin-bottom:0">antism, şərtlər pozulduğu halda hesabı əvvəlcədən xəbərdarlıq olmadan ləğv etmək hüququnu özündə saxlayır. Hesab ləğv edildikdə satın alınmış videolara giriş dayandırılır.</p>
       </div>
     </div>
-    <footer><div class="foot-logo" style="cursor:default"><div class="glass-ant"><svg viewBox="0 0 32 32"><use href="#ant"/></svg></div>antism</div><ul class="foot-links"><li><a style="color:var(--ink);pointer-events:none">Şərtlər</a></li><li><a onclick="showPage('privacy')">Gizlilik Siyasəti</a></li></ul><div class="foot-copy">© 2025 antism</div></footer>
+    
+    </div>
   </div>
 </div>
 
-<!-- ══════════════ PRIVACY POLICY ══════════════ -->
-<div id="page-privacy" class="page page-with-lnav">
-  <div style="padding-top:54px;min-height:100vh;background:var(--bg)">
-    <div style="max-width:720px;margin:0 auto;padding:48px 24px">
-      <button class="v-back" onclick="goBack()" style="margin-bottom:20px">← Geri</button>
-      <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:10px">Hüquqi Sənəd</div>
-      <h1 style="font-size:clamp(22px,3vw,34px);font-weight:700;letter-spacing:-1px;color:var(--ink);margin-bottom:6px;line-height:1.1">Gizlilik Siyasəti</h1>
-      <p style="font-size:11px;color:var(--ink3);margin-bottom:32px;letter-spacing:.3px">Son yenilənmə: 1 Yanvar 2025</p>
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:28px 28px;font-size:12px;font-weight:300;color:var(--ink2);line-height:1.85">
-
-        <div style="font-size:11px;font-weight:700;color:var(--ink);letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px;margin-top:0">1. Toplanan Məlumatlar</div>
-        <p style="margin-bottom:18px">Hesab yaradarkən adınız, e-poçt ünvanınız və hesab növü toplanır. Ödəniş məlumatları birbaşa bizə saxlanmır — üçüncü tərəf ödəniş prosessoru vasitəsilə idarə olunur. Platform istifadəsi zamanı baxış tarixi, vote fəaliyyəti və şərhlər qeydə alınır.</p>
-
-        <div style="font-size:11px;font-weight:700;color:var(--ink);letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px">2. Məlumatların İstifadəsi</div>
-        <p style="margin-bottom:18px">Toplanan məlumatlar yalnız xidmət göstərmək, hesabınızı idarə etmək və texniki problemləri həll etmək üçün istifadə olunur. Məlumatlarınız üçüncü tərəflərə satılmır. Platformanın işini yaxşılaşdırmaq üçün anonimləşdirilmiş statistika istifadə oluna bilər.</p>
-
-        <div style="font-size:11px;font-weight:700;color:var(--ink);letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px">3. Çərəzlər (Cookies)</div>
-        <p style="margin-bottom:18px">antism sessiya çərəzlərindən istifadə edir. Bu çərəzlər brauzer bağlandıqda silinir. Analitika üçün minimal məlumat toplanır. Çərəzləri brauzer tənzimləmələrindən söndürə bilərsiniz, lakin bu, platformanın düzgün işləməsinə mane ola bilər.</p>
-
-        <div style="font-size:11px;font-weight:700;color:var(--ink);letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px">4. Məlumat Təhlükəsizliyi</div>
-        <p style="margin-bottom:18px">Bütün məlumatlar SSL/TLS şifrələməsi ilə qorunur. Şifrələr hashlanmış formada saxlanır. Müntəzəm təhlükəsizlik yoxlamaları aparılır. Məlumat pozuntusu baş verdiyi halda 72 saat ərzində istifadəçilər xəbərdar edilir.</p>
-
-        <div style="font-size:11px;font-weight:700;color:var(--ink);letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px">5. Sizin Hüquqlarınız</div>
-        <p style="margin-bottom:0">Məlumatlarınıza giriş, düzəliş və silinmə hüququnuz var. Hesabınızı ləğv etmək istədikdə bütün şəxsi məlumatlarınız 30 gün ərzində silinəcək. Əlaqə: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c6b6b4afb0a7a5bf86a7a8b2afb5abe8a7bc">[email&#160;protected]</a></p>
-      </div>
-    </div>
-    <footer><div class="foot-logo" style="cursor:default"><div class="glass-ant"><svg viewBox="0 0 32 32"><use href="#ant"/></svg></div>antism</div><ul class
 </body>
 </html>
