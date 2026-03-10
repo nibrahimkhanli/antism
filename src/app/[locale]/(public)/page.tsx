@@ -10,33 +10,10 @@ import { cn } from '@/lib/utils'
 
 export default async function LandingPage() {
   const locale = await getLocale()
-  const supabase = await createClient()
-
-let user = null
-
-try {
-  const { data } = await supabase.auth.getUser()
-  user = data.user
-} catch (e) {
-  user = null
-}
-
-  let profile = null
-  if (user) {
-    const { data, error } = await supabase
-  .from('profiles')
-  .select('*')
-  .eq('user_id', user.id)
-  .maybeSingle()
-
-if (!error) {
-  profile = data
-}
-}
 
   return (
     <div className="min-h-screen bg-white">
-      <Navbar profile={profile} />
+      <Navbar profile={null} />
       <LandingContent locale={locale} />
     </div>
   )
