@@ -1,0 +1,140 @@
+{
+  "common": {
+    "appName": "Antism",
+    "tagline": "Connect your brand with the right audience",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signOut": "Sign Out",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "success": "Success",
+    "required": "Required",
+    "submit": "Submit",
+    "back": "Back"
+  },
+  "nav": {
+    "browse": "Creators",
+    "dashboard": "Dashboard",
+    "packages": "Packages",
+    "deals": "Deals",
+    "profile": "Profile"
+  },
+  "landing": {
+    "hero": {
+      "title": "Connect your brand with the right audience",
+      "subtitle": "Effective sponsorships through podcasters, athletes and events",
+      "ctaSponsor": "Start as Sponsor",
+      "ctaCreator": "Join as Creator"
+    },
+    "howItWorks": {
+      "title": "How it works",
+      "forSponsors": "For Sponsors",
+      "forCreators": "For Creators",
+      "step1Sponsor": "Browse creators",
+      "step2Sponsor": "Choose a package and make a deal",
+      "step3Sponsor": "Track your branded content",
+      "step1Creator": "Create your profile",
+      "step2Creator": "Build sponsorship packages",
+      "step3Creator": "Earn revenue"
+    },
+    "creatorTypes": {
+      "title": "Who can get sponsored?",
+      "podcast": "Podcasters",
+      "podcastDesc": "Episode ads, dedications, social media shares",
+      "athlete": "Athletes",
+      "athleteDesc": "Social posts, events, branded content",
+      "event": "Event Organizers",
+      "eventDesc": "Logo placement, stage mentions, social media"
+    }
+  },
+  "auth": {
+    "loginTitle": "Sign in to your account",
+    "registerTitle": "Create an account",
+    "email": "Email",
+    "password": "Password",
+    "fullName": "Full Name",
+    "selectRole": "Who are you?",
+    "roleSponsor": "Sponsor / Business",
+    "roleCreator": "Creator",
+    "roleSponsorDesc": "I want to sponsor creators",
+    "roleCreatorDesc": "I want to get sponsorships",
+    "alreadyHaveAccount": "Already have an account?",
+    "dontHaveAccount": "Don't have an account?"
+  },
+  "onboarding": {
+    "creatorType": "Select your creator type",
+    "podcast": "Podcaster",
+    "athlete": "Athlete",
+    "event": "Event Organizer",
+    "podcastDesc": "Reach brands through podcast episodes",
+    "athleteDesc": "Promote brands on social media and events",
+    "eventDesc": "Attract sponsors to your events"
+  },
+  "profile": {
+    "bio": "About",
+    "category": "Category",
+    "reach": "Audience size",
+    "country": "Country",
+    "socialLinks": "Social media links",
+    "mediaKit": "Media Kit",
+    "companyName": "Company name",
+    "industry": "Industry",
+    "website": "Website"
+  },
+  "packages": {
+    "title": "Packages",
+    "create": "New package",
+    "packageTitle": "Title",
+    "description": "Description",
+    "price": "Price",
+    "currency": "Currency",
+    "duration": "Duration (days)",
+    "deliverables": "Deliverables",
+    "status": "Status",
+    "active": "Active",
+    "paused": "Paused",
+    "draft": "Draft",
+    "from": "from",
+    "days": "days",
+    "sponsor": "Sponsor",
+    "noPackages": "No packages yet"
+  },
+  "deals": {
+    "title": "Deals",
+    "pending": "Pending",
+    "accepted": "Accepted",
+    "inProgress": "In Progress",
+    "completed": "Completed",
+    "cancelled": "Cancelled",
+    "disputed": "Disputed",
+    "accept": "Accept",
+    "decline": "Decline",
+    "submitProof": "Submit Proof",
+    "confirmDelivery": "Confirm Delivery",
+    "message": "Message",
+    "noDeal": "No deals yet"
+  },
+  "browse": {
+    "title": "Discover Creators",
+    "search": "Search...",
+    "filterType": "Creator type",
+    "filterPrice": "Price range",
+    "filterCountry": "Country",
+    "allTypes": "All",
+    "sortNewest": "Newest",
+    "sortPriceLow": "Price: Low to High",
+    "sortPriceHigh": "Price: High to Low"
+  },
+  "dashboard": {
+    "overview": "Overview",
+    "totalEarnings": "Total Earnings",
+    "activeDeals": "Active Deals",
+    "completedDeals": "Completed Deals",
+    "avgRating": "Avg Rating",
+    "totalSpent": "Total Spent"
+  }
+}

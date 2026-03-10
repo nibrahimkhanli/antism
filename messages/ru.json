@@ -1,0 +1,140 @@
+{
+  "common": {
+    "appName": "Antism",
+    "tagline": "Свяжите ваш бренд с нужной аудиторией",
+    "signIn": "Войти",
+    "signUp": "Регистрация",
+    "signOut": "Выйти",
+    "save": "Сохранить",
+    "cancel": "Отмена",
+    "delete": "Удалить",
+    "edit": "Редактировать",
+    "loading": "Загрузка...",
+    "error": "Произошла ошибка",
+    "success": "Успешно",
+    "required": "Обязательно",
+    "submit": "Отправить",
+    "back": "Назад"
+  },
+  "nav": {
+    "browse": "Авторы",
+    "dashboard": "Панель управления",
+    "packages": "Пакеты",
+    "deals": "Сделки",
+    "profile": "Профиль"
+  },
+  "landing": {
+    "hero": {
+      "title": "Свяжите ваш бренд с нужной аудиторией",
+      "subtitle": "Эффективное спонсорство через подкастеров, спортсменов и мероприятия",
+      "ctaSponsor": "Начать как спонсор",
+      "ctaCreator": "Присоединиться как автор"
+    },
+    "howItWorks": {
+      "title": "Как это работает",
+      "forSponsors": "Для спонсоров",
+      "forCreators": "Для авторов",
+      "step1Sponsor": "Найдите авторов",
+      "step2Sponsor": "Выберите пакет и заключите сделку",
+      "step3Sponsor": "Отслеживайте брендированный контент",
+      "step1Creator": "Создайте профиль",
+      "step2Creator": "Подготовьте спонсорские пакеты",
+      "step3Creator": "Зарабатывайте"
+    },
+    "creatorTypes": {
+      "title": "Кто может получить спонсорство?",
+      "podcast": "Подкастеры",
+      "podcastDesc": "Реклама в эпизодах, посвящения, публикации в соцсетях",
+      "athlete": "Спортсмены",
+      "athleteDesc": "Посты в соцсетях, мероприятия, брендированный контент",
+      "event": "Организаторы мероприятий",
+      "eventDesc": "Размещение логотипа, упоминания на сцене, соцсети"
+    }
+  },
+  "auth": {
+    "loginTitle": "Войдите в аккаунт",
+    "registerTitle": "Создайте аккаунт",
+    "email": "E-mail",
+    "password": "Пароль",
+    "fullName": "Имя и фамилия",
+    "selectRole": "Кто вы?",
+    "roleSponsor": "Спонсор / Бизнес",
+    "roleCreator": "Автор",
+    "roleSponsorDesc": "Хочу спонсировать авторов",
+    "roleCreatorDesc": "Хочу получить спонсорство",
+    "alreadyHaveAccount": "Уже есть аккаунт?",
+    "dontHaveAccount": "Нет аккаунта?"
+  },
+  "onboarding": {
+    "creatorType": "Выберите тип автора",
+    "podcast": "Подкастер",
+    "athlete": "Спортсмен",
+    "event": "Организатор мероприятий",
+    "podcastDesc": "Привлекайте бренды через эпизоды подкаста",
+    "athleteDesc": "Продвигайте бренды в соцсетях и на мероприятиях",
+    "eventDesc": "Привлекайте спонсоров на ваши мероприятия"
+  },
+  "profile": {
+    "bio": "О себе",
+    "category": "Категория",
+    "reach": "Размер аудитории",
+    "country": "Страна",
+    "socialLinks": "Ссылки на соцсети",
+    "mediaKit": "Медиа-кит",
+    "companyName": "Название компании",
+    "industry": "Отрасль",
+    "website": "Сайт"
+  },
+  "packages": {
+    "title": "Пакеты",
+    "create": "Новый пакет",
+    "packageTitle": "Название",
+    "description": "Описание",
+    "price": "Цена",
+    "currency": "Валюта",
+    "duration": "Длительность (дней)",
+    "deliverables": "Что входит",
+    "status": "Статус",
+    "active": "Активный",
+    "paused": "Приостановлен",
+    "draft": "Черновик",
+    "from": "от",
+    "days": "дней",
+    "sponsor": "Спонсировать",
+    "noPackages": "Пакетов пока нет"
+  },
+  "deals": {
+    "title": "Сделки",
+    "pending": "Ожидает",
+    "accepted": "Принята",
+    "inProgress": "В процессе",
+    "completed": "Завершена",
+    "cancelled": "Отменена",
+    "disputed": "Спорная",
+    "accept": "Принять",
+    "decline": "Отклонить",
+    "submitProof": "Загрузить доказательство",
+    "confirmDelivery": "Подтвердить выполнение",
+    "message": "Сообщение",
+    "noDeal": "Сделок пока нет"
+  },
+  "browse": {
+    "title": "Найдите авторов",
+    "search": "Поиск...",
+    "filterType": "Тип автора",
+    "filterPrice": "Диапазон цен",
+    "filterCountry": "Страна",
+    "allTypes": "Все",
+    "sortNewest": "Новые",
+    "sortPriceLow": "Цена: по возрастанию",
+    "sortPriceHigh": "Цена: по убыванию"
+  },
+  "dashboard": {
+    "overview": "Обзор",
+    "totalEarnings": "Общий заработок",
+    "activeDeals": "Активные сделки",
+    "completedDeals": "Завершённые сделки",
+    "avgRating": "Средний рейтинг",
+    "totalSpent": "Всего потрачено"
+  }
+}

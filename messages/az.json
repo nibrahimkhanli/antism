@@ -1,0 +1,140 @@
+{
+  "common": {
+    "appName": "Antism",
+    "tagline": "Brendinizi doğru auditoriyaya çatdırın",
+    "signIn": "Daxil ol",
+    "signUp": "Qeydiyyat",
+    "signOut": "Çıxış",
+    "save": "Saxla",
+    "cancel": "Ləğv et",
+    "delete": "Sil",
+    "edit": "Redaktə et",
+    "loading": "Yüklənir...",
+    "error": "Xəta baş verdi",
+    "success": "Uğurlu",
+    "required": "Tələb olunur",
+    "submit": "Göndər",
+    "back": "Geri"
+  },
+  "nav": {
+    "browse": "Kreatorlar",
+    "dashboard": "İdarə paneli",
+    "packages": "Paketlər",
+    "deals": "Sövdələşmələr",
+    "profile": "Profil"
+  },
+  "landing": {
+    "hero": {
+      "title": "Brendinizi doğru auditoriyaya çatdırın",
+      "subtitle": "Podkastçılar, idmançılar və tədbirlər vasitəsilə effektiv sponsorluq",
+      "ctaSponsor": "Sponsor kimi başla",
+      "ctaCreator": "Kreator kimi qoşul"
+    },
+    "howItWorks": {
+      "title": "Necə işləyir?",
+      "forSponsors": "Sponsorlar üçün",
+      "forCreators": "Kreatorlar üçün",
+      "step1Sponsor": "Kreatorları axtarın",
+      "step2Sponsor": "Paket seçin və sövdələşin",
+      "step3Sponsor": "Brend məzmununu izləyin",
+      "step1Creator": "Profilinizi yaradın",
+      "step2Creator": "Sponsorluq paketlər hazırlayın",
+      "step3Creator": "Gəlir əldə edin"
+    },
+    "creatorTypes": {
+      "title": "Kim sponsorluq əldə edə bilər?",
+      "podcast": "Podkastçılar",
+      "podcastDesc": "Epizod reklamları, dedikasiya, sosial mediaşərəklər",
+      "athlete": "İdmançılar",
+      "athleteDesc": "Sosial media postlar, tədbirlər, brendli məzmun",
+      "event": "Tədbir Təşkilatçıları",
+      "eventDesc": "Logo yerləşdirmə, sseçici reklamlar, sosial media"
+    }
+  },
+  "auth": {
+    "loginTitle": "Hesabınıza daxil olun",
+    "registerTitle": "Hesab yaradın",
+    "email": "E-poçt",
+    "password": "Şifrə",
+    "fullName": "Ad Soyad",
+    "selectRole": "Siz kisiniz?",
+    "roleSponsor": "Sponsor / Biznes",
+    "roleCreator": "Kreator",
+    "roleSponsorDesc": "Kreatorlara sponsorluq etmək istəyirəm",
+    "roleCreatorDesc": "Sponsorluq almaq istəyirəm",
+    "alreadyHaveAccount": "Artıq hesabınız var?",
+    "dontHaveAccount": "Hesabınız yoxdur?"
+  },
+  "onboarding": {
+    "creatorType": "Kreator tipini seçin",
+    "podcast": "Podkastçı",
+    "athlete": "İdmançı / Atlet",
+    "event": "Tədbir Təşkilatçısı",
+    "podcastDesc": "Podkast epizodları ilə brendlərə çatın",
+    "athleteDesc": "Sosial media və hadisələrdə brend tanıtın",
+    "eventDesc": "Tədbirinizdə sponsorları cəlb edin"
+  },
+  "profile": {
+    "bio": "Haqqında",
+    "category": "Kateqoriya",
+    "reach": "Auditoriya sayı",
+    "country": "Ölkə",
+    "socialLinks": "Sosial media linklər",
+    "mediaKit": "Media Kit",
+    "companyName": "Şirkət adı",
+    "industry": "Sənaye",
+    "website": "Vebsayt"
+  },
+  "packages": {
+    "title": "Paketlər",
+    "create": "Yeni paket",
+    "packageTitle": "Başlıq",
+    "description": "Təsvir",
+    "price": "Qiymət",
+    "currency": "Valyuta",
+    "duration": "Müddət (gün)",
+    "deliverables": "Çatdırılacaqlar",
+    "status": "Status",
+    "active": "Aktiv",
+    "paused": "Dayandırılmış",
+    "draft": "Qaralama",
+    "from": "başlayaraq",
+    "days": "gün",
+    "sponsor": "Sponsorluq et",
+    "noPackages": "Hələ paket yoxdur"
+  },
+  "deals": {
+    "title": "Sövdələşmələr",
+    "pending": "Gözləyir",
+    "accepted": "Qəbul edildi",
+    "inProgress": "Davam edir",
+    "completed": "Tamamlandı",
+    "cancelled": "Ləğv edildi",
+    "disputed": "Mübahisəli",
+    "accept": "Qəbul et",
+    "decline": "Rədd et",
+    "submitProof": "Sübut yüklə",
+    "confirmDelivery": "Çatdırılmanı təsdiqlə",
+    "message": "Mesaj",
+    "noDeal": "Hələ sövdələşmə yoxdur"
+  },
+  "browse": {
+    "title": "Kreatorları kəşf edin",
+    "search": "Axtar...",
+    "filterType": "Kreator tipi",
+    "filterPrice": "Qiymət aralığı",
+    "filterCountry": "Ölkə",
+    "allTypes": "Hamısı",
+    "sortNewest": "Ən yeni",
+    "sortPriceLow": "Qiymət: Aşağıdan",
+    "sortPriceHigh": "Qiymət: Yuxarıdan"
+  },
+  "dashboard": {
+    "overview": "İcmal",
+    "totalEarnings": "Ümumi qazanc",
+    "activeDeals": "Aktiv sövdələşmələr",
+    "completedDeals": "Tamamlanan sövdələşmələr",
+    "avgRating": "Orta reytinq",
+    "totalSpent": "Ümumi xərclər"
+  }
+}
