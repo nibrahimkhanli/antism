@@ -23,14 +23,15 @@ try {
 
   let profile = null
   if (user) {
-    const { data } = await supabase
-      .from('profiles')
-      .select('*')
-      .eq('user_id', user.id)
-      .maybeSingle()
-    if (!error) {
-    profile = data
-  }
+    const { data, error } = await supabase
+  .from('profiles')
+  .select('*')
+  .eq('user_id', user.id)
+  .maybeSingle()
+
+if (!error) {
+  profile = data
+}
 }
 
   return (
