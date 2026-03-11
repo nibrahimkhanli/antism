@@ -1,3 +1,5 @@
+import ThemeToggle from "@/components/theme-toggle";
+
 export default function Page() {
   return (
     <div>
@@ -5,6 +7,8 @@ export default function Page() {
       {/* HERO */}
 
       <div className="min-h-screen bg-background text-foreground flex flex-col items-center justify-center gap-6">
+
+        <ThemeToggle />
 
         <h1 className="text-6xl font-bold">
           Antism
@@ -16,11 +20,11 @@ export default function Page() {
 
         <div className="flex gap-4">
 
-          <button className="px-6 py-3 bg-primary text-black rounded-lg">
+          <button className="px-6 py-3 bg-primary text-black rounded-lg hover:opacity-90 transition">
             For Brands
           </button>
 
-          <button className="px-6 py-3 border border-border rounded-lg">
+          <button className="px-6 py-3 border border-border rounded-lg hover:bg-card transition">
             For Creators
           </button>
 
@@ -43,11 +47,9 @@ export default function Page() {
 
             <div>
               <div className="text-4xl font-bold mb-4">1</div>
-
               <h3 className="text-xl font-semibold mb-2">
                 Creators Join
               </h3>
-
               <p className="text-muted-foreground">
                 Athletes, podcasts and events create profiles.
               </p>
@@ -55,11 +57,9 @@ export default function Page() {
 
             <div>
               <div className="text-4xl font-bold mb-4">2</div>
-
               <h3 className="text-xl font-semibold mb-2">
                 Brands Discover
               </h3>
-
               <p className="text-muted-foreground">
                 Brands explore creators and find partners.
               </p>
@@ -67,11 +67,9 @@ export default function Page() {
 
             <div>
               <div className="text-4xl font-bold mb-4">3</div>
-
               <h3 className="text-xl font-semibold mb-2">
                 Deals Happen
               </h3>
-
               <p className="text-muted-foreground">
                 Campaigns are launched and collaborations start.
               </p>
@@ -143,11 +141,11 @@ export default function Page() {
 
           <div className="flex justify-center gap-6">
 
-            <button className="px-8 py-3 bg-black text-white rounded-lg">
+            <button className="px-8 py-3 bg-black text-white rounded-lg hover:scale-105 transition">
               Join as Creator
             </button>
 
-            <button className="px-8 py-3 border border-black rounded-lg">
+            <button className="px-8 py-3 border border-black rounded-lg hover:bg-black hover:text-white transition">
               Find Creators
             </button>
 
@@ -197,5 +195,5 @@ export default function Page() {
       </footer>
 
     </div>
-  )
+  );
 }
