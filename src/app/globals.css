@@ -5,7 +5,9 @@
 @custom-variant dark (&:is(.dark *));
 
 /* Tailwind theme mapping */
+
 @theme inline {
+
   --color-background: var(--color-background);
   --color-foreground: var(--color-foreground);
 
@@ -28,12 +30,9 @@
   --color-card: var(--color-card);
   --color-card-foreground: var(--color-card-foreground);
 
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
 }
 
-/* Light theme */
+/* LIGHT MODE */
 
 :root {
 
@@ -43,10 +42,12 @@
   --color-card: oklch(1 0 0);
   --color-card-foreground: oklch(0.145 0 0);
 
-  --color-primary: oklch(0.829 0.1314 68.07); /* Sunlit Clay */
+  /* BRAND COLORS */
+
+  --color-primary: oklch(0.829 0.1314 68.07);
   --color-primary-foreground: oklch(0.1 0 0);
 
-  --color-secondary: oklch(0.9068 0.0254 168.19); /* Aquamarine */
+  --color-secondary: oklch(0.9068 0.0254 168.19);
   --color-secondary-foreground: oklch(0.145 0 0);
 
   --color-muted: oklch(0.95 0.01 250);
@@ -59,10 +60,9 @@
   --color-input: oklch(0.92 0 0);
   --color-ring: oklch(0.708 0 0);
 
-  --radius: 0.625rem;
 }
 
-/* Dark theme */
+/* DARK MODE */
 
 .dark {
 
@@ -87,6 +87,7 @@
   --color-border: oklch(1 0 0 / 10%);
   --color-input: oklch(1 0 0 / 15%);
   --color-ring: oklch(0.556 0 0);
+
 }
 
 @layer base {
