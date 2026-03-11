@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Mic, Trophy, Calendar } from 'lucide-react'
 
 interface BrowsePageProps {
-  searchParams: Promise<{ type?: string; search?: string; country?: string }>
+  searchParams: { type?: string; search?: string; country?: string }
 }
 
 export default async function BrowsePage({ searchParams }: BrowsePageProps) {
@@ -16,12 +16,12 @@ export default async function BrowsePage({ searchParams }: BrowsePageProps) {
   const t = await getTranslations('browse')
   const supabase = await createClient()
 
-  const { type, search, country } = await searchParams
+  const { type, search, country } = searchParams
 
   const { data: { user } } = await supabase.auth.getUser()
   let profile = null
   if (user) {
-    const { data } = await supabase.from('profiles').select('*').eq('user_id', user.id).single()
+    const { data } = await supabase.from('profiles').select('*').eq('user_id', user.id).maybeSingle()
     profile = data
   }
 
