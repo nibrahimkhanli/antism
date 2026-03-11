@@ -175,6 +175,90 @@ export default function Page() {
   </div>
 </section>
 
+{/* FEATURED CREATORS */}
+
+<section className="py-24 bg-white text-black">
+  <div className="max-w-6xl mx-auto px-6 text-center">
+
+    <h2 className="text-3xl font-bold mb-12">
+      Featured Creators
+    </h2>
+
+    <div className="grid md:grid-cols-3 gap-10">
+
+      {/* CREATOR 1 */}
+      <div className="border rounded-xl p-6 hover:shadow-lg transition">
+
+        <img
+          src="https://i.pravatar.cc/200?img=1"
+          className="w-24 h-24 rounded-full mx-auto mb-4"
+        />
+
+        <h3 className="text-xl font-semibold">
+          Alex Carter
+        </h3>
+
+        <p className="text-gray-500 mb-2">
+          Athlete
+        </p>
+
+        <p className="text-sm text-gray-400">
+          120K followers
+        </p>
+
+      </div>
+
+
+      {/* CREATOR 2 */}
+      <div className="border rounded-xl p-6 hover:shadow-lg transition">
+
+        <img
+          src="https://i.pravatar.cc/200?img=2"
+          className="w-24 h-24 rounded-full mx-auto mb-4"
+        />
+
+        <h3 className="text-xl font-semibold">
+          Sarah Johnson
+        </h3>
+
+        <p className="text-gray-500 mb-2">
+          Podcast Host
+        </p>
+
+        <p className="text-sm text-gray-400">
+          80K listeners
+        </p>
+
+      </div>
+
+
+      {/* CREATOR 3 */}
+      <div className="border rounded-xl p-6 hover:shadow-lg transition">
+
+        <img
+          src="https://i.pravatar.cc/200?img=3"
+          className="w-24 h-24 rounded-full mx-auto mb-4"
+        />
+
+        <h3 className="text-xl font-semibold">
+          Tech Events Hub
+        </h3>
+
+        <p className="text-gray-500 mb-2">
+          Event Organizer
+        </p>
+
+        <p className="text-sm text-gray-400">
+          50K attendees
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
     </div>
   )
 }
