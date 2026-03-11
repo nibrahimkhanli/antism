@@ -1,65 +1,201 @@
-import Image from "next/image";
-
-export default function Home() {
+export default function Page() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div>
+
+      {/* HERO */}
+
+      <div className="min-h-screen bg-background text-foreground flex flex-col items-center justify-center gap-6">
+
+        <h1 className="text-6xl font-bold">
+          Antism
+        </h1>
+
+        <p className="text-xl text-muted-foreground">
+          Creator marketplace for athletes, podcasts and events
+        </p>
+
+        <div className="flex gap-4">
+
+          <button className="px-6 py-3 bg-primary text-black rounded-lg">
+            For Brands
+          </button>
+
+          <button className="px-6 py-3 border border-border rounded-lg">
+            For Creators
+          </button>
+
+        </div>
+
+      </div>
+
+
+      {/* HOW IT WORKS */}
+
+      <section className="py-24 bg-card text-foreground">
+
+        <div className="max-w-6xl mx-auto px-6 text-center">
+
+          <h2 className="text-3xl font-bold mb-12">
+            How Antism Works
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-10">
+
+            <div>
+              <div className="text-4xl font-bold mb-4">1</div>
+
+              <h3 className="text-xl font-semibold mb-2">
+                Creators Join
+              </h3>
+
+              <p className="text-muted-foreground">
+                Athletes, podcasts and events create profiles.
+              </p>
+            </div>
+
+            <div>
+              <div className="text-4xl font-bold mb-4">2</div>
+
+              <h3 className="text-xl font-semibold mb-2">
+                Brands Discover
+              </h3>
+
+              <p className="text-muted-foreground">
+                Brands explore creators and find partners.
+              </p>
+            </div>
+
+            <div>
+              <div className="text-4xl font-bold mb-4">3</div>
+
+              <h3 className="text-xl font-semibold mb-2">
+                Deals Happen
+              </h3>
+
+              <p className="text-muted-foreground">
+                Campaigns are launched and collaborations start.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* CREATOR CATEGORIES */}
+
+      <section className="py-24 bg-background text-foreground">
+
+        <div className="max-w-6xl mx-auto px-6 text-center">
+
+          <h2 className="text-3xl font-bold mb-12">
+            Creator Categories
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-10">
+
+            <div className="p-8 border border-border rounded-xl hover:shadow-lg transition">
+              <div className="text-4xl mb-4">🏅</div>
+              <h3 className="text-xl font-semibold mb-2">Athletes</h3>
+              <p className="text-muted-foreground">
+                Partner with brands and promote campaigns.
+              </p>
+            </div>
+
+            <div className="p-8 border border-border rounded-xl hover:shadow-lg transition">
+              <div className="text-4xl mb-4">🎙️</div>
+              <h3 className="text-xl font-semibold mb-2">Podcasts</h3>
+              <p className="text-muted-foreground">
+                Integrate sponsorships into episodes.
+              </p>
+            </div>
+
+            <div className="p-8 border border-border rounded-xl hover:shadow-lg transition">
+              <div className="text-4xl mb-4">📅</div>
+              <h3 className="text-xl font-semibold mb-2">Events</h3>
+              <p className="text-muted-foreground">
+                Work with sponsors to promote events.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* CTA */}
+
+      <section className="py-24 bg-primary text-black">
+
+        <div className="max-w-4xl mx-auto px-6 text-center">
+
+          <h2 className="text-4xl font-bold mb-6">
+            Start Collaborating Today
+          </h2>
+
+          <p className="mb-10">
+            Join Antism to connect brands with creators.
           </p>
+
+          <div className="flex justify-center gap-6">
+
+            <button className="px-8 py-3 bg-black text-white rounded-lg">
+              Join as Creator
+            </button>
+
+            <button className="px-8 py-3 border border-black rounded-lg">
+              Find Creators
+            </button>
+
+          </div>
+
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+      </section>
+
+
+      {/* FOOTER */}
+
+      <footer className="bg-card border-t border-border py-12">
+
+        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+
+          <h3 className="text-lg font-semibold text-foreground mb-4 md:mb-0">
+            Antism
+          </h3>
+
+          <div className="flex gap-6 text-muted-foreground text-sm">
+
+            <a href="#" className="hover:text-foreground">
+              About
+            </a>
+
+            <a href="#" className="hover:text-foreground">
+              Creators
+            </a>
+
+            <a href="#" className="hover:text-foreground">
+              Brands
+            </a>
+
+            <a href="#" className="hover:text-foreground">
+              Contact
+            </a>
+
+          </div>
+
+          <p className="text-xs text-muted-foreground mt-6 md:mt-0">
+            © 2026 Antism. All rights reserved.
+          </p>
+
         </div>
-      </main>
+
+      </footer>
+
     </div>
-  );
+  )
 }

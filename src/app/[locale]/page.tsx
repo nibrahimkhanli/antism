@@ -43,43 +43,32 @@ export default function Page() {
 
             <div>
               <div className="text-4xl font-bold mb-4">1</div>
-
               <h3 className="text-xl font-semibold mb-2">
                 Creators Join
               </h3>
-
               <p className="text-muted-foreground">
-                Athletes, podcasts and events create their profiles.
+                Athletes, podcasts and events create profiles.
               </p>
-
             </div>
 
             <div>
-
               <div className="text-4xl font-bold mb-4">2</div>
-
               <h3 className="text-xl font-semibold mb-2">
                 Brands Discover
               </h3>
-
               <p className="text-muted-foreground">
-                Brands explore creators and find the right partners.
+                Brands explore creators and find partners.
               </p>
-
             </div>
 
             <div>
-
               <div className="text-4xl font-bold mb-4">3</div>
-
               <h3 className="text-xl font-semibold mb-2">
                 Deals Happen
               </h3>
-
               <p className="text-muted-foreground">
-                Campaigns are created and collaborations begin.
+                Campaigns start and collaborations begin.
               </p>
-
             </div>
 
           </div>
@@ -89,68 +78,7 @@ export default function Page() {
       </section>
 
 
-      {/* CREATOR CATEGORIES */}
-
-      <section className="py-24 bg-background text-foreground">
-
-        <div className="max-w-6xl mx-auto px-6 text-center">
-
-          <h2 className="text-3xl font-bold mb-12">
-            Creator Categories
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-10">
-
-            <div className="p-8 border border-border rounded-xl hover:shadow-lg transition">
-
-              <div className="text-4xl mb-4">🏅</div>
-
-              <h3 className="text-xl font-semibold mb-2">
-                Athletes
-              </h3>
-
-              <p className="text-muted-foreground">
-                Partner with brands and promote campaigns to your fans.
-              </p>
-
-            </div>
-
-            <div className="p-8 border border-border rounded-xl hover:shadow-lg transition">
-
-              <div className="text-4xl mb-4">🎙️</div>
-
-              <h3 className="text-xl font-semibold mb-2">
-                Podcasts
-              </h3>
-
-              <p className="text-muted-foreground">
-                Integrate sponsorships into episodes.
-              </p>
-
-            </div>
-
-            <div className="p-8 border border-border rounded-xl hover:shadow-lg transition">
-
-              <div className="text-4xl mb-4">📅</div>
-
-              <h3 className="text-xl font-semibold mb-2">
-                Events
-              </h3>
-
-              <p className="text-muted-foreground">
-                Work with sponsors to promote events.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      {/* FINAL CTA */}
+      {/* CTA */}
 
       <section className="py-24 bg-primary text-black">
 
@@ -180,6 +108,45 @@ export default function Page() {
 
       </section>
 
+
+      {/* FOOTER */}
+
+      <footer className="bg-card border-t border-border py-12">
+
+        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+
+          <h3 className="text-lg font-semibold text-foreground mb-4 md:mb-0">
+            Antism
+          </h3>
+
+          <div className="flex gap-6 text-muted-foreground text-sm">
+
+            <a href="#" className="hover:text-foreground">
+              About
+            </a>
+
+            <a href="#" className="hover:text-foreground">
+              Creators
+            </a>
+
+            <a href="#" className="hover:text-foreground">
+              Brands
+            </a>
+
+            <a href="#" className="hover:text-foreground">
+              Contact
+            </a>
+
+          </div>
+
+          <p className="text-xs text-muted-foreground mt-6 md:mt-0">
+            © 2026 Antism
+          </p>
+
+        </div>
+
+      </footer>
+
     </div>
-  )
+  );
 }
