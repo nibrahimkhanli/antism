@@ -1,3 +1,7 @@
 export default function Page() {
-  return <h1>Test OK</h1>
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-black text-white">
+      <h1 className="text-4xl font-bold">Antism</h1>
+    </div>
+  )
 }
