@@ -1,7 +1,8 @@
-import createMiddleware from 'next-intl/middleware'
-import { routing } from './i18n/routing'
+import { type NextRequest, NextResponse } from 'next/server'
 
-export default createMiddleware(routing)
+export function middleware(request: NextRequest) {
+  return NextResponse.next()
+}
 
 export const config = {
   matcher: ['/((?!_next|_vercel|.*\\..*).*)'],

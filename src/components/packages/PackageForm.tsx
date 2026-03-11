@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { useTranslations } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -31,9 +30,6 @@ interface PackageFormProps {
 }
 
 export function PackageForm({ initial, onSubmit, onCancel, loading }: PackageFormProps) {
-  const t = useTranslations('packages')
-  const tCommon = useTranslations('common')
-
   const [title, setTitle] = useState(initial?.title ?? '')
   const [description, setDescription] = useState(initial?.description ?? '')
   const [price, setPrice] = useState(initial?.price ? String(initial.price / 100) : '')
@@ -74,33 +70,24 @@ export function PackageForm({ initial, onSubmit, onCancel, loading }: PackageFor
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="space-y-2">
-        <Label>{t('packageTitle')} *</Label>
+        <Label>Paket adı *</Label>
         <Input value={title} onChange={e => setTitle(e.target.value)} required />
       </div>
 
       <div className="space-y-2">
-        <Label>{t('description')}</Label>
+        <Label>Təsvir</Label>
         <Textarea value={description} onChange={e => setDescription(e.target.value)} rows={3} />
       </div>
 
       <div className="grid grid-cols-2 gap-4">
         <div className="space-y-2">
-          <Label>{t('price')} *</Label>
-          <Input
-            type="number"
-            min="1"
-            step="0.01"
-            value={price}
-            onChange={e => setPrice(e.target.value)}
-            required
-          />
+          <Label>Qiymət *</Label>
+          <Input type="number" min="1" step="0.01" value={price} onChange={e => setPrice(e.target.value)} required />
         </div>
         <div className="space-y-2">
-          <Label>{t('currency')}</Label>
+          <Label>Valyuta</Label>
           <Select value={currency} onValueChange={v => v && setCurrency(v as Currency)}>
-            <SelectTrigger>
-              <SelectValue />
-            </SelectTrigger>
+            <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
               <SelectItem value="AZN">AZN (₼)</SelectItem>
               <SelectItem value="RUB">RUB (₽)</SelectItem>
@@ -110,19 +97,12 @@ export function PackageForm({ initial, onSubmit, onCancel, loading }: PackageFor
       </div>
 
       <div className="space-y-2">
-        <Label>{t('duration')} *</Label>
-        <Input
-          type="number"
-          min="1"
-          value={duration}
-          onChange={e => setDuration(e.target.value)}
-          required
-        />
+        <Label>Müddət (gün) *</Label>
+        <Input type="number" min="1" value={duration} onChange={e => setDuration(e.target.value)} required />
       </div>
 
-      {/* Deliverables */}
       <div className="space-y-3">
-        <Label>{t('deliverables')}</Label>
+        <Label>Çatdırılacaqlar</Label>
         <div className="flex flex-wrap gap-2">
           {DELIVERABLE_PRESETS.map(p => (
             <button
@@ -139,7 +119,6 @@ export function PackageForm({ initial, onSubmit, onCancel, loading }: PackageFor
             </button>
           ))}
         </div>
-        {/* Custom deliverable */}
         <div className="flex gap-2">
           <Input
             value={customLabel}
@@ -152,7 +131,6 @@ export function PackageForm({ initial, onSubmit, onCancel, loading }: PackageFor
             <Plus className="h-4 w-4" />
           </Button>
         </div>
-        {/* Selected */}
         {deliverables.length > 0 && (
           <div className="flex flex-wrap gap-2 pt-1">
             {deliverables.map(d => (
@@ -169,10 +147,10 @@ export function PackageForm({ initial, onSubmit, onCancel, loading }: PackageFor
 
       <div className="flex gap-3 pt-2">
         <Button type="submit" disabled={loading} className="flex-1">
-          {loading ? tCommon('loading') : tCommon('save')}
+          {loading ? 'Saxlanılır...' : 'Saxla'}
         </Button>
         <Button type="button" variant="outline" onClick={onCancel}>
-          {tCommon('cancel')}
+          Ləğv et
         </Button>
       </div>
     </form>

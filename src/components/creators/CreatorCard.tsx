@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { useLocale, useTranslations } from 'next-intl'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
@@ -26,14 +25,13 @@ const typeLabels = {
 
 interface CreatorCardProps {
   creator: CreatorCardType
-  locale: string
 }
 
-export function CreatorCardComponent({ creator, locale }: CreatorCardProps) {
+export function CreatorCardComponent({ creator }: CreatorCardProps) {
   const Icon = typeIcons[creator.type]
 
   return (
-    <Link href={`/${locale}/creators/${creator.id}`}>
+    <Link href={`/creators/${creator.id}`}>
       <Card className="h-full hover:shadow-md transition-shadow cursor-pointer">
         <CardContent className="pt-6">
           <div className="flex items-start gap-4">

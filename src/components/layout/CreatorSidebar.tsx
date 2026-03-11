@@ -2,9 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
-import { useTranslations } from 'next-intl'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Button } from '@/components/ui/button'
 import { Profile } from '@/lib/supabase/types'
 import { createClient } from '@/lib/supabase/client'
 import { LayoutDashboard, Package, Handshake, User, LogOut } from 'lucide-react'
@@ -12,38 +10,31 @@ import { cn } from '@/lib/utils'
 
 interface CreatorSidebarProps {
   profile: Profile
-  locale: string
 }
 
-export function CreatorSidebar({ profile, locale }: CreatorSidebarProps) {
-  const t = useTranslations('nav')
-  const tCommon = useTranslations('common')
+const links = [
+  { href: '/creator/dashboard', label: 'İcmal', icon: LayoutDashboard },
+  { href: '/creator/dashboard/packages', label: 'Paketlər', icon: Package },
+  { href: '/creator/dashboard/deals', label: 'Sövdələşmələr', icon: Handshake },
+  { href: '/creator/dashboard/profile', label: 'Profil', icon: User },
+]
+
+export function CreatorSidebar({ profile }: CreatorSidebarProps) {
   const pathname = usePathname()
   const router = useRouter()
-
-  const base = `/${locale}/creator/dashboard`
-
-  const links = [
-    { href: base, label: t('dashboard'), icon: LayoutDashboard },
-    { href: `${base}/packages`, label: t('packages'), icon: Package },
-    { href: `${base}/deals`, label: t('deals'), icon: Handshake },
-    { href: `${base}/profile`, label: t('profile'), icon: User },
-  ]
 
   const handleSignOut = async () => {
     const supabase = createClient()
     await supabase.auth.signOut()
-    router.push(`/${locale}`)
+    router.push('/')
   }
 
   return (
     <aside className="w-64 bg-white border-r flex flex-col shrink-0">
-      {/* Logo */}
       <div className="p-6 border-b">
-        <Link href={`/${locale}`} className="font-bold text-lg">antism</Link>
+        <Link href="/" className="font-bold text-lg">antism</Link>
       </div>
 
-      {/* Profile */}
       <div className="p-4 border-b">
         <div className="flex items-center gap-3">
           <Avatar className="h-9 w-9">
@@ -57,7 +48,6 @@ export function CreatorSidebar({ profile, locale }: CreatorSidebarProps) {
         </div>
       </div>
 
-      {/* Nav */}
       <nav className="flex-1 p-3 space-y-1">
         {links.map(({ href, label, icon: Icon }) => (
           <Link
@@ -82,7 +72,7 @@ export function CreatorSidebar({ profile, locale }: CreatorSidebarProps) {
           className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:bg-red-50 hover:text-red-600 transition-colors w-full"
         >
           <LogOut className="h-4 w-4" />
-          {tCommon('signOut')}
+          Çıxış
         </button>
       </div>
     </aside>

@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
-import { useTranslations } from 'next-intl'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Profile } from '@/lib/supabase/types'
 import { createClient } from '@/lib/supabase/client'
@@ -11,34 +10,29 @@ import { cn } from '@/lib/utils'
 
 interface SponsorSidebarProps {
   profile: Profile
-  locale: string
 }
 
-export function SponsorSidebar({ profile, locale }: SponsorSidebarProps) {
-  const t = useTranslations('nav')
-  const tCommon = useTranslations('common')
+const links = [
+  { href: '/sponsor/dashboard', label: 'İcmal', icon: LayoutDashboard },
+  { href: '/browse', label: 'Kreatorlar', icon: Search },
+  { href: '/sponsor/dashboard/deals', label: 'Sövdələşmələr', icon: Handshake },
+  { href: '/sponsor/dashboard/payments', label: 'Ödənişlər', icon: CreditCard },
+]
+
+export function SponsorSidebar({ profile }: SponsorSidebarProps) {
   const pathname = usePathname()
   const router = useRouter()
-
-  const base = `/${locale}/sponsor/dashboard`
-
-  const links = [
-    { href: base, label: t('dashboard'), icon: LayoutDashboard },
-    { href: `/${locale}/browse`, label: t('browse'), icon: Search },
-    { href: `${base}/deals`, label: t('deals'), icon: Handshake },
-    { href: `${base}/payments`, label: 'Ödənişlər', icon: CreditCard },
-  ]
 
   const handleSignOut = async () => {
     const supabase = createClient()
     await supabase.auth.signOut()
-    router.push(`/${locale}`)
+    router.push('/')
   }
 
   return (
     <aside className="w-64 bg-white border-r flex flex-col shrink-0">
       <div className="p-6 border-b">
-        <Link href={`/${locale}`} className="font-bold text-lg">antism</Link>
+        <Link href="/" className="font-bold text-lg">antism</Link>
       </div>
       <div className="p-4 border-b">
         <div className="flex items-center gap-3">
@@ -75,7 +69,7 @@ export function SponsorSidebar({ profile, locale }: SponsorSidebarProps) {
           className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-slate-600 hover:bg-red-50 hover:text-red-600 transition-colors w-full"
         >
           <LogOut className="h-4 w-4" />
-          {tCommon('signOut')}
+          Çıxış
         </button>
       </div>
     </aside>

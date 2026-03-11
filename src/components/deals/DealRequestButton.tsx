@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { useTranslations } from 'next-intl'
 import { useRouter } from 'next/navigation'
 import { PackageCard } from '@/components/packages/PackageCard'
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog'
@@ -16,13 +15,9 @@ interface DealRequestButtonProps {
   pkg: Package
   sponsorId: string | null
   creatorId: string
-  locale: string
 }
 
-export function DealRequestButton({ pkg, sponsorId, creatorId, locale }: DealRequestButtonProps) {
-  const t = useTranslations('deals')
-  const tCommon = useTranslations('common')
-  const tPkg = useTranslations('packages')
+export function DealRequestButton({ pkg, sponsorId, creatorId }: DealRequestButtonProps) {
   const router = useRouter()
   const [open, setOpen] = useState(false)
   const [message, setMessage] = useState('')
@@ -30,7 +25,7 @@ export function DealRequestButton({ pkg, sponsorId, creatorId, locale }: DealReq
 
   const handleSponsor = () => {
     if (!sponsorId) {
-      router.push(`/${locale}/login`)
+      router.push('/login')
       return
     }
     setOpen(true)
@@ -56,7 +51,6 @@ export function DealRequestButton({ pkg, sponsorId, creatorId, locale }: DealReq
 
     if (error) { toast.error(error.message); setLoading(false); return }
 
-    // Log deal event
     await supabase.from('deal_events').insert({
       deal_id: deal.id,
       status: 'pending',
@@ -65,7 +59,7 @@ export function DealRequestButton({ pkg, sponsorId, creatorId, locale }: DealReq
 
     toast.success('Sorğu göndərildi!')
     setOpen(false)
-    router.push(`/${locale}/sponsor/dashboard/deals`)
+    router.push('/sponsor/dashboard/deals')
     setLoading(false)
   }
 
@@ -76,14 +70,14 @@ export function DealRequestButton({ pkg, sponsorId, creatorId, locale }: DealReq
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-md">
           <DialogHeader>
-            <DialogTitle>{tPkg('sponsor')}</DialogTitle>
+            <DialogTitle>Sponsorluq sorğusu</DialogTitle>
           </DialogHeader>
           <div className="text-sm text-slate-600 bg-slate-50 rounded-lg p-3 mb-2">
             <div className="font-semibold text-slate-900">{pkg.title}</div>
           </div>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <Label>{t('message')}</Label>
+              <Label>Mesaj</Label>
               <Textarea
                 value={message}
                 onChange={e => setMessage(e.target.value)}
@@ -92,7 +86,7 @@ export function DealRequestButton({ pkg, sponsorId, creatorId, locale }: DealReq
               />
             </div>
             <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? tCommon('loading') : t('submit')}
+              {loading ? 'Göndərilir...' : 'Sorğu göndər'}
             </Button>
           </form>
         </DialogContent>
