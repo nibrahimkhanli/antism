@@ -1,5 +1,17 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
+"use client";
+
+import { createClient } from "@/lib/supabase/client";
+
+const supabase = createClient();
+
+async function loginWithGoogle() {
+  await supabase.auth.signInWithOAuth({
+    provider: "google",
+  });
+}
+
 // ══════════════════════════════════════════
 // DESIGN TOKENS
 // ══════════════════════════════════════════
@@ -281,9 +293,28 @@ function PageGiris({T,goTo,onLogin}) {
         <h1 style={{fontSize:26,fontWeight:800,letterSpacing:"-.03em",color:T.fg,marginBottom:6}}>Xoş gəldiniz</h1>
         <p style={{fontSize:14,color:T.mfg,marginBottom:24}}>Hesabınıza daxil olun</p>
 
-        <button style={{width:"100%",minHeight:46,borderRadius:10,border:`1px solid ${T.border}`,background:T.card2,display:"flex",alignItems:"center",justifyContent:"center",gap:10,fontFamily:T.f,fontSize:14,fontWeight:600,color:T.fg,cursor:"pointer",marginBottom:16,transition:"border-color .2s"}}>
-          <IcoGoogle/> Google ilə daxil ol
-        </button>
+        <button
+  onClick={loginWithGoogle}
+  style={{
+    width:"100%",
+    minHeight:46,
+    borderRadius:10,
+    border:`1px solid ${T.border}`,
+    background:T.card2,
+    display:"flex",
+    alignItems:"center",
+    justifyContent:"center",
+    gap:10,
+    fontFamily:T.f,
+    fontSize:14,
+    fontWeight:600,
+    color:T.fg,
+    cursor:"pointer",
+    marginBottom:16
+  }}
+>
+  <IcoGoogle/> Google ilə daxil ol
+</button>
 
         <div style={{display:"flex",alignItems:"center",gap:12,margin:"0 0 16px",color:T.mfg,fontSize:12}}>
           <span style={{flex:1,height:1,background:T.border,display:"block"}}/> və ya <span style={{flex:1,height:1,background:T.border,display:"block"}}/>
@@ -365,9 +396,28 @@ function PageQeydiyyat({T,goTo,onLogin}) {
           ))}
         </div>
 
-        <button style={{width:"100%",minHeight:46,borderRadius:10,border:`1px solid ${T.border}`,background:T.card2,display:"flex",alignItems:"center",justifyContent:"center",gap:10,fontFamily:T.f,fontSize:14,fontWeight:600,color:T.fg,cursor:"pointer",marginBottom:16}}>
-          <IcoGoogle/> Google ilə davam et
-        </button>
+        <button
+  onClick={loginWithGoogle}
+  style={{
+    width:"100%",
+    minHeight:46,
+    borderRadius:10,
+    border:`1px solid ${T.border}`,
+    background:T.card2,
+    display:"flex",
+    alignItems:"center",
+    justifyContent:"center",
+    gap:10,
+    fontFamily:T.f,
+    fontSize:14,
+    fontWeight:600,
+    color:T.fg,
+    cursor:"pointer",
+    marginBottom:16
+  }}
+>
+  <IcoGoogle/> Google ilə davam et
+</button>
         <div style={{display:"flex",alignItems:"center",gap:12,margin:"0 0 16px",color:T.mfg,fontSize:12}}>
           <span style={{flex:1,height:1,background:T.border,display:"block"}}/> və ya <span style={{flex:1,height:1,background:T.border,display:"block"}}/>
         </div>
