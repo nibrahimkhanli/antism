@@ -129,6 +129,52 @@ export default function Page() {
   </div>
 </section>
 
+{/* PLATFORM STATS */}
+
+<section className="py-24 bg-slate-100 text-black">
+  <div className="max-w-6xl mx-auto px-6 text-center">
+
+    <h2 className="text-3xl font-bold mb-12">
+      Antism in Numbers
+    </h2>
+
+    <div className="grid md:grid-cols-3 gap-10">
+
+      {/* CREATORS */}
+      <div>
+        <div className="text-5xl font-bold mb-2">
+          100+
+        </div>
+        <p className="text-gray-600">
+          Creators
+        </p>
+      </div>
+
+      {/* BRANDS */}
+      <div>
+        <div className="text-5xl font-bold mb-2">
+          50+
+        </div>
+        <p className="text-gray-600">
+          Brands
+        </p>
+      </div>
+
+      {/* CAMPAIGNS */}
+      <div>
+        <div className="text-5xl font-bold mb-2">
+          200+
+        </div>
+        <p className="text-gray-600">
+          Campaigns
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
     </div>
   )
 }
