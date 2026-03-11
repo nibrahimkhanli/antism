@@ -22,4 +22,38 @@ export default function Page() {
 
     </div>
   )
-}
+}<section className="py-24 bg-white text-black">
+  <div className="max-w-6xl mx-auto px-6 text-center">
+
+    <h2 className="text-3xl font-bold mb-12">
+      Creator types on Antism
+    </h2>
+
+    <div className="grid md:grid-cols-3 gap-8">
+
+      <div className="p-6 border rounded-xl">
+        <h3 className="text-xl font-semibold mb-2">Athletes</h3>
+        <p className="text-gray-500">
+          Work with brands and promote campaigns.
+        </p>
+      </div>
+
+      <div className="p-6 border rounded-xl">
+        <h3 className="text-xl font-semibold mb-2">Podcasts</h3>
+        <p className="text-gray-500">
+          Integrate sponsorships into episodes.
+        </p>
+      </div>
+
+      <div className="p-6 border rounded-xl">
+        <h3 className="text-xl font-semibold mb-2">Events</h3>
+        <p className="text-gray-500">
+          Partner with brands for event promotions.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
