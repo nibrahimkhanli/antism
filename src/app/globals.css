@@ -44,10 +44,10 @@
 
   /* BRAND COLORS */
 
-  --color-primary: oklch(0.829 0.1314 68.07);
+  --color-primary: oklch(0.6146 0.2372 21.37);
   --color-primary-foreground: oklch(0.1 0 0);
 
-  --color-secondary: oklch(0.9068 0.0254 168.19);
+  --color-secondary: oklch(0.9702 0 0);
   --color-secondary-foreground: oklch(0.145 0 0);
 
   --color-muted: oklch(0.95 0.01 250);
@@ -72,7 +72,7 @@
   --color-card: oklch(0.22 0.02 260);
   --color-card-foreground: oklch(0.985 0 0);
 
-  --color-primary: oklch(0.829 0.1314 68.07);
+  --color-primary: oklch(0.6146 0.2372 21.37);
   --color-primary-foreground: oklch(0.15 0 0);
 
   --color-secondary: oklch(0.35 0.02 250);
