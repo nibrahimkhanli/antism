@@ -259,6 +259,70 @@ export default function Page() {
   </div>
 </section>
 
+{/* FINAL CTA */}
+
+<section className="py-24 bg-slate-950 text-white">
+  <div className="max-w-4xl mx-auto px-6 text-center">
+
+    <h2 className="text-4xl font-bold mb-6">
+      Start Collaborating Today
+    </h2>
+
+    <p className="text-gray-400 mb-10">
+      Join Antism to connect brands with athletes, podcasts and events.
+    </p>
+
+    <div className="flex justify-center gap-6">
+
+      <button className="px-8 py-3 bg-white text-black rounded-lg font-semibold hover:bg-gray-200 transition">
+        Join as Creator
+      </button>
+
+      <button className="px-8 py-3 border border-white rounded-lg font-semibold hover:bg-white hover:text-black transition">
+        Find Creators
+      </button>
+
+    </div>
+
+  </div>
+</section>
+
+{/* FOOTER */}
+
+<footer className="py-12 bg-black text-gray-400">
+  <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+
+    <h3 className="text-white font-bold text-lg mb-4 md:mb-0">
+      Antism
+    </h3>
+
+    <div className="flex gap-6 text-sm">
+
+      <a href="#" className="hover:text-white">
+        About
+      </a>
+
+      <a href="#" className="hover:text-white">
+        Creators
+      </a>
+
+      <a href="#" className="hover:text-white">
+        Brands
+      </a>
+
+      <a href="#" className="hover:text-white">
+        Contact
+      </a>
+
+    </div>
+
+    <p className="text-xs mt-6 md:mt-0">
+      © 2026 Antism. All rights reserved.
+    </p>
+
+  </div>
+</footer>
+
     </div>
   )
 }
